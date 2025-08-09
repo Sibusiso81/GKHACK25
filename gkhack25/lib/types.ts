@@ -21,15 +21,15 @@ export interface FeatureCardProps {
   description: string;
 }
 
-type StudentFormData = {
+/* type StudentFormData = {
   name: string
   email: string
   password: string
   fieldOfStudy: string
   yearOfStudy: string
   university: string
-}
-interface StudentFormProps {
+} */
+/* interface StudentFormProps {
   initialData: {
     name: string
     email: string
@@ -40,7 +40,7 @@ interface StudentFormProps {
   }
   onSubmit: (data: StudentFormData) => void
   onBack: () => void
-}
+} */
 export interface Farmer {
   name: string;
   email: string;

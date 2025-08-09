@@ -9,14 +9,14 @@ function Navbar() {
     show: {
       clipPath: "polygon(0% 0%,100% 0%,100% 100%, 0% 100%)",
       transition: {
-        ease: [0.11, 0.325, 0.16, 0.95],
+        ease: [0.11, 0.325, 0.16, 0.95] as [number, number, number, number],
         duration: 0.6,
       },
     },
     exit: {
       clipPath: "polygon(0% 100%, 100% 100%,100% 100%, 0% 100%)",
       transition: {
-        ease: [0.645, 0.045, 0.355, 0.8],
+        ease: [0.645, 0.045, 0.355, 0.8] as [number, number, number, number],
         duration: 0.6,
       },
     },
@@ -28,7 +28,7 @@ function Navbar() {
     show: {
       y: 0,
       transition: {
-        ease: "easeOut",
+        ease: "easeOut" as const,
         delay: 0.2,
         duration: 0.4,
       },
@@ -36,7 +36,7 @@ function Navbar() {
     exit: {
       y: "100%",
       transition: {
-        ease: "easeOut",
+        ease: "easeOut" as const,
         delay: 0.02,
         duration: 0.3,
       },
