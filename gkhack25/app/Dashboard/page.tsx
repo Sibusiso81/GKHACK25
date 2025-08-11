@@ -1,6 +1,59 @@
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
+import { createStudentProfile } from '../Auth/Actions/Actions'
+/* 
 
-function page() {
+Tables for studetns
+
+PostsCreated:{
+[
+name:string,
+feildofStudy:string,
+yearOfStudy:string,
+university:string,
+title:string,
+description:string,
+images :array-file 
+documments :array-file,
+comments:{
+  [
+    name:string,
+    comment:string,
+    timePosted:date
+  ]
+}
+]
+}
+]
+}
+numberOfAdpotations:number,
+
+
+*/
+
+
+function Page() {
+  
+  useEffect(() => {
+  const run = async () => {
+   const savedData = localStorage.getItem("studentData");
+   if (savedData) {
+    const parsedData = JSON.parse(savedData);
+    console.log(parsedData.email);
+    await createStudentProfile({
+       email: parsedData.email,
+      name: parsedData.name,
+      field_of_study: parsedData.fieldOfStudy,
+      year_of_study: parsedData.yearOfStudy,
+      university: parsedData.university,
+    });
+    console.log("Profile created successfully");
+   
+  }
+   
+  };
+  run();
+}, []);
   return (
     <div className="space-y-12">
       <h2 className="text-2xl font-bold">Welcome to your Dashboard</h2>
@@ -109,4 +162,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

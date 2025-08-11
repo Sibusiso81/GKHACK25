@@ -8,12 +8,14 @@ function SelectLang() {
   const [langSlected, setLangSelected] = useState(String);
   const [selected, setSelected] = useState(false);
   const [index, setIndex] = useState<number>(0);
+  
 
   function handleSelectedLanguage(i: number) {
     setLangSelected(langData[i].language);
     setSelected(true);
     setIndex(langData.indexOf(langData[i]));
     console.log(langSlected)
+    localStorage.setItem("language", langData[i].language);
   }
 
   function setUserLanguage(lang: string): void {
@@ -66,6 +68,7 @@ function SelectLang() {
               <h2></h2>
             </div>
           </div>
+        
         </div>
       ) : (
         <>

@@ -20,8 +20,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { toast, Toaster } from "sonner";
 import { Button } from "@/components/ui/button";
-import MailIcon from "@/components/MailIcon";
 import { Textarea } from "@/components/ui/textarea";
+import Gmail from "@/app/Componets/Gmail";
 
 export interface Farmer {
   name: string;
@@ -86,7 +86,8 @@ function FarmerForm() {
           <Form {...FarmerForm}>
             <form
               onSubmit={FarmerForm.handleSubmit(onSubmit)}
-              className="space-y-6 lg:space-y-8"
+            
+              className="space-y-6 lg:space-y-8 lg:grid grid-cols-2 lg:gap-x-16"
             >
               <FormField
                 control={FarmerForm.control}
@@ -308,25 +309,24 @@ function FarmerForm() {
                           </FormItem>
                         )}
                       />
-              <Button type="submit" className="cursor-pointer w-full">
+              <Button type="submit" className="cursor-pointer w-full place-self-center">
                 Submit
               </Button>
             </form>
           </Form>
         </div>
       ) : (
-        <div className="flex flex-col space-y-4 p-1  my-auto mx-auto items-center justify-center">
-          <div
-            className="flex flex-col
-         space-y-2 "
-          >
-            <MailIcon />
-            <h2 className="text-xl text-center">Check your mail </h2>
-          </div>
-          <p className="text-muted-foreground">
-            Follow the link on your email to log in .
-          </p>
+          <div className="flex flex-col space-y-4 p-1  my-auto mx-auto items-center justify-center">
+        <div className="flex flex-col
+         space-y-2 ">
+          <Gmail className="place-self-center justify-self-center"/>
+            <h2 className="text-xl text-center font-medium">Check your mail  </h2>
+            
         </div>
+        <p className="text-muted-foreground">
+          Follow the link on your email to log in .
+        </p>
+      </div>
       )}
     </>
   );

@@ -21,14 +21,47 @@ export interface FeatureCardProps {
   description: string;
 }
 
-/* type StudentFormData = {
-  name: string
-  email: string
-  password: string
-  fieldOfStudy: string
-  yearOfStudy: string
-  university: string
-} */
+
+type Post ={
+  
+  title:string,
+  description:string,
+  feildofStudy:string,
+  yearOfStudy:string,
+  university:string,
+  images: File[],
+  documents: File[],  
+
+}
+
+export const PostCreated: Post = {
+
+  title: "",
+  description: "",
+  feildofStudy: "",
+  yearOfStudy: "",
+  university: "",
+  images: [],
+  documents: []
+}
+
+PostCreated.description = 'dssdsdsd'
+console.log(PostCreated)
+type StudentProfile = {
+ 
+  language:string,
+  password: string,
+  fieldOfStudy: string,
+  yearOfStudy: string,
+  university: string,
+}
+export const StudentProfile: StudentProfile = {
+  language:'',
+  password: "",
+  fieldOfStudy: "",
+  yearOfStudy: "",
+  university: ""
+}
 /* interface StudentFormProps {
   initialData: {
     name: string

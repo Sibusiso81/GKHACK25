@@ -1,22 +1,34 @@
-import React, { useState } from 'react'
-import { LandingPageProps } from '@/lib/types'
-import { AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
-import Link from 'next/link'
-import Navbar from './Navbar'
-import { langData } from './LangData'
-import HowItWorksCard from './HowItWorksCard'
-import PricingCard from './PricingCard'
-import FeatureCard from './FeatureCard'
-import { LucideIconName } from './DynamicLucideIcon'
+import React, { useEffect, useState } from "react";
+import { LandingPageProps } from "@/lib/types";
+import { AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import Navbar from "./Navbar";
+import { langData } from "./LangData";
+import HowItWorksCard from "./HowItWorksCard";
+import PricingCard from "./PricingCard";
+import FeatureCard from "./FeatureCard";
+import { LucideIconName } from "./DynamicLucideIcon";
+import { toast, Toaster } from "sonner";
 
-function LandingPage({ index}: LandingPageProps) {
-    const [isOpen, setIsOpen] = useState<boolean>(false);
+function LandingPage({ index }: LandingPageProps) {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    localStorage.setItem("Language", langData[index].language);
+    toast.success(`Language set to ${langData[index].language}`);
+  }, [index])
   return (
-     <main className="overflow-hidden">
-      <section className="w-screen h-screen flex flex-col font-poppins  items-center justify-center overflow-hidden bg-gradient-to-b from-black to-green-900 text-[#ececec] " id="Home">
+    <main className="overflow-hidden">
+      <Toaster position="top-center"/>
+      <section
+        className="w-screen h-screen flex flex-col font-poppins  items-center justify-center overflow-hidden bg-gradient-to-b from-black to-green-900 text-[#ececec] "
+        id="Home"
+      >
         <div className="w-full border-[#eaeaea] flex justify-between items-center rounded-md relative z-40  p-4">
-          <h1 className=" font-medium text-[#eaeaea] text-lg ">Spartan Sentinel</h1>
+          <h1 className=" font-medium text-[#eaeaea] text-lg ">
+            Spartan Sentinel
+          </h1>
           <div className="flex flex-row space-x-2 items-cente justify-center pr-4">
             <Menu
               className={`cursor-pointer ${isOpen ? "hidden" : ""}`}
@@ -47,11 +59,11 @@ function LandingPage({ index}: LandingPageProps) {
             </div>
             <div className="lg:place-self-end max-w-screen-sm lg:w-1/2 ">
               {" "}
-             <Link href="/Auth/SignUp">
-              <button className="w-full hover:cursor-pointer p-4 text-center bg-lime-400 text-black lg:place-self-end justify-self-end    lg:place-content-end">
-                {langData[index].heroSection.callToAction}
-              </button>
-             </Link>
+              <Link href="/Auth/SignUp">
+                <button className="w-full hover:cursor-pointer p-4 text-center bg-lime-400 text-black lg:place-self-end justify-self-end    lg:place-content-end">
+                  {langData[index].heroSection.callToAction}
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -79,17 +91,20 @@ function LandingPage({ index}: LandingPageProps) {
           </div>
         </div>
       </section>
-      <section className="w-screen h-fit items-center  p-10 lg:p-28 space-y-8  " id="Getstarted">
+      <section
+        className="w-screen h-fit items-center  p-10 lg:p-28 space-y-8  "
+        id="Getstarted"
+      >
         <div className="w-full">
           {" "}
           <div>
             <h1 className="text-4xl lg:text-5xl font-semibold w-full">
-             {langData[index].getStartedSection.heading}
+              {langData[index].getStartedSection.heading}
             </h1>
           </div>
           <div className="w-2/3">
             <p className="text-lg md:text-md lg:text-xl mt-4">
-             {langData[index].getStartedSection.subHeading}
+              {langData[index].getStartedSection.subHeading}
             </p>
           </div>
         </div>
@@ -140,7 +155,7 @@ function LandingPage({ index}: LandingPageProps) {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3   gap-3.5 p-1  ">
-          {langData[index].services.map((items,i) => (
+          {langData[index].services.map((items, i) => (
             <FeatureCard
               icon={items.icon as LucideIconName}
               heading={items.heading}
@@ -150,7 +165,6 @@ function LandingPage({ index}: LandingPageProps) {
           ))}
         </div>
       </section>
-      
 
       <section className="w-screen h-[80vh] lg:h-[68vh] flex flex-col lg:flex p-4  justify-center   md:p-6  space-y-2 md:space-y-6">
         <div className="pt-3.5 grid grid-cols-1 md:grid-cols-2 gap-6 flex-1  ">
@@ -198,9 +212,8 @@ function LandingPage({ index}: LandingPageProps) {
           </div>
         </div>
       </section>
-    
     </main>
-  )
+  );
 }
 
-export default LandingPage
+export default LandingPage;

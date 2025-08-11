@@ -21,8 +21,8 @@ import {
 } from "@/components/ui/select";
 import { toast, Toaster } from "sonner";
 import { Button } from "@/components/ui/button";
-import MailIcon from "@/components/MailIcon";
 import { signup } from "../Actions/Actions";
+import Gmail from "@/app/Componets/Gmail";
 function StudentForm() {
     const [formSubmitted, setFormSubmitted] = useState(false);
   const studentFormSchema = z.object({
@@ -50,6 +50,7 @@ function StudentForm() {
   });
   function onSubmit(data: z.infer<typeof studentFormSchema>) {
     console.log('Submitted',data)
+    localStorage.setItem("studentData", JSON.stringify(data));
     setFormSubmitted(true);
     toast.success("Form submitted successfully!",)
     const formData = new FormData();
@@ -74,7 +75,7 @@ function StudentForm() {
       <Form {...StudentForm}>
         <form
           onSubmit={StudentForm.handleSubmit(onSubmit)}
-          className="space-y-6 lg:space-y-8"
+          className="space-y-6 lg:space-y-8 lg:grid grid-cols-2 lg:gap-x-24"
         >
           <FormField
             control={StudentForm.control}
@@ -208,7 +209,7 @@ function StudentForm() {
     : <div className="flex flex-col space-y-4 p-1  my-auto mx-auto items-center justify-center">
         <div className="flex flex-col
          space-y-2 ">
-          <MailIcon/>
+          <Gmail/>
             <h2 className="text-xl text-center">Check your mail  </h2>
             
         </div>

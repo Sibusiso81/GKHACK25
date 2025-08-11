@@ -9,7 +9,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <AppSidebar />
       <main className="flex-1">
         <div className="flex h-16 items-center gap-4 border-b px-4">
-          <SidebarTrigger />
+          <SidebarTrigger variant={'secondary'}/>
           <h1 className="font-semibold">Dashboard</h1>
         </div>
         <div className="p-4">{children}</div>
