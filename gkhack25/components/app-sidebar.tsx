@@ -43,21 +43,17 @@ const availableItems = [
     icon: Home,
   },
   {
-    title: "Share Research",
-    url: "/create-post",
+    title: "Create Post",
+    url: "/Dashboard/create-post",
     icon: Plus,
     highlight: true,
   },
   {
-    title: "My Contributions",
-    url: "/my-posts",
+    title: "My Posts",
+    url: "/Dashboard/my-posts",
     icon: FileText,
   },
-  {
-    title: "Browse Research",
-    url: "/browse",
-    icon: BookOpen,
-  },
+  
 ]
 
 // Coming soon features
