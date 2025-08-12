@@ -119,19 +119,22 @@ async function handleLogin(formData: FormData) {
 
 function Login() {
   return (
-    <section className="w-screen h-screen flex flex-col p-4 justify-center items-center   ">
+    <section className="w-screen h-screen flex flex-col p-4 lg:items-center lg:justify-center    ">
       <Toaster position="top-center" richColors/>
-      <div className="flex flex-col lg:flex-row mx-auto justify-between h-3/4  w-full max-w-screen-xl">
-        <div className="rounded-md hidden lg:flex  items-end  lg:w-1/2 bg-[url(/oliver-sjostrom-y-GMWtWW_H8-unsplash.jpg)]  bg-center bg-cover">
-         <div className="text-5xl font-bold mb-2">
-              Growth.Together.{" "}
+      <div className="flex flex-col lg:flex-row mx-auto justify-center items-center lg:h-3/4  w-full max-w-screen-xl">
+     <div className="rounded-md hidden md:flex  items-end h-[300px] lg:h-5/6 my-a md:w-full lg:w-1/2 bg-[url(/tim-mossholder-xDwEa2kaeJA-unsplash.jpg)]  bg-center bg-cover">
+
+          <div className="text-white  p-4 b rounded-lg ">
+            <div className="text-5xl font-bold mb-2">
+              Growth Together.{" "}
               <span className="place-self-start text-lg font-semibold">
-                by {""}
+                
                 <span className="text-lime-400 text-3xl">Spartans</span>
               </span>{" "}
             </div>
+          </div>
         </div>
-        <div className="flex flex-col space-y-4 lg:w-1/2 max-w-screen-sm justify-center   p-10 ">
+        <div className="flex flex-col space-y-4 w-full lg:w-1/2  max-w-screen-sm mx-auto justify-center my-auto  p-10 ">
           <p className="text-center font-medium text-md ">
             Log into your account{" "}
           </p>
