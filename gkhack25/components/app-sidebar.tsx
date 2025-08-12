@@ -1,5 +1,17 @@
 'use client'
-import {  ArrowRightCircleIcon, FileText, Home,  Plus,  Settings } from "lucide-react"
+import {
+  Home,
+  Plus,
+  FileText,
+  Users,
+  BookOpen,
+  Award,
+  TrendingUp,
+  Settings,
+  Clock,
+  Target,
+  ArrowRightCircleIcon,
+} from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -22,30 +34,64 @@ import { User2, ChevronUp } from "lucide-react"
 import { useEffect, useState } from "react"
 import logout, { getUser } from "@/app/Auth/Actions/Actions"
 import { Button } from "./ui/button"
+import { Badge } from "./ui/badge"
 
-// Menu items data
-const items = [
+const availableItems = [
   {
     title: "Home",
-    url: "#",
+    url: "/",
     icon: Home,
   },
-   {
-    title: "Create Post",
-    url: "/Dashboard/create-post",
+  {
+    title: "Share Research",
+    url: "/create-post",
     icon: Plus,
+    highlight: true,
   },
   {
-    title: "My Posts",
-    url: "/Dashboard/my-posts",
+    title: "My Contributions",
+    url: "/my-posts",
     icon: FileText,
   },
   {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
+    title: "Browse Research",
+    url: "/browse",
+    icon: BookOpen,
   },
 ]
+
+// Coming soon features
+const comingSoonItems = [
+  {
+    title: "Student Network",
+    url: "#",
+    icon: Users,
+    comingSoon: true,
+    description: "Connect with peers",
+  },
+  {
+    title: "Impact Tracker",
+    url: "#",
+    icon: TrendingUp,
+    comingSoon: true,
+    description: "See your research impact",
+  },
+  {
+    title: "Farmer Feedback",
+    url: "#",
+    icon: Target,
+    comingSoon: true,
+    description: "Get feedback from farmers",
+  },
+  {
+    title: "Research Challenges",
+    url: "#",
+    icon: Award,
+    comingSoon: true,
+    description: "Compete in innovation challenges",
+  },
+]
+
 
 export function AppSidebar() {
 const [user, setUser] = useState('');
@@ -60,19 +106,46 @@ useEffect(()=>{
 
 
   return (
-    <Sidebar>
-      <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
+    <Sidebar className="bg-gradient-to-br from-green-50 via-white to-gray-50 ">
+      <SidebarContent className="bg-gradient-to-br from-green-50 via-white to-gray-50">
+        <SidebarGroup className="gap-4">
+          <SidebarGroupLabel className="text-2xl font-bold">AgriThinkHub</SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu>
-              {items.map((item) => (
+            <SidebarMenu className="gap-1.5 font-medium">
+              {availableItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <Link href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
                     </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+              <SidebarGroup>
+          <SidebarGroupLabel className="text-gray-700">Coming Soon</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {comingSoonItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton
+                    className="opacity-60 cursor-not-allowed hover:bg-transparent flex-col items-start h-auto py-2 text-gray-600"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    <div className="flex items-center justify-between w-full">
+                      <div className="flex items-center gap-2">
+                        <item.icon className="h-4 w-4 text-gray-400" />
+                        <span className="font-medium">{item.title}</span>
+                      </div>
+                      <Badge variant="outline" className="text-xs border-gray-300 text-gray-500">
+                        <Clock className="h-3 w-3 mr-1" />
+                        Soon
+                      </Badge>
+                    </div>
+                    {item.description && <p className="text-xs text-gray-500 mt-1 ml-6">{item.description}</p>}
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}

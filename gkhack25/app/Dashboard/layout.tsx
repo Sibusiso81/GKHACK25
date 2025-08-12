@@ -5,7 +5,7 @@ import { AppSidebar } from "@/components/app-sidebar"
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <SidebarProvider>
+    <SidebarProvider className="bg-gradient-to-br from-green-50 via-white to-gray-50 ">
       <AppSidebar />
       <main className="flex-1">
         <div className="flex h-16 items-center gap-4 border-b px-4">
