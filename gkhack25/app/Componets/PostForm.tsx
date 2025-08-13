@@ -34,19 +34,19 @@ function PostForm() {
   const [title, setTitle] = useState("");
   const [images, setImages] = useState<File[]>([]);
   const [documents, setDocuments] = useState<File[]>([]);
-  const [images_urls, setImages_urls] = useState<string[]>([]);
-  const [documents_urls, setDocuments_urls] = useState<string[]>([]);
+  const [images_display_urls, setImages__Display_Urls] = useState<string[]>([]);
+  const [documents_display_urls, setDocuments_Display_Urls] = useState<string[]>([]);
   const [postCreated, setPostCreated] = useState(false);
   function handleImageChange(files: File[], onChange: (files: File[]) => void) {
     // Combine previous images with new files
-    console.log("image files:", files);
+    
     setImages((prev) => [...prev, ...files.map((file) => file)]);
 
-    setImages_urls((prev = []) => [
+    setImages__Display_Urls((prev = []) => [
       ...prev,
       ...files.map((file) => URL.createObjectURL(file)),
     ]);
-    console.log(images);
+   
     // Combine previous files with new files for the form field
     onChange([...(PostForm.getValues("images") ?? []), ...files]);
     onChange([...(PostForm.getValues("images") ?? []), ...files]);
@@ -57,13 +57,13 @@ function PostForm() {
     onChange: (files: File[]) => void
   ) {
     // Combine previous documents_urls with new files
-    console.log("document files:", files);
+    
     setDocuments((prev) => [...prev, ...files.map((file) => file)]);
-    setDocuments_urls((prev = []) => [
+    setDocuments_Display_Urls((prev = []) => [
       ...prev,
       ...files.map((file) => file.name),
     ]);
-    console.log("documents_urls", documents_urls);
+    
     // Combine previous files with new files for the form field
     onChange([...(PostForm.getValues("documents_urls") ?? []), ...files]);
   }
@@ -113,6 +113,8 @@ function PostForm() {
     setPostCreated(true);
     const  images_urls = await uploadImages(images); // returns an array of image urls
     const  documents_urls = await uploadDocuments(documents);
+    console.log('Public Image links :',images_urls)
+    console.log('Public Document links :',images_urls)
 
     const  result = await uploadPost({
       title,
@@ -274,7 +276,7 @@ function PostForm() {
                   </div>
                   <div className="border-2 h-fit rounded-md grid grid-cols-2 gap-2 p-2 w-full">
                     <div className="grid grid-cols-3 gap-1 w-full">
-                      {(images_urls ?? []).map((image, idx) => (
+                      {(images_display_urls ?? []).map((image, idx) => (
                         <Image
                           key={idx}
                           src={image}
@@ -296,7 +298,7 @@ function PostForm() {
                     <h3 className="col-span-2 text-nowrap">
                       Uploaded documents_urls:
                     </h3>
-                    {documents_urls.map((document, i) => (
+                    {documents_display_urls.map((document, i) => (
                       <div
                         key={i}
                         className="border rounded-md p-3 bg-gray-50 flex space-x-2"

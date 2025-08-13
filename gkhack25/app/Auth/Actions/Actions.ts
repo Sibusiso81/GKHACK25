@@ -171,25 +171,54 @@ export const getUser = async () => {
 
 const getUserID = async () => {
   const supabase = await createClient();
-  const {data:session,error:sessionError} = await supabase.auth.getSession()
-  if(sessionError || !session){
-    console.log('Error Fetching session',sessionError)
+  const { data: session, error: sessionError } =
+    await supabase.auth.getSession();
+  if (sessionError || !session) {
+    console.log("Error Fetching session", sessionError);
     return null;
   }
-  const user = session.session?.user.email
+  const user = session.session?.user.email;
   const { data: student, error: studentError } = await supabase
-    .from('student')
-    .select('id')
-    .eq('email', user)
+    .from("student")
+    .select("id")
+    .eq("email", user)
     .single();
 
   if (studentError || !student) {
-    console.log('Error fetching student', studentError);
+    console.log("Error fetching student", studentError);
     return null;
   }
 
   return student.id;
 };
+export async function getStudentPorfile() {
+  const supabase = await createClient();
+
+  const { data: session, error: sessionError } =
+    await supabase.auth.getSession();
+  console.log("Session data:", session);
+  if (sessionError || !session?.session) {
+    console.log("Error Fetching session", sessionError);
+    return null;
+  }
+
+  const userEmail = session.session.user.email;
+  console.log("Fetching student with email:", userEmail);
+
+  const { data: student, error: studentError } = await supabase
+    .from("student")
+    .select("*")
+    .eq("email", userEmail)
+    .single();
+
+  if (studentError) {
+    console.log("Error getting student", studentError);
+    return null;
+  }
+
+  console.log("Student profile fetched:", student);
+  return student;
+}
 
 export async function uploadPost({
   title,
@@ -197,61 +226,71 @@ export async function uploadPost({
   images_urls,
   documents_urls,
 }: Post) {
-  const userId = await  getUserID();
-  console.log('UserId:',userId)
+  const userId = await getUserID();
+  console.log("UserId:", userId);
   const supabase = await createClient();
-  const { error: insertError } = await supabase
-    .from("post")
-    .insert([
-      {
-        title: title,
-        description: description,
-        image_urls: images_urls,
-        document_urls: documents_urls,
-        student_id: userId,
-      },
-    ]);
-    if(insertError){
-      console.log(insertError.message)
-    }
-    return {success:true}
+  const { error: insertError } = await supabase.from("post").insert([
+    {
+      title: title,
+      description: description,
+      image_urls: images_urls,
+      document_urls: documents_urls,
+      student_id: userId,
+    },
+  ]);
+  if (insertError) {
+    console.log(insertError.message);
+  }
+  return { success: true };
 }
 
 export const uploadImages = async (files: File[]): Promise<string[] | null> => {
   const supabase = await createClient();
   const uploadedUrls: string[] = [];
-
+  const {
+    data: { user },
+    error: authError,
+  } = await supabase.auth.getUser();
+  if (authError || !user) {
+    console.error("User not logged in:", authError);
+    return [];
+  }
   for (const file of files) {
     // Create a unique file name to avoid overwrites
-    const filePath = `images/${Date.now()}_${file.name}`;
+    const filePath = `${user.id}/${Date.now()}_${file.name}`;
 
-    const {  error } = await supabase
-      .storage
-      .from('postImages') // your storage bucket name
+    const { error } = await supabase.storage
+      .from("postImages") // your storage bucket name
       .upload(filePath, file);
 
     if (error) {
-      console.error('Image Upload error:', error);
+      console.error("Image Upload error:", error);
     } else {
       // Generate a public URL
       const { data: publicUrlData } = supabase.storage
-        .from('postImages')
+        .from("postImages")
         .getPublicUrl(filePath);
+      console.log("image public url:", publicUrlData.publicUrl);
+      console.log(publicUrlData.publicUrl);
 
       uploadedUrls.push(publicUrlData.publicUrl);
     }
   }
 
   return uploadedUrls.length > 0 ? uploadedUrls : null;
-}
+};
 
-export const uploadDocuments = async (files: File[]): Promise<string[] | null> => {
-  
+export const uploadDocuments = async (
+  files: File[]
+): Promise<string[] | null> => {
   const supabase = await createClient();
   const uploadedDocs: string[] = [];
-   const { data: { user }, error: authError } = await supabase.auth.getUser();
+  const {
+    data: { user },
+    error: authError,
+  } = await supabase.auth.getUser();
   if (authError || !user) {
-    console.error('User not logged in:', authError);
+    console.error("User not logged in:", authError);
     return [];
   }
 
@@ -259,22 +298,143 @@ export const uploadDocuments = async (files: File[]): Promise<string[] | null> =
     // Create a unique file name to avoid overwrites
     const filePath = `${user.id}/${Date.now()}_${file.name}`;
 
-    const {  error } = await supabase
-      .storage
-      .from('postImages') // your storage bucket name
-      .upload(filePath, file);
+    const { error } = await supabase.storage
+      .from("postDocuments") // must match the bucket name exactly
+      .upload(`${user.id}/${Date.now()}_${file.name}`, file);
 
     if (error) {
-      console.error('Document Upload error:', error);
+      console.error("Document Upload error:", error);
     } else {
       // Generate a public URL
       const { data: publicUrlData } = supabase.storage
-        .from('postImages')
+        .from("postDocuments")
         .getPublicUrl(filePath);
-
+      console.log("document public url:", publicUrlData.publicUrl);
       uploadedDocs.push(publicUrlData.publicUrl);
     }
   }
 
   return uploadedDocs.length > 0 ? uploadedDocs : null;
+};
+
+export async function getUserPosts() {
+  const supabase = await createClient();
+
+  try {
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser();
+
+    if (authError || !user) {
+      console.error("User not logged in:", authError);
+      return [];
+    }
+
+    // Get the student record matching the user's email
+    const { data: studentData, error: studentError } = await supabase
+      .from("student")
+      .select("*")
+      .eq("email", user.email)
+      .single();
+
+    if (studentError || !studentData) {
+      console.log("No student found for user");
+      return [];
+    }
+
+    // Fetch posts for that student with profile data
+    const { data: posts, error: postError } = await supabase
+      .from("post")
+      .select("*")
+      .eq("student_id", studentData.id)
+      .order("created_at", { ascending: false });
+
+    if (postError) {
+      console.log("Error fetching posts:", postError);
+      return [];
+    }
+
+    // Transform the data to include the profile
+    const transformedPosts =
+      posts?.map((post) => ({
+        id: post.id,
+        created_at: post.created_at,
+        title: post.title,
+        description: post.description,
+        image_urls: post.image_urls || [],
+        document_urls: post.document_urls || [],
+        student_id: post.student_id,
+        profile: {
+          id: studentData.id,
+          created_at: studentData.created_at,
+          name: studentData.name,
+          email: studentData.email,
+          field_of_study: studentData.field_of_study,
+          year_of_study: studentData.year_of_study,
+          university: studentData.university,
+        },
+      })) || [];
+
+    return transformedPosts;
+  } catch (error) {
+    console.error("Error in getUserPosts:", error);
+    return [];
+  }
+}
+
+export async function getAllPosts() {
+  const supabase = await createClient();
+
+  try {
+    // Fetch all posts with their associated student profiles
+    const { data: posts, error: postError } = await supabase
+      .from("post")
+      .select(
+        `
+        *,
+        student:student_id (
+          id,
+          created_at,
+          name,
+          email,
+          field_of_study,
+          year_of_study,
+          university
+        )
+      `
+      )
+      .order("created_at", { ascending: false });
+
+    if (postError) {
+      console.error("Error fetching posts:", postError);
+      return [];
+    }
+
+    // Transform the data to match our PostData interface
+    const transformedPosts =
+      posts?.map((post) => ({
+        id: post.id,
+        created_at: post.created_at,
+        title: post.title,
+        description: post.description,
+        image_urls: post.image_urls || [],
+        document_urls: post.document_urls || [],
+        student_id: post.student_id,
+        profile: {
+          id: post.student.id,
+          created_at: post.student.created_at,
+          name: post.student.name,
+          email: post.student.email,
+          field_of_study: post.student.field_of_study,
+          year_of_study: post.student.year_of_study,
+          university: post.student.university,
+        },
+      })) || [];
+
+    return transformedPosts;
+  } catch (error) {
+    console.error("Error in getAllPosts:", error);
+    return [];
+  }
 }

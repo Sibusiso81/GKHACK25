@@ -29,22 +29,40 @@ export type Post = {
 };
 
 
+export interface StudentProfile {
+  id: string
+  created_at: string
+  name: string
+  email: string
+  field_of_study: string
+  year_of_study: string
+  university: string
+}
+
+export interface PostData {
+  id: string
+  created_at: string
+  title: string
+  description: string
+  image_urls: string[]
+  document_urls: string[]
+  student_id: string
+  profile: StudentProfile
+}
+
+export interface PostsResponse {
+  posts: PostData[]
+}
 
 
-type StudentProfile = {
-  language: string;
-  password: string;
-  fieldOfStudy: string;
-  yearOfStudy: string;
-  university: string;
-};
-export const StudentProfile: StudentProfile = {
-  language: "",
-  password: "",
-  fieldOfStudy: "",
-  yearOfStudy: "",
-  university: "",
-};
+export interface PostsResponse {
+  posts: PostData[]
+}
+
+
+
+
+
 /* interface StudentFormProps {
   initialData: {
     name: string

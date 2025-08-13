@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect } from 'react'
-import { createStudentProfile } from '../Auth/Actions/Actions'
+import { createStudentProfile, getAllPosts } from '../Auth/Actions/Actions'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -68,7 +68,8 @@ function Page() {
       year_of_study: parsedData.yearOfStudy,
       university: parsedData.university,
     });
-    console.log("Profile created successfully");
+    const posts = await getAllPosts()
+    console.log("Posts fetched",posts);
    
   }
    
