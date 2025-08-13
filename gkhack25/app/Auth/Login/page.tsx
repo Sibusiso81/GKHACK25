@@ -106,7 +106,7 @@ async function handleLogin(formData: FormData) {
             <div className="border w-full bg-neutral-900"></div>
           </div>
 
-          <Link href={"/Auth/Signup"}>
+          <Link href={"/Auth/SignUp"}>
             <Button variant={"default"} className="w-full ">
               Signup
             </Button>
