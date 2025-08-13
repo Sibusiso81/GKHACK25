@@ -21,47 +21,30 @@ export interface FeatureCardProps {
   description: string;
 }
 
+export type Post = {
+  title: string;
+  description: string;
+  images_urls: string[];
+  documents_urls: string[];
+};
 
-type Post ={
-  
-  title:string,
-  description:string,
-  feildofStudy:string,
-  yearOfStudy:string,
-  university:string,
-  images: File[],
-  documents: File[],  
 
-}
 
-export const PostCreated: Post = {
 
-  title: "",
-  description: "",
-  feildofStudy: "",
-  yearOfStudy: "",
-  university: "",
-  images: [],
-  documents: []
-}
-
-PostCreated.description = 'dssdsdsd'
-console.log(PostCreated)
 type StudentProfile = {
- 
-  language:string,
-  password: string,
-  fieldOfStudy: string,
-  yearOfStudy: string,
-  university: string,
-}
+  language: string;
+  password: string;
+  fieldOfStudy: string;
+  yearOfStudy: string;
+  university: string;
+};
 export const StudentProfile: StudentProfile = {
-  language:'',
+  language: "",
   password: "",
   fieldOfStudy: "",
   yearOfStudy: "",
-  university: ""
-}
+  university: "",
+};
 /* interface StudentFormProps {
   initialData: {
     name: string
@@ -73,7 +56,44 @@ export const StudentProfile: StudentProfile = {
   }
   onSubmit: (data: StudentFormData) => void
   onBack: () => void
-} */
+} 
+  
+student = {
+name,
+email,
+univeristy,
+yearOfStudy,
+FeildOfStudy,
+posts:[
+[
+id,
+title,
+description,
+images:[]
+documents:[]
+]
+
+]
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
 export interface Farmer {
   name: string;
   email: string;
@@ -84,6 +104,6 @@ export interface Farmer {
   cropsGrown: string;
   location: string;
   ageGroup: string;
-  farmingVision:string;
+  farmingVision: string;
 }
 export type User = "Student" | "Farmer" | null;

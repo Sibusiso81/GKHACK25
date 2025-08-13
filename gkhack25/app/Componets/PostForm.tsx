@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { z } from "zod";
+import {  z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ArrowDownToLine } from "lucide-react";
+import { ArrowDownToLine, Loader2Icon } from "lucide-react";
 import {
   Form,
   FormControl,
@@ -23,44 +23,49 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import {
+  uploadDocuments,
+  uploadImages,
+  uploadPost,
+} from "../Auth/Actions/Actions";
+import { toast, Toaster } from "sonner";
 function PostForm() {
-  const [Description, setDescription] = useState("");
-  const [Title, setTitle] = useState("");
-  const [Images, setImages] = useState<string[]>([]);
-  const [Documents, setDocuments] = useState<string[]>([]);
-
+  const [description, setDescription] = useState("");
+  const [title, setTitle] = useState("");
+  const [images, setImages] = useState<File[]>([]);
+  const [documents, setDocuments] = useState<File[]>([]);
+  const [images_urls, setImages_urls] = useState<string[]>([]);
+  const [documents_urls, setDocuments_urls] = useState<string[]>([]);
+  const [postCreated, setPostCreated] = useState(false);
   function handleImageChange(files: File[], onChange: (files: File[]) => void) {
     // Combine previous images with new files
-    console.log('image files:',files)
-  setImages((prev) => [
-    ...prev,
-    ...files.map((file) => URL.createObjectURL(file)),
-  ]);
-  console.log(Images)
-  // Combine previous files with new files for the form field
-  onChange([
-    ...(PostForm.getValues("images") ?? []),
-    ...files,
-  ]);
-  }
+    console.log("image files:", files);
+    setImages((prev) => [...prev, ...files.map((file) => file)]);
 
+    setImages_urls((prev = []) => [
+      ...prev,
+      ...files.map((file) => URL.createObjectURL(file)),
+    ]);
+    console.log(images);
+    // Combine previous files with new files for the form field
+    onChange([...(PostForm.getValues("images") ?? []), ...files]);
+    onChange([...(PostForm.getValues("images") ?? []), ...files]);
+  }
 
   function handleDocumentChange(
     files: File[],
     onChange: (files: File[]) => void
   ) {
-   // Combine previous documents with new files
-   console.log('document files:',files)
-  setDocuments((prev) => [
-    ...prev,
-    ...files.map((file) => file.name),
-  ]);
-  console.log(Documents)
-  // Combine previous files with new files for the form field
-  onChange([
-    ...(PostForm.getValues("documents") ?? []),
-    ...files,
-  ]);
+    // Combine previous documents_urls with new files
+    console.log("document files:", files);
+    setDocuments((prev) => [...prev, ...files.map((file) => file)]);
+    setDocuments_urls((prev = []) => [
+      ...prev,
+      ...files.map((file) => file.name),
+    ]);
+    console.log("documents_urls", documents_urls);
+    // Combine previous files with new files for the form field
+    onChange([...(PostForm.getValues("documents_urls") ?? []), ...files]);
   }
   const postFormSchema = z.object({
     title: z
@@ -75,7 +80,7 @@ function PostForm() {
 
     images: z
       .array(z.instanceof(File))
-      .max(5, { message: "You can upload a maximum of 5 images" })
+      .max(20, { message: "You can upload a maximum of 5 images" })
       .refine((files) => files.every((file) => file.size <= 5 * 1024 * 1024), {
         message: "Each image must be less than 5MB",
       })
@@ -85,9 +90,9 @@ function PostForm() {
       )
       .optional(),
 
-    documents: z
+    documents_urls: z
       .array(z.instanceof(File))
-      .max(5, { message: "You can upload a maximum of 5 documents" })
+      .max(20, { message: "You can upload a maximum of 5 documents_urls" })
       .refine((files) => files.every((file) => file.size <= 10 * 1024 * 1024), {
         message: "Each document must be less than 10MB",
       })
@@ -100,12 +105,36 @@ function PostForm() {
       title: "",
       description: "",
       images: [],
-      documents: [],
+      documents_urls: [],
     },
   });
-  function onSubmit() {}
+
+  async function onSubmit() {
+    setPostCreated(true);
+    const  images_urls = await uploadImages(images); // returns an array of image urls
+    const  documents_urls = await uploadDocuments(documents);
+
+    const  result = await uploadPost({
+      title,
+      description,
+      images_urls: images_urls ?? [],
+      documents_urls: documents_urls ?? [],
+    });
+
+    if (result.success) {
+      toast.success("Your post has been successfully uploaded.",{description:`Thank you for your contribution`});
+      PostForm.reset()
+      
+    } else {
+      toast.error(`${"Something went wrong."}`);
+       
+    }
+    setPostCreated(false)
+    
+  }
   return (
     <Form {...PostForm}>
+      <Toaster position="top-center" closeButton/>
       <form
         onSubmit={PostForm.handleSubmit(onSubmit)}
         className="space-y-10 lg:space-y-8 lg:grid lg:grid-cols-2 lg:gap-8"
@@ -122,9 +151,9 @@ function PostForm() {
                   placeholder="Enter a Title for your post"
                   type="text"
                   {...field}
-                  onChange={(e)=>{
-                    field.onChange(e)
-                    setTitle(e.target.value)
+                  onChange={(e) => {
+                    field.onChange(e);
+                    setTitle(e.target.value);
                   }}
                 />
               </FormControl>
@@ -145,14 +174,12 @@ function PostForm() {
                   placeholder="Enter a description for your post"
                   rows={20}
                   cols={50}
-            
                   {...field}
-                  onChange={(e)=>{
+                  onChange={(e) => {
                     field.onChange(e);
-                    setDescription(e.target.value)
-                    
+                    setDescription(e.target.value);
                   }}
-                  value={Description}
+                  value={description}
                 />
               </FormControl>
               <FormMessage />
@@ -190,7 +217,7 @@ function PostForm() {
         />
         <FormField
           control={PostForm.control}
-          name="documents"
+          name="documents_urls"
           render={({ field }) => (
             <FormItem>
               <FormLabel>
@@ -241,26 +268,24 @@ function PostForm() {
               {/* Scrollable content area */}
               <div className="flex-1 overflow-y-auto pr-2 -mr-2">
                 <div className="space-y-4">
-                  
-               <div > <h1 className="textlg font-bold">{Title}</h1></div>
+                  <div>
+                    {" "}
+                    <h1 className="textlg font-bold">{title}</h1>
+                  </div>
                   <div className="border-2 h-fit rounded-md grid grid-cols-2 gap-2 p-2 w-full">
-                    
                     <div className="grid grid-cols-3 gap-1 w-full">
-                      {
-                        Images.map((image,idx)=>(
-                          
-                            <Image
-                            key={idx}
-                            src={image}
-                            width={200}
-                            height={200}
-                            sizes="(max-width: 768px) 200px, (max-width: 1200px) 200px, 200px"
-                            alt={`Uploaded image ${idx + 1}`}
-                            className="border-2 rounded-md bg-gray-50 col-span-1"/>
-                         
-                        ))
-                      }
-                    {/*   <div className="border-2 rounded-md bg-gray-50"></div>
+                      {(images_urls ?? []).map((image, idx) => (
+                        <Image
+                          key={idx}
+                          src={image}
+                          width={200}
+                          height={200}
+                          sizes="(max-width: 768px) 200px, (max-width: 1200px) 200px, 200px"
+                          alt={`Uploaded image ${idx + 1}`}
+                          className="border-2 rounded-md bg-gray-50 col-span-1"
+                        />
+                      ))}
+                      {/*   <div className="border-2 rounded-md bg-gray-50"></div>
                       <div className="border-2 rounded-md bg-gray-50"></div>
                       <div className="border-2 rounded-md bg-gray-50"></div>
                       <div className="border-2 rounded-md bg-gray-50"></div> */}
@@ -268,31 +293,38 @@ function PostForm() {
                   </div>
 
                   <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <h3 className="col-span-2 text-nowrap">Uploaded Documents:</h3>
-                    {Documents.map((document, i) => (
-                     <div
-                          key={i}
-                          className="border rounded-md p-3 bg-gray-50 flex space-x-2"
-                        >
-                          <p className="text-xs">{document}</p>
-                          
-                        </div>
+                    <h3 className="col-span-2 text-nowrap">
+                      Uploaded documents_urls:
+                    </h3>
+                    {documents_urls.map((document, i) => (
+                      <div
+                        key={i}
+                        className="border rounded-md p-3 bg-gray-50 flex space-x-2"
+                      >
+                        <p className="text-xs">{document}</p>
+                      </div>
                     ))}
                   </div>
 
                   <DialogDescription className="text-sm text-start">
-                   {Description}
+                    {description}
                   </DialogDescription>
 
                   {/* Extra content to demonstrate scrolling */}
-                 
                 </div>
               </div>
             </DialogContent>
           </Dialog>
-          <Button type="submit" className="cursor-pointer w-full">
-            Submit
-          </Button>
+          {postCreated ? (
+            <Button  disabled>
+              <Loader2Icon className="animate-spin" />
+              Please wait
+            </Button>
+          ) : (
+            <Button type="submit" className="cursor-pointer w-full">
+              Submit
+            </Button>
+          )}
         </div>
       </form>
     </Form>

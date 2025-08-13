@@ -1,9 +1,11 @@
 "use server";
 
 import { createClient } from "@/app/utils/supabse/server";
+import { Post } from "@/lib/types";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { toast } from "sonner";
+
 export async function createStudentProfile({
   email,
   name,
@@ -21,7 +23,7 @@ export async function createStudentProfile({
 
   // Check if the student already exists
   const { data: existing, error: fetchError } = await supabase
-    .from("Students")
+    .from("student")
     .select("id")
     .eq("email", email)
     .single();
@@ -39,7 +41,7 @@ export async function createStudentProfile({
   }
 
   // Insert new student
-  const { error } = await supabase.from("Students").insert({
+  const { error } = await supabase.from("student").insert({
     email,
     name,
     field_of_study,
@@ -65,7 +67,7 @@ export async function login(formData: FormData) {
     console.log(error.message);
     return { error: error.message };
   }
- 
+
   revalidatePath("/", "layout");
   redirect("/Dashboard");
 }
@@ -147,7 +149,10 @@ export async function changePassword(formData: FormData) {
 }
 export const getUser = async () => {
   const supabase = await createClient();
-  const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+  const {
+    data: { session },
+    error: sessionError,
+  } = await supabase.auth.getSession();
 
   if (sessionError || !session) {
     console.log("Error fetching session", sessionError);
@@ -163,3 +168,113 @@ export const getUser = async () => {
   // Return the user object or just the email
   return { email: user.email };
 };
+
+const getUserID = async () => {
+  const supabase = await createClient();
+  const {data:session,error:sessionError} = await supabase.auth.getSession()
+  if(sessionError || !session){
+    console.log('Error Fetching session',sessionError)
+    return null;
+  }
+  const user = session.session?.user.email
+  const { data: student, error: studentError } = await supabase
+    .from('student')
+    .select('id')
+    .eq('email', user)
+    .single();
+
+  if (studentError || !student) {
+    console.log('Error fetching student', studentError);
+    return null;
+  }
+
+  return student.id;
+};
+
+export async function uploadPost({
+  title,
+  description,
+  images_urls,
+  documents_urls,
+}: Post) {
+  const userId = await  getUserID();
+  console.log('UserId:',userId)
+  const supabase = await createClient();
+  const { error: insertError } = await supabase
+    .from("post")
+    .insert([
+      {
+        title: title,
+        description: description,
+        image_urls: images_urls,
+        document_urls: documents_urls,
+        student_id: userId,
+      },
+    ]);
+    if(insertError){
+      console.log(insertError.message)
+    }
+    return {success:true}
+}
+
+export const uploadImages = async (files: File[]): Promise<string[] | null> => {
+  const supabase = await createClient();
+  const uploadedUrls: string[] = [];
+
+  for (const file of files) {
+    // Create a unique file name to avoid overwrites
+    const filePath = `images/${Date.now()}_${file.name}`;
+
+    const {  error } = await supabase
+      .storage
+      .from('postImages') // your storage bucket name
+      .upload(filePath, file);
+
+    if (error) {
+      console.error('Image Upload error:', error);
+    } else {
+      // Generate a public URL
+      const { data: publicUrlData } = supabase.storage
+        .from('postImages')
+        .getPublicUrl(filePath);
+
+      uploadedUrls.push(publicUrlData.publicUrl);
+    }
+  }
+
+  return uploadedUrls.length > 0 ? uploadedUrls : null;
+}
+
+export const uploadDocuments = async (files: File[]): Promise<string[] | null> => {
+  
+  const supabase = await createClient();
+  const uploadedDocs: string[] = [];
+   const { data: { user }, error: authError } = await supabase.auth.getUser();
+  if (authError || !user) {
+    console.error('User not logged in:', authError);
+    return [];
+  }
+
+  for (const file of files) {
+    // Create a unique file name to avoid overwrites
+    const filePath = `${user.id}/${Date.now()}_${file.name}`;
+
+    const {  error } = await supabase
+      .storage
+      .from('postImages') // your storage bucket name
+      .upload(filePath, file);
+
+    if (error) {
+      console.error('Document Upload error:', error);
+    } else {
+      // Generate a public URL
+      const { data: publicUrlData } = supabase.storage
+        .from('postImages')
+        .getPublicUrl(filePath);
+
+      uploadedDocs.push(publicUrlData.publicUrl);
+    }
+  }
+
+  return uploadedDocs.length > 0 ? uploadedDocs : null;
+}
