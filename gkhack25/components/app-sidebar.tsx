@@ -39,7 +39,7 @@ import { Badge } from "./ui/badge"
 const availableItems = [
   {
     title: "Home",
-    url: "/",
+    url: "/Dashbard",
     icon: Home,
   },
   {

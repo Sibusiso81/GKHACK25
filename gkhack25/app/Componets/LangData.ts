@@ -3,16 +3,16 @@ export const langData = [
     language: "English",
     heroSection: {
       headline:
-        "Join us in crafting a safe digital experience that insulates you from cyber threats",
+        "Emprace knwledge, Empower Your power",
       subHeadline:
-        "Empower your digital presence with real-time cybersecurity monitoring and assistance.",
+        "AgriAssistSA is a mobile-first companion for township and rural farmers, combining AI tools, student innovation, and community wisdom to deliver real-time advice, crop insights, and market opportunities. By turning knowledge into action, we help farmers grow smarter, stronger, and more profitable.",
       callToAction: "Get Started",
     },
     aboutSection: {
       title: "ABOUT US ",
       whoWeAre: `Who we are: Our story and missioning  `,
-      ourStory: `Founded by a team of cybersecurity enthusiasts, we recognized the growing need for real-time, user-friendly security solutions. Our journey began with the vision to create tools that not only detect threats but also educate users, fostering a safer online environment for all.`,
-      ourMission: `To empower users with proactive cybersecurity tools that are both effective and easy to use, ensuring peace of mind in an increasingly connected world.`,
+      ourStory: `AgriAssistSA was founded to give small-scale and rural farmers access to cutting-edge and prevailing agricultural strategies, while creating a vibrant community where students can apply their knowledge, innovation, and creativity to solve real challenges. By combining AI-driven tools, local insights, and student-led ideas, we aim to bridge the gap between traditional farming practices and modern solutions—empowering farmers to thrive in today's changing agricultural landscape.`,
+      ourMission: `To empower individuals and organizations with proactive cybersecurity tools that are both effective and easy to use—ensuring peace of mind in an increasingly connected world`,
       whyChooseUsSection: {
         subtitle: "Why Choose Us?",
         description: `Leverage the power of AI to optimize your experience on the web, ensuring you get to explore the web with ease.`,
@@ -20,33 +20,39 @@ export const langData = [
     },
     services: [
       {
-        icon: "ShieldCheck",
-        heading: "Real-Time Threat Detection",
-        paragraph: `Monitor and identify potential cyber threats as they occur, ensuring immediate response and mitigation.
+        icon: "Sprout",
+        heading: "Hyperlocal Focus (Gauteng Townships",
+        paragraph: `Tailored for township and peri-urban farmers, starting with Gautengs backyard and informal agri space.
 `,
       },
       {
-        icon: "MailWarning",
-        heading: " Phishing Protection",
-        paragraph: `Detect and block phishing attempts, safeguarding your sensitive information from malicious actors.`,
+        icon: "Mic",
+        heading: " Multilingual WhatsApp Voice Bot",
+        paragraph: `Real-time support in isiZulu, Sepedi, Tswana, Xhosa, and English—farmers can simply talk to AgriAssistSA.`,
       },
       {
-        icon: "Globe",
-        heading: "Secure Browsing Extension",
+        icon: "WifiOff",
+        heading: "SOffline Pest Detection",
         paragraph:
-          "Enhance your browsing experience with our extension that alerts you to unsafe websites and downloads.",
+          "iagnose crop diseases with TensorFlow Lite directly on-device, no internet needed.",
       },
       {
-        icon: "Key",
-        heading: "Password Security Analysis",
+        icon: "GraduationCap",
+        heading: "AgriThinkHub",
         paragraph:
-          "Evaluate the strength of your passwords and receive recommendations to enhance your account security.",
+          "A student farmer innovation hub where youth share solutions, research, and new techniques with farmers",
       },
       {
-        icon: "BookOpen",
-        heading: "Cybersecurity Education Hub",
+        icon: "Calendar",
+        heading: "My AgriPlan (New)",
         paragraph:
-          "Access a wealth of resources and tutorials to stay informed about best practices in online security.",
+          "Personalized crop roadmap with daily/weekly tasks, reminders, and seasonal planning synced to market data",
+      },
+      {
+        icon: "TrendingUp",
+        heading: "Market Readiness Tracker",
+        paragraph:
+          "See days to harvest, projected prices, and profit tips in one glance",
       },
     ],
     Pricing: {

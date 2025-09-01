@@ -103,12 +103,11 @@ export async function signup(data: FormData) {
     console.log("Email and password are required");
   }
   const { error } = await supabase.auth.signUp(info);
-
   if (error) {
-    console.log(error);
-    redirect("/Auth/Error");
-    return;
+    console.log(error.message);
+    return { error: error.message };
   }
+
   revalidatePath("/", "layout");
   redirect("/");
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { LandingPageProps } from "@/lib/types";
 import { AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { ArrowBigLeft, ArrowBigRight, Menu, Sprout, X } from "lucide-react";
 import Link from "next/link";
 import Navbar from "./Navbar";
 import { langData } from "./LangData";
@@ -10,6 +10,7 @@ import PricingCard from "./PricingCard";
 import FeatureCard from "./FeatureCard";
 import { LucideIconName } from "./DynamicLucideIcon";
 import { toast, Toaster } from "sonner";
+import Image from "next/image";
 
 function LandingPage({ index }: LandingPageProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -17,25 +18,44 @@ function LandingPage({ index }: LandingPageProps) {
   useEffect(() => {
     localStorage.setItem("Language", langData[index].language);
     toast.success(`Language set to ${langData[index].language}`);
-  }, [index])
+  }, [index]);
   return (
     <main className="overflow-hidden">
-      <Toaster position="top-center"/>
+      <Toaster position="top-center" />
       <section
-        className="w-screen h-screen flex flex-col font-poppins  items-center justify-center overflow-hidden bg-gradient-to-b from-black to-green-900 text-[#ececec] "
+        className="w-screen h-screen flex flex-col font-poppins  items-center justify-center overflow-hidden    bg-center bg-cover text-white "
         id="Home"
       >
-        <div className="w-full border-[#eaeaea] flex justify-between items-center rounded-md relative z-40  p-4">
-          <h1 className=" font-medium text-[#eaeaea] text-lg ">
-            Spartan Sentinel
-          </h1>
-          <div className="flex flex-row space-x-2 items-cente justify-center pr-4">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          
+        >
+          <source src="/9136347-uhd_2560_1440_25fps.mp4" type="video/mp4" 
+        
+        
+        />
+        </video>
+        <div className=" flex justify-between items-center relative z-40  p-5 w-full ">
+          <div className="flex justify-between items-center w-32 ">
+            <h1 className=" font-medium text-white text-lg ">AgriAssist</h1>
+            <Sprout className="w-8 h-8 stroke-lime-400"/>
+            
+          </div>
+          <div className="flex flex-row space-x-2 items-cente justify-between pr-4">
             <Menu
-              className={`cursor-pointer ${isOpen ? "hidden" : ""}`}
+              className={`cursor-pointer stroke-white ${
+                isOpen ? "hidden" : ""
+              }`}
               onClick={() => setIsOpen(!isOpen)}
             />
             <X
-              className={`cursor-pointer ${isOpen ? "mx-2" : "hidden"}`}
+              className={`cursor-pointer text-white ${
+                isOpen ? "mx-2" : "hidden"
+              }`}
               onClick={() => setIsOpen(!isOpen)}
             />
           </div>
@@ -44,23 +64,29 @@ function LandingPage({ index }: LandingPageProps) {
         <AnimatePresence mode="wait">
           {isOpen ? <Navbar /> : null}
         </AnimatePresence>
-        <div className="flex flex-1 flex-col lg:flex-row justify-center  md:place-content-end md:items-start md:p-10 space-y-9 p-8 z-10 lg:justify-items-end lg:items-start lg:p-10 lg:w-full lg:justify-between lg:h-full lg:gap-10 lg:space-x-8">
-          <div className="lg:justify-self-end lg:place-self-end lg:w-1/2 ">
+        <div className="flex flex-1 flex-col lg:flex-row justify-center  md:place-content-end md:items-start md:p-10 space-y-9 p-4 z-10 lg:justify-items-end lg:items-start lg:p-10 lg:w-full lg:justify-between lg:h-full lg:gap-10 lg:space-x-8">
+          {/*  <div className="lg:justify-self-end lg:place-self-end lg:w-1/2 ">
             <h1 className="text-4xl md:text-5xl lg:text-5xl lg:max-w-screen-sm font-poppins font-medium">
               {langData[index].heroSection.subHeadline}
             </h1>
+          </div> */}
+          <div className="flex flex-col space-y-2 lg:max-w-screen-sm font-poppins p-1 rounded-md">
+            <h1 className="text-4xl font-medium ">
+              {langData[index].heroSection.headline}
+            </h1>
+            <h2 className=" font-medium text-sm">
+              {langData[index].heroSection.subHeadline}
+            </h2>
           </div>
 
           <div className="lg:p-10 space-y-4 lg:justify-self-center  lg:justify-center lg:items-center lg:place-self-end-safe lg:justifyself-end lg:place-content-end lg:w-1/2s">
             <div>
-              <h2 className="text-md md:text-md font-poppins font-medium w-full lg:w-1/2 lg:place-self-end">
-                {langData[index].heroSection.headline}
-              </h2>
+              <h2 className="text-md md:text-md font-poppins font-medium w-full lg:w-1/2 lg:place-self-end"></h2>
             </div>
-            <div className="lg:place-self-end max-w-screen-sm lg:w-1/2 ">
+            <div className="lg:place-self-end max-w-screen-sm w-1/2 h-fit">
               {" "}
               <Link href="/Auth/SignUp">
-                <button className="w-full hover:cursor-pointer p-4 text-center bg-lime-400 text-black lg:place-self-end justify-self-end    lg:place-content-end">
+                 <button className="w-full hover:cursor-pointer p-2 text-center bg-white text-lime-600 lg:place-self-end justify-self-end    lg:place-content-end">
                   {langData[index].heroSection.callToAction}
                 </button>
               </Link>
@@ -69,7 +95,7 @@ function LandingPage({ index }: LandingPageProps) {
         </div>
       </section>
       <section
-        className="w-screen   h-screen sm:h-screen flex flex-col p-10 md:p-16 lg:p-32 space-y-6 lg:justify-center"
+        className="w-screen   h-screen sm:h-screen flex flex-col p-10 md:p-16 lg:p-32 space-y-6 lg:justify-center text-green-950"
         id="About"
       >
         <div className="lg:pl-16">
@@ -87,12 +113,12 @@ function LandingPage({ index }: LandingPageProps) {
           <div className="flex flex-col space-y-4 lg:space-y-7 justify-self-end lg:w-1/2 my-auto text-md font-poppins">
             <p>{langData[index].aboutSection.ourStory}</p>
             <p>{langData[index].aboutSection.ourMission}</p>
-            <p>{langData[index].aboutSection.ourMission}</p>
+            
           </div>
         </div>
       </section>
       <section
-        className="w-screen h-fit items-center  p-10 lg:p-28 space-y-8  "
+        className="w-screen h-fit items-center  p-10 lg:p-28 space-y-8 text-green-950 "
         id="Getstarted"
       >
         <div className="w-full">
