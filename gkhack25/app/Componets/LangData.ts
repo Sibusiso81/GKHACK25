@@ -3,7 +3,7 @@ export const langData = [
     language: "English",
     heroSection: {
       headline:
-        "Emprace knwledge, Empower Your power",
+        "Embrace knwledge, Embrace Your power",
       subHeadline:
         "AgriAssistSA is a mobile-first companion for township and rural farmers, combining AI tools, student innovation, and community wisdom to deliver real-time advice, crop insights, and market opportunities. By turning knowledge into action, we help farmers grow smarter, stronger, and more profitable.",
       callToAction: "Get Started",

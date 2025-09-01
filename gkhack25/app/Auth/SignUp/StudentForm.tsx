@@ -48,11 +48,16 @@ function StudentForm() {
       university: "",
     },
   });
+
+
+  
   function onSubmit(data: z.infer<typeof studentFormSchema>) {
     console.log('Submitted',data)
     localStorage.setItem("studentData", JSON.stringify(data));
     setFormSubmitted(true);
     toast.success("Form submitted successfully!",)
+        toast.success("Form submitted successfully!",)
+
     const formData = new FormData();
     Object.entries(data).forEach(([key, value]) => {
       formData.append(key, value);
