@@ -64,9 +64,9 @@ function LandingPage({ index }: LandingPageProps) {
         <AnimatePresence mode="wait">
           {isOpen ? <Navbar /> : null}
         </AnimatePresence>
-        <div className="flex flex-1 flex-col   place-content-end place-self-start md:w-2/3 lg:w-1/2 md:p-10 space-y-4 p-4 m-4  z-10  
+        <div className="flex flex-1 flex-col   place-content-end place-self-start md:w-2/3 lg:w-1/2 md:p-10  space-y-4 p-4 m-4  z-10  
         
-         lg:m-8 lg:space-y-8">
+          lg:space-y-8">
           {/*  <div className="lg:justify-self-end lg:place-self-end lg:w-1/2 ">
             <h1 className="text-4xl md:text-5xl lg:text-5xl lg:max-w-screen-sm font-poppins font-medium">
               {langData[index].heroSection.subHeadline}
@@ -80,20 +80,12 @@ function LandingPage({ index }: LandingPageProps) {
               {langData[index].heroSection.subHeadline}
             </h2>
           </div>
-
-          <div className="lg:p-10 space-y-4 lg:justify-self-center  lg:justify-center lg:items-center lg:place-self-end-safe lg:justifyself-end lg:place-content-end lg:w-1/2s">
-            <div>
-              <h2 className="text-md md:text-md font-poppins font-medium w-full lg:w-1/2 lg:place-self-end"></h2>
-            </div>
-            <div className=" max-w-screen-sm w-1/2 h-fit">
-              {" "}
-              <Link href="/Auth/SignUp">
-                 <button className="w-2/3 md:w-1/2 hover:cursor-pointer p-2 text-center bg-white text-lime-600 lg:place-self-end justify-self-end    lg:place-content-end">
+ <Link href="/Auth/SignUp">
+                 <button className="w-2/3 md:w-1/2 hover:cursor-pointer p-2 text-center bg-white text-lime-600 place-self-start">
                   {langData[index].heroSection.callToAction}
                 </button>
               </Link>
-            </div>
-          </div>
+          
         </div>
       </section>
       <section
