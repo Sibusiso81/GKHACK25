@@ -47,13 +47,13 @@ function LandingPage({ index }: LandingPageProps) {
           </div>
           <div className="flex flex-row space-x-2 items-cente justify-between pr-4">
             <Menu
-              className={`cursor-pointer stroke-white ${
+              className={`cursor-pointer stroke-white  w-8 h-8 ${
                 isOpen ? "hidden" : ""
               }`}
               onClick={() => setIsOpen(!isOpen)}
             />
             <X
-              className={`cursor-pointer text-white ${
+              className={`cursor-pointer stroke-white w-8 h-8 ${
                 isOpen ? "mx-2" : "hidden"
               }`}
               onClick={() => setIsOpen(!isOpen)}
@@ -64,17 +64,19 @@ function LandingPage({ index }: LandingPageProps) {
         <AnimatePresence mode="wait">
           {isOpen ? <Navbar /> : null}
         </AnimatePresence>
-        <div className="flex flex-1 flex-col lg:flex-row justify-center  md:place-content-end md:items-start md:p-10 space-y-9 p-4 z-10 lg:justify-items-end lg:items-start lg:p-10 lg:w-full lg:justify-between lg:h-full lg:gap-10 lg:space-x-8">
+        <div className="flex flex-1 flex-col   place-content-end place-self-start md:w-2/3 lg:w-1/2 md:p-10 space-y-4 p-4 m-4  z-10  
+        
+         lg:m-8 lg:space-y-8">
           {/*  <div className="lg:justify-self-end lg:place-self-end lg:w-1/2 ">
             <h1 className="text-4xl md:text-5xl lg:text-5xl lg:max-w-screen-sm font-poppins font-medium">
               {langData[index].heroSection.subHeadline}
             </h1>
           </div> */}
           <div className="flex flex-col space-y-2 lg:max-w-screen-sm font-poppins p-1 rounded-md">
-            <h1 className="text-4xl font-medium ">
+            <h1 className="text-4xl lg:text-4xl font-medium ">
               {langData[index].heroSection.headline}
             </h1>
-            <h2 className=" font-medium text-sm">
+            <h2 className=" font-medium text-sm lg:text-lg">
               {langData[index].heroSection.subHeadline}
             </h2>
           </div>
@@ -83,10 +85,10 @@ function LandingPage({ index }: LandingPageProps) {
             <div>
               <h2 className="text-md md:text-md font-poppins font-medium w-full lg:w-1/2 lg:place-self-end"></h2>
             </div>
-            <div className="lg:place-self-end max-w-screen-sm w-1/2 h-fit">
+            <div className=" max-w-screen-sm w-1/2 h-fit">
               {" "}
               <Link href="/Auth/SignUp">
-                 <button className="w-full hover:cursor-pointer p-2 text-center bg-white text-lime-600 lg:place-self-end justify-self-end    lg:place-content-end">
+                 <button className="w-2/3 md:w-1/2 hover:cursor-pointer p-2 text-center bg-white text-lime-600 lg:place-self-end justify-self-end    lg:place-content-end">
                   {langData[index].heroSection.callToAction}
                 </button>
               </Link>
