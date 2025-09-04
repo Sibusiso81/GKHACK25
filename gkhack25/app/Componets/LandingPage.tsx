@@ -20,10 +20,10 @@ function LandingPage({ index }: LandingPageProps) {
     toast.success(`Language set to ${langData[index].language}`);
   }, [index]);
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden ">
       <Toaster position="top-center" />
       <section
-        className="w-screen h-screen flex flex-col font-poppins  items-center justify-center overflow-hidden    bg-center bg-cover text-white "
+        className="w-screen h-screen flex flex-col font-poppins  items-center justify-center overflow-hidden    bg-center bg-cover text-white  "
         id="Home"
       >
         <video
@@ -31,10 +31,11 @@ function LandingPage({ index }: LandingPageProps) {
           loop
           muted
           playsInline
+          preload="auto"
           className="absolute top-0 left-0 w-full h-full object-cover"
-          
+         
         >
-          <source src="/9136347-uhd_2560_1440_25fps.mp4" type="video/mp4" 
+          <source src="/9136347-uhd_2560_1440_25fps (2) (1).mp4" type="video/mp4" 
         
         
         />
@@ -47,13 +48,13 @@ function LandingPage({ index }: LandingPageProps) {
           </div>
           <div className="flex flex-row space-x-2 items-cente justify-between pr-4">
             <Menu
-              className={`cursor-pointer stroke-white  w-8 h-8 ${
+              className={`cursor-pointer stroke-lime-400  w-8 h-8 ${
                 isOpen ? "hidden" : ""
               }`}
               onClick={() => setIsOpen(!isOpen)}
             />
             <X
-              className={`cursor-pointer stroke-white w-8 h-8 ${
+              className={`cursor-pointer stroke-lime-400 w-8 h-8 ${
                 isOpen ? "mx-2" : "hidden"
               }`}
               onClick={() => setIsOpen(!isOpen)}
@@ -72,7 +73,7 @@ function LandingPage({ index }: LandingPageProps) {
               {langData[index].heroSection.subHeadline}
             </h1>
           </div> */}
-          <div className="flex flex-col space-y-2 lg:max-w-screen-sm font-poppins p-1 rounded-md">
+          <div className="flex flex-col space-y-4 lg:spaec-y- lg:max-w-screen-sm font-poppins p-1 rounded-md">
             <h1 className="text-4xl lg:text-4xl font-medium ">
               {langData[index].heroSection.headline}
             </h1>
@@ -81,7 +82,7 @@ function LandingPage({ index }: LandingPageProps) {
             </h2>
           </div>
  <Link href="/Auth/SignUp">
-                 <button className="w-2/3 md:w-1/2 hover:cursor-pointer p-2 text-center bg-white text-lime-600 place-self-start">
+                 <button className="w-2/3 md:w-1/2 hover:cursor-pointer p-2 lg:p-3 text-center bg-white text-lime-600 place-self-start">
                   {langData[index].heroSection.callToAction}
                 </button>
               </Link>
@@ -111,7 +112,7 @@ function LandingPage({ index }: LandingPageProps) {
           </div>
         </div>
       </section>
-      <section
+      {/* <section
         className="w-screen h-fit items-center  p-10 lg:p-28 space-y-8 text-green-950 "
         id="Getstarted"
       >
@@ -129,8 +130,56 @@ function LandingPage({ index }: LandingPageProps) {
           </div>
         </div>
         <HowItWorksCard steps={langData[index].getStartedSection.steps} />
+      </section> */}
+      <section className="w-screen h-fit xl:h-[80vh]  flex flex-col  space-y-5 lg:space-y-12 p-6 md:p-16  text-lime-950">
+        <div className="flex flex-col  justify-between">
+           <h1 className="text-xl md:text-3xl lg:text-5xl font-bold w-2/3">
+              {langData[index].getStartedSection.heading}
+            </h1>
+             <p className="text-md md:text-md lg:text-lg mt-4 md:w-1/2  ">
+              {langData[index].getStartedSection.subHeading}
+            </p>
+        </div>
+        <div>
+          <HowItWorksCard steps={langData[index].getStartedSection.steps} />
+        </div>
       </section>
-      <section className="w-screen h-fit justify-center items-center  flex flex-col space-y-9  p-10 lg:p-32">
+      <section className="w-screem h-fit  p-6 md:p-10  xl:p-16  flex flex-col    space-y-4">
+        <div className="flex-col space-y-4 lg:w-1/2 ">
+        <h1 className="text-xl md:text-3xl lg:text-5xl font-bold w-2/3">{langData[index].aboutSection.whyChooseUsSection.subtitle}</h1>
+        <p className="text-lg font-medium  lg:text-xl md:w-4/5">{langData[index].aboutSection.whyChooseUsSection.description}</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3   gap-3.5 p-1 lg:w-full ">
+          {langData[index].services.map((items, i) => (
+            <FeatureCard
+              icon={items.icon as LucideIconName}
+              heading={items.heading}
+              description={items.paragraph}
+              key={i}
+            />
+          ))}
+        </div>
+      </section>
+      <section className="w-screen h-fit p-4 md:p-10  xl:p-14  flex flex-col space-y-4 ">
+<div className="flex-col space-y-4 lg:w-1/2 lg:mt-10">
+        <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold w-2/3">{langData[index].aboutSection.pricing?.subtitle}</h1>
+        <p className="text-lg font-medium  lg:text-xl md:w-4/5">{langData[index].aboutSection.pricing?.description}</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:gap-5 md:grid-cols-2 lg:grid-cols-3 gap-3 ">
+          {Object.values(langData[index].Pricing).map((plan, idx) => (
+            <PricingCard
+              key={idx}
+              price={plan.price}
+              description={plan.description}
+              features={plan.features}
+              idx={idx}
+              buttonText={langData[index].heroSection.callToAction}
+            />
+          ))}
+        </div>
+      </section>
+      {/* <section className="w-screen h-fit justify-center items-center  flex flex-col space-y-9  p-10 lg:p-32">
         <div className="w-full" id="Pricing">
           {" "}
           <div>
@@ -156,9 +205,9 @@ function LandingPage({ index }: LandingPageProps) {
             />
           ))}
         </div>
-      </section>
-      <section
-        className="w-screen h-fit    flex flex-col items-center p-10 lg:p-32 justify-center  space-y-8 mx-auto my-auto"
+      </section> */}
+  {/*     <section
+        className="w-screen h-fit    flex flex-col items-center p-10 lg:p-56 justify-center  space-y-8 mx-auto my-auto"
         id="Features"
       >
         <div className="w-full">
@@ -184,9 +233,9 @@ function LandingPage({ index }: LandingPageProps) {
             />
           ))}
         </div>
-      </section>
+      </section> */}
 
-      <section className="w-screen h-[80vh] lg:h-[68vh] flex flex-col lg:flex p-4  justify-center   md:p-6  space-y-2 md:space-y-6">
+      <section className="w-screen h-[80vh] lg:h-[68vh] flex flex-col lg:flex p-6 justify-center   md:p-6  space-y-2 md:space-y-6">
         <div className="pt-3.5 grid grid-cols-1 md:grid-cols-2 gap-6 flex-1  ">
           <div className="col-span-2 flex flex-col space-y-4">
             <div className="w-full border-t-2 h-2 border-neutral-600/65"></div>

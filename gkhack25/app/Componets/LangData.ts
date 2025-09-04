@@ -2,8 +2,7 @@ export const langData = [
   {
     language: "English",
     heroSection: {
-      headline:
-        "Embrace knwledge, Embrace Your power",
+      headline: "Embrace knwledge, Embrace Your power",
       subHeadline:
         "AgriAssistSA is a mobile-first companion for township and rural farmers, combining AI tools, student innovation, and community wisdom to deliver real-time advice, crop insights, and market opportunities. By turning knowledge into action, we help farmers grow smarter, stronger, and more profitable.",
       callToAction: "Get Started",
@@ -12,11 +11,15 @@ export const langData = [
       title: "ABOUT US ",
       whoWeAre: `Who we are: Our story and missioning  `,
       ourStory: `AgriAssistSA was founded to give small-scale and rural farmers access to cutting-edge and prevailing agricultural strategies, while creating a vibrant community where students can apply their knowledge, innovation, and creativity to solve real challenges. By combining AI-driven tools, local insights, and student-led ideas, we aim to bridge the gap between traditional farming practices and modern solutions—empowering farmers to thrive in today's changing agricultural landscape.`,
-      ourMission: `To empower individuals and organizations with proactive cybersecurity tools that are both effective and easy to use—ensuring peace of mind in an increasingly connected world`,
+      ourMission: `To empower individuals and organizations with proactive cybersecurity tools that are both effective and easy to use ensuring peace of mind in an increasingly connected world`,
       whyChooseUsSection: {
-        subtitle: "Why Choose Us?",
+        subtitle: "SOLUTIONS WE PROVIDE",
         description: `Leverage the power of AI to optimize your experience on the web, ensuring you get to explore the web with ease.`,
       },
+      pricing:{
+        subtitle: "PLANS THAT GROW WITH YOU",
+description: `Our pricing is designed to stay affordable and impactful. Choose a plan that meets your needs, scale as you grow, and unlock tools that bring real value to your fields and your ideas.`,
+      }
     },
     services: [
       {
@@ -56,6 +59,7 @@ export const langData = [
       },
     ],
     Pricing: {
+      
       basicPlan: {
         price: "Free",
         description:
@@ -91,32 +95,33 @@ export const langData = [
       },
     },
     getStartedSection: {
-      heading: "Unlock Your Digital Security",
-      subHeading: "Follow our quick guide and experience worry-free Browse.",
+      heading: "Grow Together, Learn Together.",
+      subHeading:
+        "Join AgriAssistSA in just a few steps  whether you're a farmer seeking support or a student sharing innovation.",
       steps: [
         {
-          step: "S/1",
-          subHeading: "Choose Your Shield",
+          step: "01",
+          subHeading: "Sign Up & Tell Us Who You Are",
           description:
-            "Select the perfect plan that fits your online life. Basic for essentials, Pro for power, Enterprise for total coverage.",
+            "Create your free account as a farmer or a student. Farmers share what they grow, students share their field of study.",
         },
         {
-          step: "S/2",
-          subHeading: "Quick Setup",
+          step: "02",
+          subHeading: "Set Up Your Profile",
           description:
-            "Create your account in moments. We make registration fast, so you can start protecting yourself immediately.",
+            "Farmers: Add your crops, location, and challenges. Students: Add your university, year, and areas of expertise.",
         },
         {
-          step: "S/3",
-          subHeading: "Activate & Go",
+          step: "03",
+          subHeading: "Engage & Contribute",
           description:
-            "Install our lightweight extension or app. A few clicks, and your protection is live – ready to defend.",
+            "Farmers can ask questions, check weather, or diagnose pests. Students can post ideas, share guides, and respond to farmer needs.",
         },
         {
-          step: "S/4",
-          subHeading: "Effortless Protection",
+          step: "04",
+          subHeading: "Connect & Grow",
           description:
-            "With intelligent AI and clear insights on your dashboard, stay secure without becoming a cybersecurity expert. We handle the heavy lifting.",
+            "Earn rewards, share feedback, and learn new methods. Together we create a community that thrives on collaboration and innovation.",
         },
       ],
     },
@@ -177,7 +182,7 @@ export const langData = [
       },
     ],
     Pricing: {
-       basicPlan: {
+      basicPlan: {
         price: "Mahhala",
         description:
           "Ilungele abantu abafuna amathuluzi abalulekile ezokuphepha ku-inthanethi.",
@@ -188,7 +193,7 @@ export const langData = [
           "Isandiso Sokuphepha Sokuphequlula",
         ],
       },
-       enterprisePlan: {
+      enterprisePlan: {
         price: "R100",
         description:
           "Izixazululo zokuphepha eziphelele zezinhlangano ezinkulu.",
@@ -210,8 +215,6 @@ export const langData = [
           "Ukusekelwa Okusemqoka",
         ],
       },
-     
-     
     },
     getStartedSection: {
       heading: "Vula Ukuphepha Kwakho Kwedijithali",
@@ -415,7 +418,7 @@ export const langData = [
       },
     ],
     Pricing: {
-       basicPlan: {
+      basicPlan: {
         price: "Simahla",
         description:
           "Ifanelekile kubantu abafuna izixhobo eziyimfuneko zokhuseleko lwe-cyber.",
@@ -426,7 +429,7 @@ export const langData = [
           "Isandiso Sokukhangela Esikhuselekileyo",
         ],
       },
-       enterprisePlan: {
+      enterprisePlan: {
         price: "R100",
         description: "Izisombululo zokhuseleko ezibanzi kwimibutho emikhulu.",
         features: [
@@ -447,8 +450,6 @@ export const langData = [
           "Inkxaso Ephambili",
         ],
       },
-     
-     
     },
     getStartedSection: {
       heading: "Vula Ukhuseleko Lwakho Lwedijithali",

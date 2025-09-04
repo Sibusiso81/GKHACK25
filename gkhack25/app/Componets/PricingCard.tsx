@@ -16,11 +16,11 @@ function PricingCard({
 
   return (
     <div
-      className={`  flex flex-col p-6   md:p-7 lg:p-5 rounded-lg shadow-sm border  space-y-6 ${
+      className={`  flex flex-col p-6   md:p-7 lg:p-5 rounded-lg shadow-sm border  space-y-6 text-emerald-950 ${
         idx === 0
           ? " border-neutral-300"
           : idx === 1
-          ? "bg-neutral-950 text-white "
+          ? "bg-[#9ce069] text-emerald-950 "
           : " border-neutral-100"
       }`}
     >
@@ -31,55 +31,56 @@ function PricingCard({
           <p
             className={` ${
               idx === 0
-                ? " text-muted-foreground"
+                ? " "
                 : idx === 1
-                ? "text-white/95 "
-                : " text-muted-foreground"
+                ? " "
+                : " "
             }`}
           >
             {description}
           </p>
         </div>
-        <div className="flex space-x-2 items-center">
+        <div className="flex flex-col ">
           <h2 className="text-2xl  font-medium ">{price}</h2>
           <p
-            className={` text-md ${
-              idx === 0
-                ? " text-muted-foreground"
-                : idx === 1
-                ? "text-white/50 "
-                : " text-muted-foreground"
-            }`}
+            className={` text-lg font-medium`}
           >
-            {price != typeof "" ? "/pm" : ""}
+           Billed per month 
           </p>
+         
         </div>
       </div>
       <div className="w-full h-0.5 bg-neutral-300/30"></div>
       {features &&
         features.map((item, i) => (
-          <ul className="flex space-x-4 text-sm" key={`${item}-${i}`}>
+          <ul className="flex space-x-4 text-sm items-center text-emerald-950" key={`${item}-${i}`}>
             <Check
-              className={`stroke-gray-400 ${
-                idx === 0 ? " " : idx === 1 ? "bg-white  " : " text-white"
-              } bg-gray-200/45 rounded-full w-4 h-4 `}
+              className={` ${
+                idx === 0 ? "bg-lime-500 stroke-white  " : idx === 1 ? "bg-emerald-950 stroke-white" : " bg-lime-500 stroke-white"
+              }  stroke-black rounded-full w-5 h-5 p-0.5 `}
             />
-            <li>{item}</li>
+            <li className="font-medium ">{item}</li>
           </ul>
         ))}
 
       <Link href={"Auth/SignUp"}>
         <Button
-          variant={`${idx === 1 ? "secondary" : "default"}`}
-          className={`w-full p-6 rounded-lg cursor-pointer   `}
+          className={`w-full p-6 rounded-lg cursor-pointer  ${
+              idx === 0
+                ? " bg-lime-400 hover:bg-[#9ce069] "
+                : idx === 1
+                ? " bg-emerald-950 "
+                : " bg-lime-400 hover:bg-[#9ce069] "
+            }`}
+         
         >
           <p
             className={`${
               idx === 0
-                ? " text-white"
+                ? " text-emerald-950 font-medium"
                 : idx === 1
-                ? "text-black "
-                : " text-white"
+                ? "text-white font-medium"
+                : " text-emerald-950 font-medium"
             }`}
           >
             {buttonText}
