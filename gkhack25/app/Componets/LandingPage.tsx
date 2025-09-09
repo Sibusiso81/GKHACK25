@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { LandingPageProps } from "@/lib/types";
 import { AnimatePresence } from "framer-motion";
-import { ArrowBigLeft, ArrowBigRight, ArrowDownLeft, ArrowDownLeftFromSquare, ArrowDownRight, ArrowDownToLine, ArrowUpRight, Menu, Sprout, X } from "lucide-react";
+import { ArrowUpRight, Menu, Sprout, X } from "lucide-react";
 import Link from "next/link";
 import Navbar from "./Navbar";
 import { langData } from "./LangData";
@@ -11,7 +11,6 @@ import PricingCard from "./PricingCard";
 import FeatureCard from "./FeatureCard";
 import { LucideIconName } from "./DynamicLucideIcon";
 import { toast, Toaster } from "sonner";
-import Image from "next/image";
 import Clock from "./Clock";
 
 function LandingPage({ index }: LandingPageProps) {
@@ -206,7 +205,7 @@ function LandingPage({ index }: LandingPageProps) {
               <p>↳ PAGES</p>
               <ul>
                 {langData[index]?.Footer?.Pagelinks.map((link: string, _idx: number) => (
-                  <Link href={`#${link}`}>
+                  <Link href={`#${link}`} key={_idx}>
                     <li key={_idx} className="lg:text-md xl:text-xl">
                     {link}
                   </li>
