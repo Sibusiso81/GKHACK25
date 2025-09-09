@@ -11,11 +11,13 @@ function SelectLang() {
   
 
   function handleSelectedLanguage(i: number) {
-    setLangSelected(langData[i].language);
-    setSelected(true);
-    setIndex(langData.indexOf(langData[i]));
-    console.log(langSlected)
-    localStorage.setItem("language", langData[i].language);
+    if (langData[i]) {
+      setLangSelected(langData[i].language);
+      setSelected(true);
+      setIndex(langData.indexOf(langData[i]));
+      console.log(langSlected);
+      localStorage.setItem("language", langData[i].language);
+    }
   }
 
   function setUserLanguage(lang: string): void {
@@ -50,7 +52,7 @@ function SelectLang() {
               <span className="w-32 h-1  border-b-4 border-lime-400 p-1 "></span>
             </div>
             <div className=" grid grid-cols-3 gap-3 text-md">
-              {Array(10)
+              {Array(11)
                 .fill(null)
                 .map((_, i) => (
                   <button
@@ -58,7 +60,7 @@ function SelectLang() {
                     onClick={() => handleSelectedLanguage(i)}
                     key={i}
                   >
-                    {langData[i].language}
+                    {langData[i]?.language}
                   </button>
                 ))}
             </div>

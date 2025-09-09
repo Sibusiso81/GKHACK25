@@ -21,7 +21,7 @@ function PricingCard({
           ? " border-neutral-300"
           : idx === 1
           ? "bg-[#9ce069] text-emerald-950 "
-          : " border-neutral-100"
+          : " border-neutral-100 "
       }`}
     >
       <div className="flex flex-col space-y-4 ">

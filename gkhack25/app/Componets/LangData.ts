@@ -2,1323 +2,1587 @@ export const langData = [
   {
     language: "English",
     heroSection: {
-      headline: "Embrace knwledge, Embrace Your power",
+      headline: "Empower Your Farm, Grow Your Future",
       subHeadline:
-        "AgriAssistSA is a mobile-first companion for township and rural farmers, combining AI tools, student innovation, and community wisdom to deliver real-time advice, crop insights, and market opportunities. By turning knowledge into action, we help farmers grow smarter, stronger, and more profitable.",
+        "AgriAssistSA is your digital agriculture companion, using AI tools and real-time support to help township and peri-urban farmers in Gauteng grow smarter, stronger, and more profitable. We're bridging the gap between farmers and reliable agricultural information.",
       callToAction: "Get Started",
     },
     aboutSection: {
-      title: "ABOUT US ",
-      whoWeAre: `Who we are: Our story and missioning  `,
-      ourStory: `AgriAssistSA was founded to give small-scale and rural farmers access to cutting-edge and prevailing agricultural strategies, while creating a vibrant community where students can apply their knowledge, innovation, and creativity to solve real challenges. By combining AI-driven tools, local insights, and student-led ideas, we aim to bridge the gap between traditional farming practices and modern solutions—empowering farmers to thrive in today's changing agricultural landscape.`,
-      ourMission: `To empower individuals and organizations with proactive cybersecurity tools that are both effective and easy to use ensuring peace of mind in an increasingly connected world`,
+      title: "ABOUT US",
+      whoWeAre: "Who We Are: Our Story and Mission",
+      ourStory:
+        "Founded by a team passionate about food security and community empowerment, AgriAssistSA was created to tackle the challenges faced by township farmers, such as limited access to reliable information, poor pest control, and unfair Store prices. Our journey began with the vision of a mobile-first platform that empowers farmers to thrive in a challenging landscape.",
+      ourMission:
+        "Our mission is to bridge the gap between farmers and essential agri-tech by providing an accessible, multilingual, and mobile-first platform that boosts farmer resilience, food security, and local agri-economies.",
       whyChooseUsSection: {
         subtitle: "SOLUTIONS WE PROVIDE",
-        description: `Leverage the power of AI to optimize your experience on the web, ensuring you get to explore the web with ease.`,
+        description:
+          "We are the first township-focused, offline-capable, multilingual agri-companion designed to empower farmers where the need is greatest. Our tools are built for your reality, not an urban-centric one.",
       },
-      pricing:{
+      pricing: {
         subtitle: "PLANS THAT GROW WITH YOU",
-description: `Our pricing is designed to stay affordable and impactful. Choose a plan that meets your needs, scale as you grow, and unlock tools that bring real value to your fields and your ideas.`,
-      }
+        description:
+          "Our pricing is designed to be affordable and impactful. Choose a plan that meets your needs and unlocks tools that bring real value to your fields. Our freemium model provides basic features for free, with premium options for those who want advanced analytics and insights.",
+      },
     },
     services: [
       {
         icon: "Sprout",
-        heading: "Hyperlocal Focus (Gauteng Townships",
-        paragraph: `Tailored for township and peri-urban farmers, starting with Gautengs backyard and informal agri space.
-`,
+        heading: "Hyperlocal Focus",
+        paragraph:
+          "We are specifically focused on empowering Gauteng’s township and peri-urban farmers before scaling nationally. This ensures our solutions are tailored to your unique needs.",
       },
       {
         icon: "Mic",
-        heading: " Multilingual WhatsApp Voice Bot",
-        paragraph: `Real-time support in isiZulu, Sepedi, Tswana, Xhosa, and English—farmers can simply talk to AgriAssistSA.`,
+        heading: "Multilingual WhatsApp Voice Bot",
+        paragraph:
+          "Get real-time support in your preferred language. Our voice bot works in isiZulu, Sepedi, Setswana, IsiXhosa, and English, making our platform accessible and inclusive.",
       },
       {
         icon: "WifiOff",
-        heading: "SOffline Pest Detection",
+        heading: "Offline AI Pest Detection",
         paragraph:
-          "iagnose crop diseases with TensorFlow Lite directly on-device, no internet needed.",
+          "Diagnose crop diseases instantly, even without an internet connection. Our AI tool works offline so you can get the information you need, when you need it.",
       },
       {
         icon: "GraduationCap",
-        heading: "AgriThinkHub",
+        heading: "AgriThinkHub: Youth Co-Creation",
         paragraph:
-          "A student farmer innovation hub where youth share solutions, research, and new techniques with farmers",
+          "We connect student innovators with farmers to co-create solutions. This youth-student-farmer pipeline is a hub where new ideas and techniques are shared and tested.",
       },
       {
-        icon: "Calendar",
-        heading: "My AgriPlan (New)",
+        icon: "Store",
+        heading: "Real-Time Store Prices",
         paragraph:
-          "Personalized crop roadmap with daily/weekly tasks, reminders, and seasonal planning synced to market data",
+          "Access reliable Store price information and avoid unfair prices. Local vendors and agribusinesses can also subscribe for access to these valuable Store insights.",
       },
       {
-        icon: "TrendingUp",
-        heading: "Market Readiness Tracker",
+        icon: "Handshake",
+        heading: "Agri-Input Partnerships",
         paragraph:
-          "See days to harvest, projected prices, and profit tips in one glance",
+          "We connect you directly to agri-input suppliers through our platform, helping you get the tools you need to grow.",
       },
     ],
     Pricing: {
-      
       basicPlan: {
         price: "Free",
         description:
-          "Ideal for individuals seeking essential cybersecurity tools.",
+          "The perfect starting point for any farmer. Get essential tools at no cost.",
         features: [
-          "Real-Time Threat Detection",
-          "Secure Browsing Extension",
-          "Phishing Protection",
-          "Secure Browsing Extension",
+          "Real-Time Support (Voice Bot)",
+          "Offline AI Pest Detection",
+          "Community & Knowledge Sharing",
+          "Basic Store Insights",
         ],
       },
       enterprisePlan: {
-        price: "R100",
+        price: "Contact Us",
         description:
-          "Comprehensive security solutions for large organizations.",
+          "Custom solutions for agribusinesses, cooperatives, and large organizations.",
         features: [
-          "All features in Pro Plan",
-          "Customized Security Solutions",
+          "All features from Premium Plan",
+          "Customized Analytics & Reporting",
           "Dedicated Account Manager",
-          "24/7 Support",
+          "24/7 Priority Support",
         ],
       },
       proPlan: {
-        price: "R120",
+        price: "R50/month",
         description:
-          "Designed for small businesses requiring advanced security features.",
+          "For farmers and cooperatives seeking advanced tools and deeper insights.",
         features: [
-          "All features in Basic Plan",
-          "Password Security Analysis",
-          "Cybersecurity Education Hub",
-          "Priority Support",
+          "All features from Basic Plan",
+          "Advanced Analytics & Crop Insights",
+          "Store Insights Subscription",
+          "Premium AgriThinkHub Access",
         ],
       },
     },
     getStartedSection: {
-      heading: "Grow Together, Learn Together.",
+      heading: "Join the AgriAssistSA Community",
       subHeading:
-        "Join AgriAssistSA in just a few steps  whether you're a farmer seeking support or a student sharing innovation.",
+        "Get started with AgriAssistSA in just a few steps. It’s simple, quick, and built for you.",
       steps: [
         {
           step: "01",
-          subHeading: "Sign Up & Tell Us Who You Are",
+          subHeading: "Sign Up & Tell Us About Your Farm",
           description:
-            "Create your free account as a farmer or a student. Farmers share what they grow, students share their field of study.",
+            "Create your free account and let us know what you're growing and where you're located. Our design is culturally aligned with simple icons, audio, and emojis for a user-friendly experience.",
         },
         {
           step: "02",
-          subHeading: "Set Up Your Profile",
+          subHeading: "Start Using Our Tools",
           description:
-            "Farmers: Add your crops, location, and challenges. Students: Add your university, year, and areas of expertise.",
+            "Access our WhatsApp voice bot for instant advice, or use the offline AI pest detection to solve problems in your fields.",
         },
         {
           step: "03",
-          subHeading: "Engage & Contribute",
+          subHeading: "Connect with the Community",
           description:
-            "Farmers can ask questions, check weather, or diagnose pests. Students can post ideas, share guides, and respond to farmer needs.",
+            "Engage with students and other farmers in the AgriThinkHub to share ideas, find solutions, and learn new techniques.",
         },
         {
           step: "04",
-          subHeading: "Connect & Grow",
+          subHeading: "Grow Smarter, Grow Stronger",
           description:
-            "Earn rewards, share feedback, and learn new methods. Together we create a community that thrives on collaboration and innovation.",
+            "With AgriAssistSA, you'll gain resilience and contribute to a stronger local agri-economy, ensuring food security for your household and community.",
         },
       ],
+    },
+    Footer: {
+      callToActionDescription:
+        "Let's shape the future of sustainable farming together.",
+      footerDescription:
+        "Start your journey with AgriAssistSA today. Contact us to learn more and let's work together to achieve your farming goals.",
+      Pagelinks: ["Home", "About", "Services", "How To Get Started", "Contact"],
+      socialLinks: ["Instagram", "X", "Linkedin"],
+      Footprint: "All Rights Reserved",
     },
   },
   {
     language: "IsiZulu",
     heroSection: {
-      headline: "Hlala Phambili Ezinsongweni Zobugebengu Be-inthanethi",
+      headline: "Khulisa Ipulazi Lakho, Khulisa Ikusasa Lakho",
       subHeadline:
-        "Nika amandla ukuba khona kwakho kwedijithali ngokuqapha nokusiza kwezokuphepha ku-inthanethi ngesikhathi sangempela.",
+        "I-AgriAssistSA ingumngane wakho wedijithali wezolimo, esebenzisa amathuluzi e-AI nosizo lwesikhathi sangempela ukusiza abalimi basemakhishini nasemadolobheni aseGauteng ukuba bakhule ngobuhlakani, ngamandla, nangenzuzo. Sivala igebe phakathi kwabalimi nolwazi oluthembekile lwezolimo.",
       callToAction: "Qalisa Manje",
     },
     aboutSection: {
-      title: "MAYELANA NATHI",
-      whoWeAre: "Singobani: Indaba yethu nomgomo wethu",
-      ourStory: `Sisungulwe ithimba labathandi bezokuphepha ku-inthanethi, sabona isidingo esikhulayo sezixazululo zokuphepha ngesikhathi sangempela, ezisebenziseka kalula.
-    
-    Uhambo lwethu lwaqala ngombono wokudala amathuluzi angagcini nje ngokuthola izinsongo kodwa futhi afundise abasebenzisi, akhe indawo ephephe kakhudlwana ku-inthanethi kubo bonke.
-`,
+      title: "NGATHI",
+      whoWeAre: "Singobani: Indaba Nomgomo Wethu",
+      ourStory:
+        "Yasungulwa ithimba elishisekela ukuvikeleka kokudla kanye nokunika amandla umphakathi, i-AgriAssistSA yakhelwa ukubhekana nezinselelo ezibhekene nabalimi basemakhishini, njengokuntuleka kolwazi oluthembekile, ukulawula okungekuhle kwezinambuzane, kanye namanani emakethe angenabulungiswa. Uhambo lwethu lwaqala ngombono wesikhulumi esihamba phambili esinika amandla abalimi ukuthi bachume endaweni eyinselele.",
       ourMission:
-        "Ukunika abasebenzisi amandla ngamathuluzi ezokuphepha ku-inthanethi asebenzayo futhi asebenziseka kalula, aqinisekise ukuthula kwengqondo ezweni elixhumene kakhulu.",
+        "Umsebenzi wethu ukuvala igebe phakathi kwabalimi kanye nobuchwepheshe bezolimo obubalulekile ngokunikeza inkundla efinyeleleka kalula, enezilimi eziningi, neqhuba kuselula eyandisa amandla ombalimi, ukuvikeleka kokudla, kanye nomnotho wezolimo wasekhaya.",
       whyChooseUsSection: {
-        subtitle: "Kungani Ukhethe Thina?",
+        subtitle: "IZIXAZULULO ESIZIHLELA",
         description:
-          "Sebenzisa amandla e-AI ukuze uthuthukise ulwazi lwakho kuwebhu, uqinisekise ukuthi ufinyelela kuwebhu kalula.",
+          "Singumngane wezolimo wokuqala ogxile emakhishini, okwazi ukusebenza ngaphandle kwe-inthanethi, futhi onezilimi eziningi, oklanyelwe ukunika amandla abalimi lapho isidingo sikhulu khona. Amathuluzi ethu akhelwe isimo sakho sangempela, hhayi esedolobha.",
+      },
+      pricing: {
+        subtitle: "AMAPULANI AKHULA NAWE",
+        description:
+          "Amanani ethu aklanyelwe ukuhlala efinyeleleka futhi enomthelela. Khetha uhlelo oluhlangabezana nezidingo zakho futhi uvule amathuluzi alethela amapulazi akho inani langempela. Uhlelo lwethu lwe-'freemium' lunikeza izici eziyisisekelo mahhala, ngezinketho eziyibhasela kulabo abafuna ukuhlaziya okuthuthukile kanye nemininingwane ejulile.",
       },
     },
     services: [
       {
-        icon: "ShieldCheck",
-        heading: "Ukuthola Izinsongo Ngesikhathi Sangempela",
-        paragraph: `Qapha futhi uhlonze izinsongo ezingaba khona zobugebengu be-inthanethi lapho zenzeka, uqinisekise impendulo esheshayo nokunciphisa.
-`,
-      },
-      {
-        icon: "MailWarning",
-        heading: "Ukuvikela Ubugebengu Bokweba Imininingwane Yomuntu",
+        icon: "Sprout",
+        heading: "Ukugxila Okufana Nendawo",
         paragraph:
-          "Thola futhi uvimbele imizamo yobugebengu bokweba imininingwane yomuntu, uvikele imininingwane yakho ebucayi kubenzi bokubi.",
+          "Sigxile ngqo ekunikezeni amandla abalimi basemakhishini nasezitolo zaseGauteng ngaphambi kokwandisa ezweni lonke. Lokhu kuqinisekisa ukuthi izixazululo zethu zenzelwe izidingo zakho ezihlukile.",
       },
       {
-        icon: "Globe",
-        heading: "Isandiso Sokuphepha Sokuphequlula",
+        icon: "Mic",
+        heading: "I-WhatsApp Voice Bot Enezilimi Eziningi",
         paragraph:
-          "Thuthukisa ulwazi lwakho lokuphequlula ngesandiso sethu esikuxwayisa ngamawebhusayithi angafaneleki nokulandwayo.",
+          "Thola usizo lwesikhathi sangempela ngolimi olukhethayo. I-voice bot yethu isebenza ngesiZulu, isiPedi, isiTswana, isiXhosa, nesiNgisi, okwenza inkundla yethu ifinyeleleke futhi ifakwe kubo bonke.",
       },
       {
-        icon: "Key",
-        heading: "Ukuhlaziya Ukuphepha Kwephasiwedi",
+        icon: "WifiOff",
+        heading: "Ukutholwa Kwezinambuzane Ngaphandle Kwe-inthanethi",
         paragraph:
-          "Hlola amandla amaphasiwedi akho futhi uthole izincomo zokuthuthukisa ukuphepha kwe-akhawunti yakho.",
+          "Hlola izifo zezitshalo ngokushesha, ngisho nangaphandle kokuxhumeka kwe-inthanethi. Ithuluzi lethu le-AI lisebenza ngaphandle kwe-inthanethi ukuze uthole ulwazi oludingayo, ngesikhathi oludinga ngaso.",
       },
       {
-        icon: "BookOpen",
-        heading: "Isikhungo Sezemfundo Yezokuphepha Ku-inthanethi",
+        icon: "GraduationCap",
+        heading: "I-AgriThinkHub: Ukwakhiwa Kwabasha Ndawonye",
         paragraph:
-          "Finyelela ingcebo yezinsiza nezifundo ukuze uhlale unolwazi mayelana nemikhuba engcono kakhulu kwezokuphepha ku-inthanethi.",
-      },
-    ],
-    Pricing: {
-      basicPlan: {
-        price: "Mahhala",
-        description:
-          "Ilungele abantu abafuna amathuluzi abalulekile ezokuphepha ku-inthanethi.",
-        features: [
-          "Ukuthola Izinsongo Ngesikhathi Sangempela",
-          "Isandiso Sokuphepha Sokuphequlula",
-          "Ukuvikela Ubugebengu Bokweba Imininingwane Yomuntu",
-          "Isandiso Sokuphepha Sokuphequlula",
-        ],
-      },
-      enterprisePlan: {
-        price: "R100",
-        description:
-          "Izixazululo zokuphepha eziphelele zezinhlangano ezinkulu.",
-        features: [
-          "Zonke izici ku-Pro Plan",
-          "Izixazululo Zokuphepha Ezenziwe Ngokwezifiso",
-          "Umphathi We-akhawunti Ozinikele",
-          "Ukusekelwa Okungu-24/7",
-        ],
-      },
-      proPlan: {
-        price: "R120",
-        description:
-          "Yakhelwe amabhizinisi amancane adinga izici zokuphepha ezithuthukisiwe.",
-        features: [
-          "Zonke izici ku-Basic Plan",
-          "Ukuhlaziya Ukuphepha Kwephasiwedi",
-          "Isikhungo Sezemfundo Yezokuphepha Ku-inthanethi",
-          "Ukusekelwa Okusemqoka",
-        ],
-      },
-    },
-    getStartedSection: {
-      heading: "Vula Ukuphepha Kwakho Kwedijithali",
-      subHeading:
-        "Landela umhlahlandlela wethu osheshayo bese ukhumbula ukuphepha ngaphandle kokukhathazeka.",
-      steps: [
-        {
-          step: "S/1",
-          subHeading: "Khetha Isivikelo Sakho",
-          description:
-            "Khetha uhlelo olufanele kakhulu impilo yakho ye-inthanethi. Okuyisisekelo okudingekayo, i-Pro ngamandla, i-Enterprise ukuze ube nokuvikelwa okuphelele.",
-        },
-        {
-          step: "S/2",
-          subHeading: "Ukusetha Okusheshayo",
-          description:
-            "Dala i-akhawunti yakho ngaso leso sikhathi. Senza ukubhalisa kusheshe, ukuze uqale ukuvikela ngokushesha.",
-        },
-        {
-          step: "S/3",
-          subHeading: "Faka & Yenza Kusebenze",
-          description:
-            "Faka isandiso sethu esincane noma uhlelo lokusebenza. Izikhathi ezimbalwa nje, futhi ukuvikela kwakho kusasebenza – kumi ngomumo ukuze kuvikele.",
-        },
-        {
-          step: "S/4",
-          subHeading: "Ukuvikela Ngaphandle Kobunzima",
-          description:
-            "Ngokuvikela kwe-AI okuhlakaniphile nemininingwane ecacile kudeshibhodi yakho, hlala uphephile ngaphandle kokuba uchwepheshe wezokuphepha ku-inthanethi. Siyenza lula imisebenzi enzima.",
-        },
-      ],
-    },
-  },
-  {
-    language: "Siswati",
-    heroSection: {
-      headline:
-        "Hlanganyela Natsi Ekubumbeni Kuvikeleka Kwedijithali Lokukuvikela Etisongweni Te-inthanethi",
-      subHeadline:
-        "Nika emandla kubakhona kwakho kwedijithali ngelusito nekucaphela kwebuvikeli be-inthanethi ngesikhatsi sangempela.",
-      callToAction: "Calisa Manje",
-    },
-    aboutSection: {
-      title: "NGEKWETFU",
-      whoWeAre: `Bani Natsi: Indzaba Yetfu Nemgomo Wetfu `,
-      ourStory: `Sasungulwa licembu lebantfu labatsandza buvikeli be-inthanethi, sabona sicheni lesikhulako setinsita tekuvikela letisebenta ngesikhatsi sangempela, letilula kubasebentisi.\n\nLuhambo lwetfu lwacala ngembono wekudala imitamo lebeyingati nje kuphela tive tisongo kodvwa futsi ifundzise nabasebentisi, ihlele indzawo yephephile ku-inthanethi kubo bonkhe.`,
-      ourMission: `Kupha emandla basebentisi ngemitamo yebuvikeli be-inthanethi lebeyisebenta kahle futsi ilula kuyisebentisa, kuqinisekisa kuthula kwengcondvo emhlabeni lowandza uxhumane kakhulu.`,
-      whyChooseUsSection: {
-        subtitle: "Kungani Usikhetsa?",
-        description: `Sebentisa emandla e-AI kuze utfutfukise kuphila kwakho kuwebhu, ucinisekise kutsi uyakwati kuhlola iwebhu kalula.`,
-      },
-    },
-    services: [
-      {
-        icon: "ShieldCheck",
-        heading: "Kucaphela Tisongo Ngesikhatsi Sangempela",
-        paragraph: `Caphela futsi ubone tisongo te-inthanethi letikhona ngaleso sikhatsi tivela, kuqinisekisa kuphendvula ngokushesha nekunciphisa.`,
+          "Sixhumanisa abafundi abasunguli nabalimi ukuze bakhe izixazululo ndawonye. Leli qembu labasha-abafundi-abalimi liyisikhungo lapho kwabelwana khona ngemibono emisha namasu.",
       },
       {
-        icon: "MailWarning",
-        heading: "Kuvikela Kuphishing",
-        paragraph: `Caphela futsi uvimbe imetamo yekuphishing, uvikela imininingwane yakho lebutsakatsaka kubaphangi.`,
-      },
-      {
-        icon: "Globe",
-        heading: "Isandiso Sekuphepha Kwekuphenya",
+        icon: "Store",
+        heading: "Amanani Emakethe Esikhathi Sangempela",
         paragraph:
-          "Tfutfukisa indlela yakho yekuphenya ngesandiso setfu lesikucaphelisa ngemawebhusayithi langaphephile kanye nama-downloads.",
+          "Finyelela ulwazi oluthembekile lwamanani emakethe futhi ugweme amanani angenabulungiswa. Abathengisi bendawo kanye namabhizinisi ezolimo bangabhalisa ukuze bathole le mininingwane ebalulekile yemakethe.",
       },
       {
-        icon: "Key",
-        heading: "Kuhlatiya Kuvikeleka Kwephasiwedi",
+        icon: "Handshake",
+        heading: "Ubambiswano Lwezokufakwa Kwezolimo",
         paragraph:
-          "Hlola emandla emaphasiwedi akho futsi uthole tincomo tekutfutfukisa kuvikeleka kwe-akhawunti yakho.",
-      },
-      {
-        icon: "BookOpen",
-        heading: "Sikhungo Semfundvo Yebuvikeli Be-inthanethi",
-        paragraph:
-          "Finyelela imithombo leminyenti netitfutfukisi tekuhlala unolwazi ngetindlela letinhle tekuvikela ku-inthanethi.",
+          "Sixhumanisa ngqo nabahlinzeki bezokufaka kwezolimo ngesikhulumi sethu, sikusize uthole amathuluzi owadingayo ukuze ukhule.",
       },
     ],
     Pricing: {
       basicPlan: {
         price: "Mahala",
         description:
-          "Ilungele bantfu labafuna imitamo lebalulekile yebuvikeli be-inthanethi.",
+          "Isiqalo esiphelele sanoma yimuphi umlimi. Thola amathuluzi abalulekile ngaphandle kwezindleko.",
         features: [
-          "Kucaphela Tisongo Ngesikhatsi Sangempela",
-          "Isandiso Sekuphepha Kwekuphenya",
-          "Kuvikela Kuphishing",
-          "Isandiso Sekuphepha Kwekuphenya",
+          "Usizo lwesikhathi sangempela (Voice Bot)",
+          "Ukutholwa Kwezinambuzane Ngaphandle Kwe-inthanethi",
+          "Ukuxhumana Nomphakathi Nokwabelana Ngolwazi",
+          "Imindeni Eyisisekelo Yemakethe",
         ],
       },
       enterprisePlan: {
-        price: "R100",
-        description: "Tinsita letiphelele tekuvikela teminhlangano lemikulu.",
+        price: "Xhumana Nathi",
+        description:
+          "Izixazululo ezenzelwe amabhizinisi ezolimo, ama-cooperatives, kanye nezinhlangano ezinkulu.",
         features: [
-          "Tonkhe tifisho te-Pro Plan",
-          "Tinsita Tekuvikela Letihlelwe Ngokwesidingo",
-          "Mphatsi We-akhawunti Losite",
-          "Lusito lwa 24/7",
+          "Zonke izici ze-Premium Plan",
+          "Ukuhlaziya Okwenziwe Ngokwesidingo",
+          "Umphathi we-akhawunti",
+          "Usizo oluphambili lwa-24/7",
         ],
       },
       proPlan: {
-        price: "R120",
+        price: "R50/ngenyanga",
         description:
-          "Idizayinwe ngemabhizinisi lamancane ladzinga tifisho tekuphepha letitfutfukile.",
+          "Okwabalimi nama-cooperatives abafuna amathuluzi athuthukile nemininingwane ejulile.",
         features: [
-          "Tonkhe tifisho te-Basic Plan",
-          "Kuhlatiya Kuvikeleka Kwephasiwedi",
-          "Sikhungo Semfundvo Yebuvikeli Be-inthanethi",
-          "Lusito Lolusemaceleni",
+          "Zonke izici ze-Basic Plan",
+          "Ukuhlaziya Okuthuthukile Nemininingwane Yezitshalo",
+          "Ukubhalisa Kwemininingwane Yemakethe",
+          "Ukufinyelela Kwe-AgriThinkHub",
         ],
       },
     },
     getStartedSection: {
-      heading:
-        "Umhlahlandlela Wakho Wesinyatselo Ngesinyatselo Wekuvikela Kwedijithali",
+      heading: "Joyina Umphakathi we-AgriAssistSA",
       subHeading:
-        "Landzela letinyatselo letisheshako netilula tekusebentisa kuvikeleka kwakho futsi ujabulele kusebentisa i-inthanethi ngaphandle kwekutikhatsata.",
+        "Qalisa nge-AgriAssistSA ngezinyathelo ezimbalwa nje. Kulula, kuyashesha, futhi kwakhelwe wena.",
       steps: [
         {
-          step: "S/1",
-          subHeading: "Khetha Sihlangu Sakho",
+          step: "01",
+          subHeading: "Bhalisa Futhi Usitshele Ngepulazi Lakho",
           description:
-            "Khetha luhlelo lolufanele kakhulu impilo yakho ye-inthanethi. Okuyisisekelo lokusilindzelwe, i-Pro ngemandla, i-Enterprise ukuze ube nokuvikelwa lokuphelele.",
+            "Dala i-akhawunti yakho yamahhala bese usitshela ukuthi ukhulisa ini nokuthi ukuphi. I-design yethu ihambisana namasiko ngezithonjana ezilula, umsindo, kanye nama-emojis enzelwe abasebenzisi bendawo.",
         },
         {
-          step: "S/2",
-          subHeading: "Kusetjha Lokusesheshayo",
+          step: "02",
+          subHeading: "Qalisa Ukusebenzisa Amathuluzi Ethu",
           description:
-            "Dala i-akhawunti yakho ngekushesha. Senza kubhalisa kusheshe, ukuze uqale kuvikela masinyane.",
+            "Finyelela i-WhatsApp voice bot yethu ukuze uthole iseluleko esisheshayo, noma sebenzisa ukuthola kwezinambuzane kwe-AI ngaphandle kwe-inthanethi ukuxazulula izinkinga emapulazini akho.",
         },
         {
-          step: "S/3",
-          subHeading: "Faka & Yenta Kusebente",
+          step: "03",
+          subHeading: "Xhumana Nomphakathi",
           description:
-            "Faka isandiso setfu lesincane nobe uhlelo lokusebenta. Kuphazima kweliso nje, bese kuvikeleka kwakho kusasebenta – sekulungele kuvikela.",
+            "Hlanganyela nabafundi nabanye abalimi e-AgriThinkHub ukuze nabelane ngemibono, nithole izixazululo, futhi nifunde amasiko amasha.",
         },
         {
-          step: "S/4",
-          subHeading: "Stay Secure, Effortlessly",
+          step: "04",
+          subHeading: "Khula Ngobuhlakani, Khula Ngamandla",
           description:
-            "With intelligent AI protection and user-friendly insights on your dashbard , you stay safe without having to be a cybersecurity expert.",
+            "Nge-AgriAssistSA, uzothola amandla okumelana futhi ufake isandla ekwakheni umnotho wezolimo wendawo oqinile, uqinisekise ukuvikeleka kokudla komndeni wakho nomphakathi.",
         },
       ],
+    },
+    Footer: {
+      callToActionDescription: "Asakhe ikusasa lezolimo eziqhubekayo ndawonye.",
+      footerDescription:
+        "Qalisa uhambo lwakho lwezolimo nge-AgriAssistSA namuhla. Xhumana nathi ukuze ufunde kabanzi bese sisebenzisana ukuze ufeze izinhloso zakho zokulima.",
+      Pagelinks: ["Ikhaya", "Nathi", "Izinsizakalo", "Ukuqalisa", "Xhumana"],
+      socialLinks: ["Instagram", "X", "Linkedin"],
+      Footprint: "Wonke Amalungelo Agodliwe",
     },
   },
   {
     language: "isiXhosa",
     heroSection: {
-      headline: "Hlala Ngaphambili Kwizisongelo ze-Cyber",
+      headline: "Xhobisa iFama Yakho, Khulisa Ikamva Lakho",
       subHeadline:
-        "Qinisa ubukho bakho bedijithali ngokuqapha okwenene kwe-cybersecurity kunye noncedo.",
-      callToAction: "Qalisa Ngoku",
+        "I-AgriAssistSA liqabane lakho ledijithali kwezolimo, lisebenzisa izixhobo ze-AI kunye nenkxaso yexesha lokwenyani ukunceda abalimi baselokishini nabakwiindawo ezingqongileyo eGauteng ukuba bakhule ngokukrelekrele, ngamandla, nangenzuzo. Sivala umsantsa phakathi kwabalimi nolwazi oluthembekileyo lwezolimo.",
+      callToAction: "Qalisa",
     },
     aboutSection: {
       title: "NGATHI",
-      whoWeAre: "Singobani: Ibali lethu kunye nomsebenzi wethu",
+      whoWeAre: "Singobani: Ibali Lethu kunye Neenjongo Zethu",
       ourStory:
-        "Yasekwa liqela labathandi be-cybersecurity, saqonda isidingo esikhulayo sezisombululo zokhuseleko ngexesha lokwenene, ezisebenziseka lula.\n\nUhambo lwethu lwaqala ngombono wokudala izixhobo ezingafumanisi kuphela izisongelo kodwa zikwafundise abasebenzisi, zikhulisa indawo ekhuselekileyo kwi-intanethi kubo bonke.",
+        "Isekwe liqela elinothando lokhuseleko lokutya kunye nokuxhotyiswa koluntu, i-AgriAssistSA yadalwa ukujongana nemingeni ejongene nabalimi baselokishini, njengokungafumani lula ulwazi oluthembekileyo, ulawulo olungafanelekanga lwezinambuzane, kunye namaxabiso emarike angafanelekanga. Uhambo lwethu lwaqala ngombono weqonga eliphambili ngefowuni elixhobisa abalimi ukuba baphumelele kwindawo enzima.",
       ourMission:
-        "Ukunika abasebenzisi amandla ngezixhobo zokhuseleko lwe-cyber ezisebenzayo nezilula ukuzisebenzisa, ziqinisekisa uxolo lwengqondo kwihlabathi eliqhagamshelwe kakhulu.",
+        "Injongo yethu kukuvala umsantsa phakathi kwabalimi kunye netekhnoloji yezolimo ebalulekileyo ngokunikezela ngeqonga elifikelelekayo, leelwimi ezininzi, neliphambili ngefowuni elonyusa ukomelela kwabalimi, ukhuseleko lokutya, kunye noqoqosho lwezolimo lwasekhaya.",
       whyChooseUsSection: {
-        subtitle: "Kutheni Usikhethile?",
+        subtitle: "IZISOMBULULO ESIZIQINISEKISAYO",
         description:
-          "Sebenzisa amandla e-AI ukuphucula amava akho kwiwebhu, uqinisekise ukuba uyakwazi ukukhangela kwiwebhu ngokulula.",
+          "Thina singabagadi bokuqala bezolimo abajolise elokishini, abakwazi ukusebenza ngaphandle kwe-intanethi, abathetha iilwimi ezininzi abayilelwe ukuxhobisa abalimi apho imfuneko inkulu khona. Izixhobo zethu zakhelwe inyaniso yakho, hayi eyasezidolophini.",
+      },
+      pricing: {
+        subtitle: "IZICWANGCISO EZIKHULA NAWE",
+        description:
+          "Amaxabiso ethu ayilwe ukuba abizeke kwaye abe nefuthe. Khetha isicwangciso esihlangabezana neemfuno zakho kwaye uvule izixhobo ezizisa ixabiso lokwenyani emasimini akho. Isicwangciso sethu se-freemium sinikezela ngeempawu ezisisiseko simahla, kunye neenketho eziphambili kwabo bafuna uhlalutyo oluphambili kunye nokuqonda.",
       },
     },
     services: [
       {
-        icon: "ShieldCheck",
-        heading: "Ukufumanisa Izisongelo Ngexesha Lokwenene",
+        icon: "Sprout",
+        heading: "Ugxininiso Lwasekhaya Kakhulu",
         paragraph:
-          "Beka iliso kwaye uchonge izisongelo ezinokubakho ze-cyber njengoko zenzeka, uqinisekisa impendulo kunye nokunciphisa kwangoko.",
+          "Sigxile ngokukodwa ekuxhobiseni abalimi baselokishini nabakwiindawo ezingqongileyo eGauteng ngaphambi kokuba sikhule ngokwesizwe. Oku kuqinisekisa ukuba izisombululo zethu zilungiselelwe iimfuno zakho ezizodwa.",
       },
       {
-        icon: "MailWarning",
-        heading: "Ukhuseleko lwePhishing",
+        icon: "Mic",
+        heading: "WhatsApp Voice Bot Yezilwimi Ezininzi",
         paragraph:
-          "Fumanisa kwaye uthintele iinzame zokukhohlisa (phishing), ukhusela ulwazi lwakho olubuthathaka kubenzi bobubi.",
+          "Fumana inkxaso yexesha lokwenyani ngolwimi olukhethayo. I-voice bot yethu isebenza ngesiZulu, Sepedi, Setswana, isiXhosa, nesiNgesi, isenza iqonga lethu lifikeleleke kwaye libandakanye wonke umntu.",
       },
       {
-        icon: "Globe",
-        heading: "Isandiso Sokukhangela Esikhuselekileyo",
+        icon: "WifiOff",
+        heading: "Ukufumanisa Izitshabalalisi Nge-AI Ngaphandle Kwe-intanethi",
         paragraph:
-          "Phucula amava akho okukhangela ngesandiso sethu esikwazisa malunga neewebhusayithi ezingakhuselekanga kunye nokukhutshelwa.",
+          "Fumana isifo sezityalo kwangoko, naxa kungekho intanethi. Isixhobo sethu se-AI sisebenza ngaphandle kwe-intanethi ukuze ufumane ulwazi olufunayo, xa uludinga.",
       },
       {
-        icon: "Key",
-        heading: "Uhlalutyo Lokhuseleko Lwegama Lokungena",
+        icon: "GraduationCap",
+        heading: "I-AgriThinkHub: Ukudala Ngokudibeneyo Ulutsha",
         paragraph:
-          "Hlola amandla amagama akho okungena kwaye ufumane iingcebiso zokuphucula ukhuseleko lweakhawunti yakho.",
+          "Sihlanganisa abasunguli abangabafundi nabalimi ukuba badale izisombululo ngokudibeneyo. Le nkqubo yolutsha-abafundi-abalimi liqabane apho izimvo ezintsha kunye neendlela zabelwana kwaye zivavanywa.",
       },
       {
-        icon: "BookOpen",
-        heading: "Iziko Lezemfundo Lwe-Cybersecurity",
+        icon: "Store",
+        heading: "Amaxabiso Eemarike Exesha Lokwenyani",
         paragraph:
-          "Fikelela ubuninzi bezixhobo kunye nezifundo ukuze uhlale unolwazi malunga neendlela ezilungileyo zokhuseleko lwe-intanethi.",
+          "Fumana ulwazi oluthembekileyo lwamaxabiso emarike kwaye uphephe amaxabiso angafanelekanga. Abathengisi basekhaya kunye namashishini ezolimo nabo banokubhalisela ukufikelela kwezi nkcukacha zexabiso lemarike ezixabisekileyo.",
+      },
+      {
+        icon: "Handshake",
+        heading: "Ubambiswano Lwezixhobo Zezolimo",
+        paragraph:
+          "Sikudibanisa ngokuthe ngqo nabathengisi bezixhobo zokufaka izinto kwezolimo ngeqonga lethu, sikuncede ufumane izixhobo ozidingayo ukuze ukhule.",
       },
     ],
     Pricing: {
       basicPlan: {
         price: "Simahla",
         description:
-          "Ifanelekile kubantu abafuna izixhobo eziyimfuneko zokhuseleko lwe-cyber.",
+          "Eyona ndawo ifanelekileyo yokuqala kuye nawuphi na umlimi. Fumana izixhobo ezibalulekileyo ngaphandle kweendleko.",
         features: [
-          "Ukufumanisa Izisongelo Ngexesha Lokwenene",
-          "Isandiso Sokukhangela Esikhuselekileyo",
-          "Ukhuseleko lwePhishing",
-          "Isandiso Sokukhangela Esikhuselekileyo",
+          "Inkxaso Yexesha Lokwenyani (Voice Bot)",
+          "Ukufumanisa Izitshabalalisi Nge-AI Ngaphandle Kwe-intanethi",
+          "Ulwazi Loluntu Nokwabelana Ngolwazi",
+          "Ulwazi Olusisiseko Lweemarike",
         ],
       },
       enterprisePlan: {
-        price: "R100",
-        description: "Izisombululo zokhuseleko ezibanzi kwimibutho emikhulu.",
+        price: "Qhagamshelana Nathi",
+        description:
+          "Izisombululo ezilungiselelwe amashishini ezolimo, iinkampani zentsebenziswano, kunye nemibutho emikhulu.",
         features: [
-          "Zonke iimpawu kwi-Pro Plan",
-          "Izisombululo Zokhuseleko Ezenziwe Ngokwezifiso",
-          "Umphathi We-akhawunti Ozinikeleyo",
-          "Inkxaso ye-24/7",
+          "Zonke iimpawu ezivela kwiSicwangciso SePremium",
+          "Uhlalutyo Olulungiselelwe & Ingxelo",
+          "Umphathi Weakhawunti Ozinikeleyo",
+          "24/7 Inkxaso Ephambili",
         ],
       },
       proPlan: {
-        price: "R120",
+        price: "R50/ngenyanga",
         description:
-          "Yenzelwe amashishini amancinci afuna iimpawu zokhuseleko eziphambili.",
+          "Kubalimi kunye neenkampani zentsebenziswano ezifuna izixhobo eziphambili kunye nokuqonda okunzulu.",
         features: [
-          "Zonke iimpawu kwi-Basic Plan",
-          "Uhlalutyo Lokhuseleko Lwegama Lokungena",
-          "Iziko Lezemfundo Lwe-Cybersecurity",
-          "Inkxaso Ephambili",
+          "Zonke iimpawu ezivela kwiSicwangciso Sesisiseko",
+          "Uhlalutyo Oluphezulu & Ulwazi Lwezityalo",
+          "Ukubhalisa Kwesibonelelo Semarike",
+          "Umfikelelo We-AgriThinkHub Yepremiyamu",
         ],
       },
     },
     getStartedSection: {
-      heading: "Vula Ukhuseleko Lwakho Lwedijithali",
+      heading: "Joyina Uluntu Lwe-AgriAssistSA",
       subHeading:
-        "Landela isikhokelo sethu esikhawulezayo kwaye ufumane amava okukhangela ngaphandle kokukhathazeka.",
+        "Qalisa nge-AgriAssistSA ngeenyathelo ezimbalwa nje. Kulula, kuyakhawuleza, kwaye yakhelwe wena.",
       steps: [
         {
-          step: "S/1",
-          subHeading: "Khetha iSikhuselo Sakho",
+          step: "01",
+          subHeading: "Bhalisa Kwaye Usixelele NgeFama Yakho",
           description:
-            "Khetha isicwangciso esifanelekileyo esihambelana nobomi bakho kwi-intanethi. Isiseko sezinto ezibalulekileyo, i-Pro ngamandla, i-Enterprise yokugubungela ngokupheleleyo.",
+            "Yenza iakhawunti yakho yasimahla kwaye usazise ukuba ukhulisa ntoni kwaye ukuphi. Uyilo lwethu luhambelana nenkcubeko kunye neempawu ezilula, iaudio, kunye ne-emoji ukuze ube namava alungele umsebenzisi.",
         },
         {
-          step: "S/2",
-          subHeading: "Ukucwangciswa Okukhawulezayo",
+          step: "02",
+          subHeading: "Qalisa Ukusebenzisa Izixhobo Zethu",
           description:
-            "Yenza i-akhawunti yakho ngomzuzwana. Senza ubhaliso lukhawuleze, ukuze uqalise ukuzikhusela ngoko nangoko.",
+            "Fikelela kwi-WhatsApp voice bot yethu ukuze ufumane ingcebiso ngokukhawuleza, okanye usebenzise ukufumanisa izitshabalalisi nge-AI ngaphandle kwe-intanethi ukusombulula iingxaki emasimini akho.",
         },
         {
-          step: "S/3",
-          subHeading: "Faka & Vula",
+          step: "03",
+          subHeading: "Qhagamshelana Noluntu",
           description:
-            "Faka isandiso sethu esincinci okanye iapp. Cofa kanye, kwaye ukhuseleko lwakho luyasebenza – lulungele ukukhusela.",
+            "Zibandakanye nabafundi kunye nabanye abalimi kwi-AgriThinkHub ukuze babelane ngezimvo, bafumane izisombululo, kwaye bafunde iindlela ezintsha.",
         },
         {
-          step: "S/4",
-          subHeading: "Ukhuseleko Olungenamzamo",
+          step: "04",
+          subHeading: "Khulisa Ngokukrelekrele, Khulisa Ngamandla",
           description:
-            "Ngokhuseleko olukrelekrele lwe-AI kunye nokuqonda okucacileyo kwideshibhodi yakho, hlala ukhuselekile ngaphandle kokuba yingcali kwezokhuseleko kwi-intanethi. Sikwenzela umsebenzi onzima.",
+            "Nge-AgriAssistSA, uya kufumana ukomelela kwaye ube negalelo kuqoqosho lwezolimo lwasekhaya olomeleleyo, uqinisekise ukhuseleko lokutya kwikhaya lakho nakuluntu.",
         },
       ],
     },
-  },
-  {
-    language: "Setswana",
-    heroSection: {
-      headline: "Nna Pele ga Ditshosetso tsa Inthanete",
-      subHeadline:
-        "Nonotsha boteng jwa gago jwa dijithale ka go tlhatlhoba le go thusa ka tshireletso ya inthanete ka nako ya nnete.",
-      callToAction: "Simolola",
-    },
-    aboutSection: {
-      title: "KA GA RONA",
-      whoWeAre: "Re Bo Mang: Kgang ya rona le maikaelelo a rona",
-      ourStory:
-        "E theilwe ke setlhopha sa barati ba tshireletso ya inthanete, re lemogile tlhokego e e golang ya ditharabololo tsa tshireletso tsa nako ya nnete, tse di motlhofo go di dirisa.\n\nLeeto la rona le simologile ka pono ya go tlhama didirisiwa tse di sa lemogeng ditshosetso fela mme gape le ruta badirisi, go tlhama tikologo ya inthanete e e bolokegileng go botlhe.",
-      ourMission:
-        "Go nonotsha badirisi ka didirisiwa tsa tshireletso ya inthanete tse di tswelelang pele tse di nang le matswela le tse di motlhofo go di dirisa, go netefatsa kagiso ya mogopolo mo lefatsheng le le golaganeng ka go tswelela.",
-      whyChooseUsSection: {
-        subtitle: "Goreng o re Kgetha?",
-        description:
-          "Dirisa maatla a AI go tlhabolola maitemogelo a gago mo webong, go netefatsa gore o kgona go hlahloba web ka botlhofo.",
-      },
-    },
-    services: [
-      {
-        icon: "ShieldCheck",
-        heading: "Go Lemoga Ditshosetso ka Nako ya Nnete",
-        paragraph:
-          "Tlhatlhoba le go lemoga ditshosetso tsa inthanete tse di ka nnang teng fa di direga, go netefatsa karabo e e bofefo le go fokotsa matswela.",
-      },
-      {
-        icon: "MailWarning",
-        heading: "Tshireletso ya Phishing",
-        paragraph:
-          "Lemoga le go thibela maiteko a go phishing, go sireletsa tshedimosetso ya gago e e botlhokwa mo badiring ba ba bosula.",
-      },
-      {
-        icon: "Globe",
-        heading: "Keketseletso ya Go Batlisisa e e Bolokegileng",
-        paragraph:
-          "Ntlafatsa maitemogelo a gago a go batlisisa ka keketseletso ya rona e e go tlhagisang ka diwebsaete le dilafo tse di sa bolokegeng.",
-      },
-      {
-        icon: "Key",
-        heading: "Tshekatsheko ya Tshireletso ya Sephiri",
-        paragraph:
-          "Sekaseka nonofo ya diphiri tsa gago mme o amogele dikgothatso tsa go nonotsha tshireletso ya akhaonto ya gago.",
-      },
-      {
-        icon: "BookOpen",
-        heading: "Lefelo la Thuto ya Tshireletso ya Inthanete",
-        paragraph:
-          "Fitlhelela letlotlo la metswedi le dithuto go nna o itse ka mekgwa e e siameng ya tshireletso ya inthanete.",
-      },
-    ],
-    Pricing: {
-      proPlan: {
-        price: "R120",
-        description:
-          "E dirilwe bakeng sa dikgwebo tse dinnye tse di tlhokang dilo tsa tshireletso tse di tsweletseng pele.",
-        features: [
-          "Dilo tsotlhe mo Basic Plan",
-          "Tshekatsheko ya Tshireletso ya Sephiri",
-          "Lefelo la Thuto ya Tshireletso ya Inthanete",
-          "Tshegetso e e Tlhomologileng",
-        ],
-      },
-      enterprisePlan: {
-        price: "R100",
-        description:
-          "Ditharabololo tsa tshireletso tse di feletseng tsa mekgatlho e megolo.",
-        features: [
-          "Dilo tsotlhe mo Pro Plan",
-          "Ditharabololo tsa Tshireletso tse di Itiriseditsweng",
-          "Motsamaisi wa Akhaonto yo o Itekanetseng",
-          "Tshegetso ya 24/7",
-        ],
-      },
-      basicPlan: {
-        price: "Mahala",
-        description:
-          "E siametse batho ba ba batlang didirisiwa tsa botlhokwa tsa tshireletso ya inthanete.",
-        features: [
-          "Go Lemoga Ditshosetso ka Nako ya Nnete",
-          "Keketseletso ya Go Batlisisa e e Bolokegileng",
-          "Tshireletso ya Phishing",
-          "Keketseletso ya Go Batlisisa e e Bolokegileng",
-        ],
-      },
-    },
-    getStartedSection: {
-      heading: "Notlolla Tshireletso ya Gago ya Dijithale",
-      subHeading:
-        "Latela motlhala wa rona o o bofefo mme o iponetse boitemogelo jwa go batlisisa ntle le letshogo.",
-      steps: [
-        {
-          step: "S/1",
-          subHeading: "Tlhopha Thebe ya Gago",
-          description:
-            "Tlhopha lenaneo le le siametseng botshelo jwa gago jwa inthanete. Basic mo dilong tsa botlhokwa, Pro mo maateng, Enterprise mo go sireletseng gotlhe.",
-        },
-        {
-          step: "S/2",
-          subHeading: "Go Tlhomamisa ka Bonako",
-          description:
-            "Bopa akhaonto ya gago ka nako e khutshwane. Re dira gore go ikwadisa go nne bonako, gore o kgone go simolola go itshireletsa ka bonako.",
-        },
-        {
-          step: "S/3",
-          subHeading: "Kenya & Dirisa",
-          description:
-            "Kenya katoloso ya rona e bobebe kgotsa app. Diklikelo di se kae, mme tshireletso ya gago e a direga – e siametse go sireletsa.",
-        },
-        {
-          step: "S/4",
-          subHeading: "Tshireletso e e Sa Kgonegeleng",
-          description:
-            "Ka tshireletso ya AI e e botlhale le dintlha tse di sa raraanang mo dashboard ya gago, nna o bolokegile kwa ntle ga go nna setsebi sa cybersecurity. Re dira tiro e kgolo.",
-        },
+    Footer: {
+      callToActionDescription:
+        "Masingasibumbi ikamva lezolimo oluzinzileyo kunye.",
+      footerDescription:
+        "Qalisa uhambo lwakho nge-AgriAssistSA namhlanje. Qhagamshelana nathi ukuze ufunde ngakumbi kwaye masisebenze kunye ukufezekisa iinjongo zakho zokulima.",
+      Pagelinks: [
+        "Ikhaya",
+        "Ngathi",
+        "Iinkonzo",
+        "Indlela Yokuqalisa",
+        "Qhagamshelana",
       ],
-    },
-  },
-  {
-    language: "Sepedi",
-    heroSection: {
-      headline: "Dula Pele ga Ditšhošetšo tša Inthanete",
-      subHeadline:
-        "Matlafatša boteng bja gago bja dijithale ka go hlahloba le go thuša ka tšhireletšo ya inthanete ka nako ya nnete.",
-      callToAction: "Thoma",
-    },
-    aboutSection: {
-      title: "KA GA RENA",
-      whoWeAre: "Re Bo Mang: Kanegelo ya rena le morero wa rena",
-      ourStory:
-        "E theilwe ke sehlopha sa barati ba tšhireletšo ya inthanete, re lemogile kgatelelo ye e golago ya ditharollo tša tšhireletšo tša nako ya nnete, tše di šomago gabonolo.\n\nLeeto la rena le thomile ka pono ya go hloma didirišwa tšeo di sa lemogego ditšhošetšo fela eupša di ruta le badiriši, di hloma tikologo ya inthanete ye e šireletšegilego go bohle.",
-      ourMission:
-        "Go matlafatša badiriši ka didirišwa tša tšhireletšo ya inthanete tšeo di šomago le go šoma gabonolo, di netefatša khutšo ya monagano lefaseng leo le kopantšwego ka go šetša.",
-      whyChooseUsSection: {
-        subtitle: "Goreng o re Kgetha?",
-        description:
-          "Šomiša maatla a AI go kaonefatša phihlelo ya gago go web, o netefatše gore o kgona go hlahloba web gabonolo.",
-      },
-    },
-    services: [
-      {
-        icon: "ShieldCheck",
-        heading: "Go Lemoga Ditšhošetšo ka Nako ya Nnete",
-        paragraph:
-          "Hlahloba le go lemoga ditšhošetšo tša inthanete tšeo di ka bago gona ge di direga, o netefatša karabo ye e potlakilego le go fokotša ditlamorago.",
-      },
-      {
-        icon: "MailWarning",
-        heading: "Tšhireletšo ya Phishing",
-        paragraph:
-          "Lemoga le go thibela maiteko a phishing, o šireletša tshedimošetšo ya gago ye e bohlokwa go badiri ba maleba.",
-      },
-      {
-        icon: "Globe",
-        heading: "Katoloso ya Go Bala e e Šireletšegilego",
-        paragraph:
-          "Kgatla bokgoni bja gago bja go bala ka katoloso ya rena yeo e go laišago ka diwebosaete le dilafo tše di sa šireletšegago.",
-      },
-      {
-        icon: "Key",
-        heading: "Hlahlobo ya Tšhireletšo ya Lentšuphetho",
-        paragraph:
-          "Lekola maatla a mantšuphetho a gago gomme o amogele dikgothatšo tša go matlafatša tšhireletšo ya akhaonto ya gago.",
-      },
-      {
-        icon: "BookOpen",
-        heading: "Setheo sa Thuto ya Tšhireletšo ya Inthanete",
-        paragraph:
-          "Kgona go hwetša mehlodi le dithuto tše dintši go dula o tseba ka mekgwa ye mebotse ya tšhireletšo ya inthanete.",
-      },
-    ],
-    Pricing: {
-      proPlan: {
-        price: "R120",
-        description:
-          "E dirilwe bakeng sa dikgwebo tše dinyane tšeo di nyakago diswantšho tša tšhireletšo tše di tšwetšego pele.",
-        features: [
-          "Dilo ka moka ka go Basic Plan",
-          "Hlahlobo ya Tšhireletšo ya Lentšuphetho",
-          "Setheo sa Thuto ya Tšhireletšo ya Inthanete",
-          "Thekgo ya Maemo a Godimo",
-        ],
-      },
-      enterprisePlan: {
-        price: "R100",
-        description:
-          "Ditharollo tša tšhireletšo tše di feletšego tša mekgatlo ye megolo.",
-        features: [
-          "Dilo ka moka ka go Pro Plan",
-          "Ditharollo tša Tšhireletšo tše di Dirilwego go ya ka Tlhokego",
-          "Molaodi wa Akhaonto yo a Itšego",
-          "Thekgo ya 24/7",
-        ],
-      },
-      basicPlan: {
-        price: "Mahala",
-        description:
-          "E loketše batho ka o tee bao ba nyakago didirišwa tša tšhireletšo ya inthanete tše bohlokwa.",
-        features: [
-          "Go Lemoga Ditšhošetšo ka Nako ya Nnete",
-          "Katoloso ya Go Bala e e Šireletšegilego",
-          "Tšhireletšo ya Phishing",
-          "Katoloso ya Go Bala e e Šireletšegilego",
-        ],
-      },
-    },
-    getStartedSection: {
-      heading: "Notlolla Tšhireletšo ya Gago ya Dijithale",
-      subHeading:
-        "Latela tlhahlobo ya rena ya lebelo gomme o hwetše boiphihlelo bja go bala ntle le kgokelo.",
-      steps: [
-        {
-          step: "S/1",
-          subHeading: "Kgetha Sesireletši sa Gago",
-          description:
-            "Kgetha lenaneo le le swanetšego bophelo bja gago bja inthanete. Basic bakeng sa bohlokwa, Pro bakeng sa maatla, Enterprise bakeng sa tšhireletšo e feletšego.",
-        },
-        {
-          step: "S/2",
-          subHeading: "Peakanyo ya Lebelo",
-          description:
-            "Bopa akhaonto ya gago ka metsotswana. Re dira ngwadišo e be le lebelo, gore o kgone go thoma go itšhireletša ka bjako.",
-        },
-        {
-          step: "S/3",
-          subHeading: "Kenya & Dirisa",
-          description:
-            "Kenya katoloso ya rena ye bobebe goba app. Diklikelo tše mmalwa, gomme tšhireletšo ya gago e a šoma – e loketše go šireletša.",
-        },
-        {
-          step: "S/4",
-          subHeading: "Tšhireletšo ye e sa Nyakego Matla",
-          description:
-            "Ka tšhireletšo ya AI ye bohlale le dintlha tše di kwagalago go dashboard ya gago, o dula o šireletšegile ntle le go swanelwa ke go ba setsebi sa tšhireletšo ya inthanete. Re dira mošomo o mogolo.",
-        },
-      ],
+      socialLinks: ["Instagram", "X", "Linkedin"],
+      Footprint: "Onke Amalungelo Agciniwe",
     },
   },
   {
     language: "Sesotho",
     heroSection: {
-      headline: "Lula Pele ho Litšokelo tsa Marang-rang",
+      headline: "Matlafatsa Polasi ya Hao, Hola Bokamoso ba Hao",
       subHeadline:
-        "Matlafatsa boteng ba hau ba dijithale ka ho beha leihlo le thuso ea cybersecurity ea nako ea nnete.",
+        "AgriAssistSA ke motshwari wa hao wa temo ya dijithale, e sebedisa dithulusi tsa AI le tshehetso ya nako ya nnete ho thusa balemi ba metse le ba dibaka tse haufi le litoropo Gauteng ho hola ka bohlale, ka matla, le ka phaello e kgolo. Re kopanya balemi le tlhahisoleseding ya temo e tshepahalang.",
       callToAction: "Qala",
     },
     aboutSection: {
-      title: "KA RŌNA",
-      whoWeAre: "Re Bo Mang: Pale ea rona le morero oa rona",
+      title: "KA RONA",
+      whoWeAre: "Re Bo Mang: Pale le Morero wa Rona",
       ourStory:
-        "E thehiloe ke sehlopha sa ba ratang cybersecurity, re ile ra lemoha tlhokahalo e ntseng e hola ea tharollo ea ts'ireletso ea nako ea nnete, e bonolo ho e sebelisa.\n\nLeeto la rona le ile la qala ka pono ea ho theha lisebelisoa tse sa fumane feela litšokelo empa hape li ruta basebelisi, ho theha tikoloho e sireletsehileng ea inthanete bakeng sa bohle.",
+        "E thehilwe ke sehlopha se nang le tjantjello ka polokeho ya dijo le matlafatso ya setjhaba, AgriAssistSA e thehilwe ho rarolla diphephetso tseo balemi ba metse ba tobanang le tsona, jwalo ka ho se fumaneha ha tlhahisoleseding e tshepahalang, taolo e fokolang ya dikokonyana, le ditheko tse sa lokang tsa mmaraka. Leeto la rona le qalile ka pono ya sethala se sebediswang ka mobile pele se matlafatsang balemi ho atleha sebakeng se nang le diphephetso.",
       ourMission:
-        "Ho matlafatsa basebelisi ka lisebelisoa tsa cybersecurity tse sebetsang le tse bonolo ho li sebelisa, ho netefatsa khotso ea kelello lefatšeng le hokahaneng haholo.",
+        "Morero wa rona ke ho kopanya balemi le theknoloji ya temo ya bohlokwa ka ho fana ka sethala se fumanehang, sa dipuo tse ngata, le se sebediswang ka mobile pele se matlafatsang boits'oaro ba balemi, polokeho ya dijo, le moruo wa temo wa lehae.",
       whyChooseUsSection: {
-        subtitle: "Hobaneng re U Khetha?",
+        subtitle: "DITHAROLOHO TSE RE DI FANANG KA TSOHONA",
         description:
-          "Sebelisa matla a AI ho ntlafatsa boiphihlelo ba hau ho web, ho netefatsa hore o khona ho hlahloba web habonolo.",
+          "Re motshwari wa temo wa pele o lebisitseng metse, o kgonang ho sebetsa ntle le inthanete, o nang le dipuo tse ngata o etseditswe ho matlafatsa balemi moo tlhokahalo e leng kgolo. Dithulusi tsa rona di hahilwe bakeng sa nnete ya hao, eseng ya litoropo.",
+      },
+      pricing: {
+        subtitle: "MANANE A HO HOHOLA LE WENA",
+        description:
+          "Ditheko tsa rona di etseditswe ho ba theko e tlase le e nang le tshusumetso. Kgetha lenane le hlokang ditlhoko tsa hao mme o bule dithulusi tse tlisang boleng ba nnete masimong a hao. Mohlala wa rona wa freemium o fana ka dintho tsa motheo mahala, ka dikgetho tsa premium bakeng sa ba batlang ditshekatsheko le tsebo e tswetseng pele.",
       },
     },
     services: [
       {
-        icon: "ShieldCheck",
-        heading: "Ho Fumana Litšokelo ka Nako ea Nnete",
+        icon: "Sprout",
+        heading: "Tsepamiso ya Hyperlocal",
         paragraph:
-          "Beka leihlo le ho lemoha litšokelo tse ka bang teng tsa marang-rang ha li etsahala, ho netefatsa karabo e potlakileng le ho fokotsa.",
+          "Re tsepamisitse maikutlo ka ho toba ho matlafatseng balemi ba metse le ba dibaka tse haufi le litoropo tsa Gauteng pele re atolosa naheng ka bophara. Sena se netefatsa hore ditharollo tsa rona di etseditswe ditlhoko tsa hao tse ikgethileng.",
       },
       {
-        icon: "MailWarning",
-        heading: "Tšireletso ea Phishing",
+        icon: "Mic",
+        heading: "WhatsApp Voice Bot ya Dipuo Tse Ngata",
         paragraph:
-          "Fumana le ho thibela liteko tsa ho phishing, ho sireletsa tlhahisoleseding ea hau e bonolo ho batšoantšisi ba bobe.",
+          "Fumana tshehetso ya nako ya nnete ka puo eo o e ratang. Voice bot ya rona e sebetsa ka isiZulu, Sepedi, Setswana, isiXhosa, le Senyesemane, e etsa hore sethala sa rona se fumanehe le ho kenyelletsa bohle.",
       },
       {
-        icon: "Globe",
-        heading: "Keketseho ea ho Batla e Sireletsehileng",
+        icon: "WifiOff",
+        heading: "Ho Fumana Dikokonyana ka AI Ntle le Inthanete",
         paragraph:
-          "Ntlafatsa boiphihlelo ba hau ba ho batla ka keketseho ea rona e u hlokomelang ka liwebosaete le lits'oants'o tse sa sireletsehang.",
+          "Fumana mafu a dijalo hang hang, leha o se na kgokahanyo ya inthanete. Sesebediswa sa rona sa AI se sebetsa ntle le inthanete hore o ka fumana tlhahisoleseding eo o e hlokang, ha o e hloka.",
       },
       {
-        icon: "Key",
-        heading: "Tlhahlobo ea Ts'ireletso ea Password",
+        icon: "GraduationCap",
+        heading: "AgriThinkHub: Tlwaelano ya Bacha",
         paragraph:
-          "Hlola matla a li-password tsa hau le ho fumana likhothaletso tsa ho matlafatsa ts'ireletso ea akhaonto ea hau.",
+          "Re hokahanya baqapi ba baithuti le balemi ho theha ditharollo mmoho. Sena ke setshelo moo mehopolo le mekgwa e metjha e abelanwang le ho lekoa.",
       },
       {
-        icon: "BookOpen",
-        heading: "Setsi sa Thuto ea Cybersecurity",
+        icon: "Store",
+        heading: "Ditheko Tsa Mmaraka Tsa Nako Ya Nnete",
         paragraph:
-          "Finyella boholo ba lisebelisoa le lithuto ho lula u tseba ka mekhoa e metle ea ts'ireletso ea inthanete.",
+          "Fumana tlhahisoleseding e tshepahalang ya ditheko tsa mmaraka mme o qobe ditheko tse sa lokang. Barekisi ba lehae le dikgwebo tsa temo le tsona di ka ingolisa ho fumana tsebo ena ya bohlokwa ya mmaraka.",
+      },
+      {
+        icon: "Handshake",
+        heading: "Ditshwaragano tsa Diyantle tsa Temo",
+        paragraph:
+          "Re o hokahanya ka ho toba le bafani ba diyantle tsa temo ka sethala sa rona, ho o thusa ho fumana dithulusi tseo o di hlokang ho hola.",
       },
     ],
     Pricing: {
-      proPlan: {
-        price: "R120",
-        description:
-          "E etselitsoe likhoebo tse nyenyane tse hlokang likarolo tsa ts'ireletso tse tsoetseng pele.",
-        features: [
-          "Likarolo tsohle ho Basic Plan",
-          "Tlhahlobo ea Ts'ireletso ea Password",
-          "Setsi sa Thuto ea Cybersecurity",
-          "Tšehetso ea Bohlokoa",
-        ],
-      },
-      enterprisePlan: {
-        price: "R100",
-        description:
-          "Tharollo e felletseng ea ts'ireletso bakeng sa mekhatlo e meholo.",
-        features: [
-          "Likarolo tsohle ho Pro Plan",
-          "Tharollo ea Ts'ireletso e Ikhethileng",
-          "Motsamaisi oa Akhaonto ea Ikhethileng",
-          "Tšehetso ea 24/7",
-        ],
-      },
       basicPlan: {
         price: "Mahala",
         description:
-          "E loketse batho ba batlang lisebelisoa tsa bohlokoa tsa cybersecurity.",
+          "Sebaka se phethahetseng sa ho qala bakeng sa molemi ofe kapa ofe. Fumana dithulusi tsa bohlokwa ntle ho tefo.",
         features: [
-          "Ho Fumana Litšokelo ka Nako ea Nnete",
-          "Keketseho ea ho Batla e Sireletsehileng",
-          "Tšireletso ea Phishing",
-          "Keketseho ea ho Batla e Sireletsehileng",
+          "Tshehetso ya Nako ya Nnete (Voice Bot)",
+          "Ho Fumana Dikokonyana ka AI Ntle le Inthanete",
+          "Ho Abelana ka Setjhaba le Tsebo",
+          "Tlhahisoleseding ya Mmaraka ya Motheo",
+        ],
+      },
+      enterprisePlan: {
+        price: "Ikopanye le Rona",
+        description:
+          "Ditharollo tse ikgethileng bakeng sa dikgwebo tsa temo, dikoporasi, le mekgatlo e meholo.",
+        features: [
+          "Dintho tsohle tsa Lenane la Premium",
+          "Ditshekatsheko le Dithlaleho tse Ikgethileng",
+          "Motsamaisi wa Akhaonto ya Dedicatehileng",
+          "24/7 Tshehetso ya Bohlokwa",
+        ],
+      },
+      proPlan: {
+        price: "R50/kgwedi",
+        description:
+          "Bakeng sa balemi le dikoporasi tse batlang dithulusi tse tswetseng pele le tsebo e tebileng.",
+        features: [
+          "Dintho tsohle tsa Lenane la Motheo",
+          "Ditshekatsheko tse Tswetseng Pele le Tsebo ya Dijalo",
+          "Ho Ingolisa ho Tlhahisoleseding ya Mmaraka",
+          "Phumano ya AgriThinkHub ya Premium",
         ],
       },
     },
     getStartedSection: {
-      heading: "Notlolla Tšireletso ea Hao ea Dijithale",
+      heading: "Kena Sechabeng sa AgriAssistSA",
       subHeading:
-        "Latela tataiso ea rona e potlakileng 'me u be le boiphihlelo ba ho batla marang-rang ntle le tšabo.",
+        "Qala ka AgriAssistSA ka mehato e mmalwa feela. Ho bonolo, ho potlakile, mme ho hahilwe bakeng sa hao.",
       steps: [
         {
-          step: "S/1",
-          subHeading: "Khetha Thebe ea Hau",
+          step: "01",
+          subHeading: "Ingolisa & Re Bolelle ka Polasi ya Hao",
           description:
-            "Khetha moralo o phethahetseng o lumellanang le bophelo ba hau ba marang-rang. Basic bakeng sa bohlokoa, Pro bakeng sa matla, Enterprise bakeng sa ho koahela ka botlalo.",
+            "Bopa akhaonto ya hao ya mahala mme o re tsebise hore na o lema eng le hore na o hokae. Moralo wa rona o lumellana le setso ka ditshwantsho tse bonolo, modumo, le dieyemo bakeng sa boiphihlelo bo bonolo ba mosebedisi.",
         },
         {
-          step: "S/2",
-          subHeading: "Ho Hlophisa ka Potlako",
+          step: "02",
+          subHeading: "Qala ho Sebedisa Dithulusi tsa Rona",
           description:
-            "Theha akhaonto ea hau ka nakoana. Re etsa hore ho ngolisa ho be bonolo, kahoo o ka qala ho itšireletsa hang-hang.",
+            "Fumana WhatsApp voice bot ya rona bakeng sa keletso e potlakileng, kapa sebedisa ho fumana dikokonyana tsa AI ntle le inthanete ho rarolla mathata masimong a hao.",
         },
         {
-          step: "S/3",
-          subHeading: "Kenya & Kenya Tšebetsong",
+          step: "03",
+          subHeading: "Hokahana le Sechaba",
           description:
-            "Kenya katoloso ea rona e bobebe kapa sesebelisoa. Liklike tse 'maloa, 'me tšireletso ea hau e ea sebetsa – e itokiselitse ho sireletsa.",
+            "Kenela baithuti le balemi ba bang ba AgriThinkHub ho arolelana mehopolo, ho fumana ditharollo, le ho ithuta mekgwa e metjha.",
         },
         {
-          step: "S/4",
-          subHeading: "Tšireletso e Bonolo",
+          step: "04",
+          subHeading: "Hola ka Bohlale, Hola ka Matla",
           description:
-            "Ka tšireletso e bohlale ea AI le lintlha tse hlakileng ho dashboard ea hau, lula u sireletsehile ntle le ho ba setsebi sa cybersecurity. Re etsa mosebetsi o boima.",
+            "Ka AgriAssistSA, o tla fumana boits'oaro le ho kenya letsoho ho moruo wa temo wa lehae o matla, o netefatsa polokeho ya dijo bakeng sa lelapa la hao le setjhaba.",
         },
       ],
+    },
+    Footer: {
+      callToActionDescription:
+        "A re theheng bokamoso ba temo e tsitsitseng mmoho.",
+      footerDescription:
+        "Qala leeto la hao le AgriAssistSA kajeno. Ikopanye le rona ho ithuta ho eketsehileng mme a re sebetse mmoho ho fihlella dintlha tsa hao tsa temo.",
+      Pagelinks: [
+        "Lehae",
+        "Ka Rona",
+        "Ditshebeletso",
+        "Mokgwa wa ho Qala",
+        "Ikopanye",
+      ],
+      socialLinks: ["Instagram", "X", "Linkedin"],
+      Footprint: "Ditokelo Tsohle di Sireleditswe",
+    },
+  },
+  {
+    language: "Setswana",
+    heroSection: {
+      headline: "Nonotsha Polase ya Gago, Godisa Bokamoso Jwa Gago",
+      subHeadline:
+        "AgriAssistSA ke motlatsa-temothuo wa gago wa sedijithale, o dirisa didirisiwa tsa AI le tshegetso ya nako ya nnete go thusa balemi ba ditoropo le ba mafelo a a gaufi le ditoropo mo Gauteng go lema ka botlhale, ka nonofo, le ka poelo e ntsi. Re kopanya balemi le tshedimosetso ya temothuo e e tshepehang.",
+      callToAction: "Simolola",
+    },
+    aboutSection: {
+      title: "KA RONA",
+      whoWeAre: "Rona ke Bo Mang: Polelo ya Rona le Maikaelelo a Rona",
+      ourStory:
+        "E simolotswe ke setlhopha se se nang le maikutlo a a botlhokwa ka polokego ya dijo le nonotsho ya setšhaba, AgriAssistSA e tlhamilwe go rarabolola dikgwetlho tse balemi ba ditoropo ba tobanang le tsona, jaaka go sa kgone go bona tshedimosetso e e tshepehang, taolo e e sa siamang ya dibokwana, le ditlhotlhwa tsa mmaraka tse di sa siamang. Loeto lwa rona lo simologile ka pono ya sethala se se dirisiwang ka founu pele se se nonotshang balemi go atlega mo tikologong e e tletseng dikgwetlho.",
+      ourMission:
+        "Maikaelelo a rona ke go kopanya balemi le thekenoloji ya temothuo e e botlhokwa ka go fana ka sethala se se kgonegang, sa dipuo tse dintsi, le se se dirisiwang ka founu pele se se godisang bofefo jwa balemi, polokego ya dijo, le ikonomi ya temothuo ya selegae.",
+      whyChooseUsSection: {
+        subtitle: "DITHARABOLOLO TSE RE DI NEELANG",
+        description:
+          "Rona ke motlatsa-temothuo wa ntlha o o itebagantseng le toropo, o o kgonang go dira ntle le inthanete, o o nang le dipuo tse dintsi o o diretsweng go nonotsha balemi kwa tlhokego e leng kgolo. Didirisiwa tsa rona di agilwe go ya ka nnete ya gago, e seng ya toropo.",
+      },
+      pricing: {
+        subtitle: "MANANE O A GODISANG LE WENA",
+        description:
+          "Ditlhotlhwa tsa rona di diretswe go nna tsa theko e e botlhokwa le go nna le ditlamorago. Tlhopha lenane le le fitlhelelang ditlhokego tsa gago le le bulang didirisiwa tse di tlisa boleng jwa nnete mo masimong a gago. Mokgwa wa rona wa freemium o fana ka ditšhupetso tsa motheo mahala, ka dikgetho tsa premium tsa bao ba batlang ditshekatsheko tsa maemo a kwa godimo le dikitsiso.",
+      },
+    },
+    services: [
+      {
+        icon: "Sprout",
+        heading: "Tebaganyo ya Hyperlocal",
+        paragraph:
+          "Re itebagantse ka go tlhamalala le go nonotsha balemi ba ditoropo le ba mafelo a a gaufi le ditoropo mo Gauteng pele ga go atologa ka bosetšhaba. Seno se netefatsa gore ditharabololo tsa rona di dirilwe go ya ka ditlhokego tsa gago tse di ikgethileng.",
+      },
+      {
+        icon: "Mic",
+        heading: "WhatsApp Voice Bot ya Dipuo Tse Dintsi",
+        paragraph:
+          "Bona tshegetso ya nako ya nnete ka puo e o e ratang. Voice bot ya rona e dira ka isiZulu, Sepedi, Setswana, isiXhosa, le Senyesemane, e dira gore sethala sa rona se kgonege le go akaretsa botlhe.",
+      },
+      {
+        icon: "WifiOff",
+        heading: "Go Lemoga Dibokwana ka AI Ntle le Inthanete",
+        paragraph:
+          "Lemoga malwetse a dijalo ka ponyo ya leitlho, le fa go sena kgokagano ya inthanete. Sedirisiwa sa rona sa AI se dira ntle le inthanete gore o kgone go bona tshedimosetso e o e tlhokang, fa o e tlhoka.",
+      },
+      {
+        icon: "GraduationCap",
+        heading: "AgriThinkHub: Tlhamo e Kopanetsweng ya Banana",
+        paragraph:
+          "Re kopanya bathami ba baithuti le balemi go tlhama ditharabololo mmogo. Phipaela e ya banana-baithuti-balemi ke lefelo le go abelanwang ka megopolo le ditsela tse disha mo go yona le go di leka.",
+      },
+      {
+        icon: "Store",
+        heading: "Ditlhotlhwa Tsa Mmaraka Tsa Nako Ya Nnete",
+        paragraph:
+          "Bona tshedimosetso ya ditlhotlhwa tsa mmaraka e e tshepehang le go tila ditlhotlhwa tse di sa siamang. Barekisi ba selegae le dikgwebo tsa temothuo le bona ba ka ikwadisa go bona tshedimosetso e e botlhokwa ya mmaraka.",
+      },
+      {
+        icon: "Handshake",
+        heading: "Tirisano ya Dithoto Tsa Temothuo",
+        paragraph:
+          "Re go kopanya ka go tlhamalala le barekisi ba dithoto tsa temothuo ka sethala sa rona, go go thusa go bona didirisiwa tse o di tlhokang go lema.",
+      },
+    ],
+    Pricing: {
+      basicPlan: {
+        price: "Mahala",
+        description:
+          "Lefelo le le siameng la go simolola mo go balemi botlhe. Bona didirisiwa tsa botlhokwa mahala.",
+        features: [
+          "Tshegetso ya Nako ya Nnete (Voice Bot)",
+          "Go Lemoga Dibokwana ka AI Ntle le Inthanete",
+          "Go Abelana ka Setšhaba le Kitsiso",
+          "Ditshekatsheko Tsa Mmaraka Tsa Motheo",
+        ],
+      },
+      enterprisePlan: {
+        price: "Ikwalolole",
+        description:
+          "Ditharabololo tsa setlwaedi tsa dikgwebo tsa temothuo, dikoporasi, le mekgatlho e megolo.",
+        features: [
+          "Ditšhupetso Tsotlhe tsa Lenane la Premium",
+          "Ditshekatsheko Tse di Rulagantsweng le Pegelo",
+          "Motsamaisi wa Akhaonto yo o Ikemetseng",
+          "Tshegetso ya Bosigo le Motshegare ya Maemo a Kwa Godimo",
+        ],
+      },
+      proPlan: {
+        price: "R50/kgwedi",
+        description:
+          "Go balemi le dikoporasi tse di batlang didirisiwa tsa maemo a kwa godimo le dikitsiso tse di boteng.",
+        features: [
+          "Ditšhupetso Tsotlhe tsa Lenane la Motheo",
+          "Ditshekatsheko Tse di Rulagantsweng le Ditshekatsheko Tsa Dijalo",
+          "Pampiri ya Ditshekatsheko Tsa Mmaraka",
+          "Go Kena mo AgriThinkHub ya Premium",
+        ],
+      },
+    },
+    getStartedSection: {
+      heading: "Tshwara Setšhaba sa AgriAssistSA",
+      subHeading:
+        "Simolola ka AgriAssistSA ka dikgato di sekae fela. Go motlhofo, go bofefo, mme go agilwe go ya ka wena.",
+      steps: [
+        {
+          step: "01",
+          subHeading: "Ikkwadise & Re Bolele ka Polase ya Gago",
+          description:
+            "Bopa akhaonto ya gago ya mahala mme o re tseye ka tse o di lemang le kwa o leng teng. Thulaganyo ya rona e tsamaelana le setso ka ditshwantsho tse di motlhofo, modumo, le dieyemo go bona maitemogelo a a siametseng modirisi.",
+        },
+        {
+          step: "02",
+          subHeading: "Simolola Go Dirisa Didirisiwa Tsa Rona",
+          description:
+            "Bona kgokagano ya WhatsApp voice bot ya rona go bona kgakololo ya nako e e tlang, kgotsa dirisa go lemoga dibokwana ka AI ntle le inthanete go rarabolola mathata mo masimong a gago.",
+        },
+        {
+          step: "03",
+          subHeading: "Kopana le Setšhaba",
+          description:
+            "Dirisa baithuti le balemi ba bangwe mo AgriThinkHub go abelana ka megopolo, go bona ditharabololo, le go ithuta ditsela tse disha.",
+        },
+        {
+          step: "04",
+          subHeading: "Gola ka Botlhale, Gola ka Nonofo",
+          description:
+            "Ka AgriAssistSA, o tla bona bofefo le go tsenya letsogo mo ikonoming ya temothuo ya selegae e e nonofileng, o netefatsa polokego ya dijo mo lelapeng la gago le mo setšhabeng.",
+        },
+      ],
+    },
+    Footer: {
+      callToActionDescription:
+        "A re bope bokamoso jwa temothuo e e tswelelang mmogo.",
+      footerDescription:
+        "Simolola loeto lwa gago ka AgriAssistSA gompieno. Ikwalolole go ithuta go feta le a re direng mmogo go fitlhelela maikaelelo a gago a temothuo.",
+      Pagelinks: [
+        "Lelapa",
+        "Ka Rona",
+        "Ditirelo",
+        "Kafano ya Go Simolola",
+        "Ikwalolole",
+      ],
+      socialLinks: ["Instagram", "X", "Linkedin"],
+      Footprint: "Ditshwanelo Tsotlhe Di Siametse",
+    },
+  },
+  {
+    language: "Sepedi",
+    heroSection: {
+      headline: "Matlafatsa Polasa ya Gago, Godiša Bokamoso bja Gago",
+      subHeadline:
+        "AgriAssistSA ke mogwera wa gago wa temo ya dijithale, o šomiša didirišwa tša AI le thekgo ya nako ya nnete go thuša balemi ba ditoropo le ba magaeng a kgauswi le ditoropo kua Gauteng go gola ka bohlale, ka matla, le ka phaello ye ntši. Re kgaoganya balemi le tshedimošetšo ya temo ye e botagetšego.",
+      callToAction: "Thoma",
+    },
+    aboutSection: {
+      title: "KA RENA",
+      whoWeAre: "Rena ke Bo Mang: Kanegelo ya Rena le Maikemišetšo a Rena",
+      ourStory:
+        "E theilwe ke sehlopha se se nago le kganyogo ka polokego ya dijo le matlafatšo ya setšhaba, AgriAssistSA e hlotšwe go rarolla dikgwedi tšeo balemi ba ditoropo ba lebanago le tšona, go swana le go se hwetše tshedimošetšo ye e botagetšego, taolo ye e sa swanelago ya dibokana, le ditheko tša mmaraka tše di sa swanelago. Leeto la rena le thomile ka pono ya sethala sa founo se se matlafatsago balemi go atlega lefaseng la dikgwedi.",
+      ourMission:
+        "Maikaemišetšo a rena ke go kgaoganya balemi le theknolotši ya temo ya bohlokwa ka go fana ka sethala se se hwetšagalago, sa dipuo tše ntši, le sa founo se se godišago boima bja balemi, polokego ya dijo, le ikonomi ya temo ya lefelong leo.",
+      whyChooseUsSection: {
+        subtitle: "DITHARABOLLO TŠE RE DI FANA KA TŠONA",
+        description:
+          "Rena ke mogwera wa temo wa ntlha yo o lebišitšego toropo, yo o kgonago go šoma ntle le inthanete, yo o nago le dipuo tše ntši yo o hlotšwego go matlafatsa balemi moo go nyakega kudu. Didirišwa tša rena di agilwe ka nnete ya gago, e seng ya toropo.",
+      },
+      pricing: {
+        subtitle: "MANANE A A GOLAGO LE WENA",
+        description:
+          "Ditheko tša rena di dirilwe go ba tša theko ye botse le go ba le ditlamorago. Kgetha lenane leo le fihlelelago dinyakwa tša gago le leo le bulago didirišwa tšeo di tlišago boleng bja nnete masimong a gago. Mokgwa wa rena wa freemium o fana ka ditšobotsi tša motheo mahala, ka dikgetho tša premium tša bao ba nyakago dihlahlobo tša maemo a godimo le dikgopolo.",
+      },
+    },
+    services: [
+      {
+        icon: "Sprout",
+        heading: "Lebišišo la Hyperlocal",
+        paragraph:
+          "Re lebišitše ka go lebanya matlafatšo ya balemi ba ditoropo le ba magaeng a kgauswi le ditoropo kua Gauteng pele ga go gola ka bosetšhaba. Se se netefatša gore ditharabololo tša rena di rulagantšwe go ya ka dinyakwa tša gago tše di ikgethago.",
+      },
+      {
+        icon: "Mic",
+        heading: "WhatsApp Voice Bot ya Dipuo Tše Ntši",
+        paragraph:
+          "Hwetša thekgo ya nako ya nnete ka polelo ye o e ratago. Voice bot ya rena e šoma ka isiZulu, Sepedi, Setswana, isiXhosa, le Senyesemane, e dira gore sethala sa rena se hwetšagale le go akaretša bohle.",
+      },
+      {
+        icon: "WifiOff",
+        heading: "Go Lemoga Dibokana ka AI Ntle le Inthanete",
+        paragraph:
+          "Lemoga malwetši a dibjalo ka bonako, le ge go se na kgokaganyo ya inthanete. Sedirišwa sa rena sa AI se šoma ntle le inthanete gore o kgone go hwetša tshedimošetšo yeo o e nyakago, ge o e nyaka.",
+      },
+      {
+        icon: "GraduationCap",
+        heading: "AgriThinkHub: Tlhamo e Kopanetsweng ya Bafsa",
+        paragraph:
+          "Re kgokaganya baithuti ba ba hlolago le balemi go hloma ditharabololo mmogo. Pipaela e ya bafsa-baithuti-balemi ke lefelo leo go abelanwago ka megopolo le ditsela tše diswa mo go yona le go di leka.",
+      },
+      {
+        icon: "Store",
+        heading: "Ditheko Tša Mmaraka Tša Nako Ya Nnete",
+        paragraph:
+          "Hwetša tshedimošetšo ya ditheko tša mmaraka ye e botagetšego le go tila ditheko tše di sa swanelago. Bareki ba lefelong leo le dikgwebo tša temo le bona ba ka ikwadiša go hwetša tshedimošetšo ye e botlhokwa ya mmaraka.",
+      },
+      {
+        icon: "Handshake",
+        heading: "Tirisano ya Didirišwa tša Temo",
+        paragraph:
+          "Re go kgokaganya ka go lebanya le bareki ba didirišwa tša temo ka sethala sa rena, go go thuša go hwetša didirišwa tšeo o di nyakago go gola.",
+      },
+    ],
+    Pricing: {
+      basicPlan: {
+        price: "Mahala",
+        description:
+          "Lefelo le le loketšego la go thoma go balemi bohle. Hwetša didirišwa tša bohlokwa mahala.",
+        features: [
+          "Thekgo ya Nako ya Nnete (Voice Bot)",
+          "Go Lemoga Dibokana ka AI Ntle le Inthanete",
+          "Go Abelana ka Setšhaba le Tsebo",
+          "Dintlha tša Mmaraka tša Motheo",
+        ],
+      },
+      enterprisePlan: {
+        price: "Ikgošaganye Le Rena",
+        description:
+          "Ditharabollo tša setlwaedi tša dikgwebo tša temo, dikoporasi, le mekgatlo e megolo.",
+        features: [
+          "Ditšobotsi ka Moka tša Lenane la Premium",
+          "Dihlahlbo tša Setlwaedi & Pegelo",
+          "Molaodi wa Akhaonto yo o Ikgethilwego",
+          "24/7 Thekgo ya Pele",
+        ],
+      },
+      proPlan: {
+        price: "R50/kgwedi",
+        description:
+          "Go balemi le dikoporasi tšeo di nyakago didirišwa tša maemo a godimo le dikgopolo tše di tseneletšego.",
+        features: [
+          "Ditšobotsi ka Moka tša Lenane la Motheo",
+          "Dihlahlbo tša Maemo a Godimo & Dintlha tša Dibjalo",
+          "Tlhagišo ya Dintlha tša Mmaraka",
+          "Kgokagano ya AgriThinkHub ya Premium",
+        ],
+      },
+    },
+    getStartedSection: {
+      heading: "Kgokaganya Setšhaba sa AgriAssistSA",
+      subHeading:
+        "Thoma ka AgriAssistSA ka dikgato tše sego kae fela. Go bonolo, go a fefoga, gomme go agilwe ka baka la wena.",
+      steps: [
+        {
+          step: "01",
+          subHeading: "Ingwadiša & Re Botše ka Polasa ya Gago",
+          description:
+            "Bopa akhaonto ya gago ya mahala gomme o re botše gore o lema eng le gore o kae. Kgokaganyo ya rena e sepedišana le setšo ka ditshwantšho tše bonolo, modumo, le dieyemo bakeng sa maitemogelo a bonolo go mošomi.",
+        },
+        {
+          step: "02",
+          subHeading: "Thoma go Šomiša Didirišwa tša Rena",
+          description:
+            "Hwetša WhatsApp voice bot ya rena bakeng sa keletšo ya bonako, goba o šomiše go lemoga dibokana ka AI ntle le inthanete go rarolla mathata masimong a gago.",
+        },
+        {
+          step: "03",
+          subHeading: "Kgokaganya le Setšhaba",
+          description:
+            "Tšea karolo le baithuti le balemi ba bangwe ka AgriThinkHub go abelana ka megopolo, go hwetša ditharabollo, le go ithuta ditsela tše diswa.",
+        },
+        {
+          step: "04",
+          subHeading: "Gola ka Bohlale, Gola ka Matla",
+          description:
+            "Ka AgriAssistSA, o tla hwetša boima bja go sega le go tsenya letsogo go ikonomi ya temo ya lefelong leo ye e tiilego, o netefatša polokego ya dijo ya lapa la gago le setšhaba.",
+        },
+      ],
+    },
+    Footer: {
+      callToActionDescription:
+        "A re bope bokamoso bja temo ye e tšwelelago mmogo.",
+      footerDescription:
+        "Thoma leeto la gago ka AgriAssistSA lehono. Kgokaganya le rena go ithuta go feta gomme a re šomeng mmogo go fihlelela maikemišetšo a gago a temo.",
+      Pagelinks: [
+        "Gae",
+        "Ka Rena",
+        "Ditirelo",
+        "Kamoo O ka Thoma Ka Gona",
+        "Kgokaganya",
+      ],
+      socialLinks: ["Instagram", "X", "Linkedin"],
+      Footprint: "Ditokelo Ka Moka Di Bolokilwe",
     },
   },
   {
     language: "Xitsonga",
     heroSection: {
-      headline: "Tshama emahlweni ka Swisongo swa Inthanete",
+      headline: "Nyika Ndzhawu Purasi ra Wena, Kurisa Vumundzuku bya Wena",
       subHeadline:
-        "Nyika matimba vukona bya wena bya digital hi ku langutela ka nkarhi wa xiviri ka vuhlayiseki bya inthanete na vukorhokeri.",
+        "AgriAssistSA i muteketeri wa wena wa vurimi wa digital, loyi a tirhisaka switirhisiwa swa AI na nseketelo wa nkarhi wa xiviri ku pfuneta varimi va le madorobeni na lava va le kusuhi na madoroba eGauteng ku kurisa hi vutlhari, hi matimba, na hi bindzu lerikulu. Hi pfanganisa xivati exikarhi ka varimi na vuxokoxoko bya vurimi lebyi tshembekaka.",
       callToAction: "Sungula",
     },
     aboutSection: {
-      title: "HI NGA SWIHI",
-      whoWeAre: "Hi Nga Swihi: Ntokoto wa hina na xikongomelo xa hina",
+      title: "HI TA HINA",
+      whoWeAre: "Hi Vamani: Manguva na Xikongomelo xa Hina",
       ourStory:
-        "Yi simekiwile hi ntlawa wa vanhu lava rhandzaka vuhlayiseki bya inthanete, hi lemukile xilaveko lexi kulaka xa swintshunxiso swa nkarhi wa xiviri, leswi olovaka ku tirhisiwa.\n\nEndlelo ra hina ri sungule hi vonele ra ku vumba switirhisiwa leswi nga lemukiki ntsena swisongo kambe swi dyondzisa na vatirhisi, swi vumba mbangu wa inthanete lowu hlayisekeke eka hinkwavo.",
+        "Yi simekiwe hi ntlawa lowu khwathiseke hi ta nsirhelelo wa swakudya na matimba ya vaaki, AgriAssistSA yi vumbiwe ku langutana na mintlhontlho leyi varimi va le madorobeni va langutanaka na yona, tani hi ku pfumaleka ka vuxokoxoko lebyi tshembekaka, ku lawula switsotsi hi ku pfumaleka, na switheko swa mimaraka leswi nga lulamelang. Ndzavisiso wa hina wu sungule hi vonele ra pulatifomo leyi rhangelelaka hi mobile leyi nyikaka varimi matimba yo humelela eka ndhawu leyi rharhaka.",
       ourMission:
-        "Ku nyika matimba vatirhisi hi switirhisiwa swa vuhlayiseki bya inthanete leswi tirhaka kahle naswona swi olova ku tirhisiwa, ku tiyisekisa ku rhula ka mianakanyo emisaveni leyi hlanganisiweke hi ku tswalana.",
+        "Xikongomelo xa hina hi ku pfanganisa xivati exikarhi ka varimi na thekinoloji ya vurimi leyi faneleke hi ku nyika pulatifomo leyi fikelelekaka, ya tindzimi to tala, na leyi rhangelelaka hi mobile leyi tlakusaka ku tiyela ka varimi, nsirhelelo wa swakudya, na ikhonomi ya vurimi ya miganga.",
       whyChooseUsSection: {
-        subtitle: "Ha yini U Hi Hlawula?",
+        subtitle: "DITHARABOLOLO TŠE RE DI FANA KA TŠONA",
         description:
-          "Tirhisa matimba ya AI ku antswisa vutivi bya wena eka web, u tiyisekisa leswaku u kota ku hlahloba web hi ku olova.",
+          "Hi hina muteketeri wa vurimi wo sungula lowu languteleke eka madorobeni, loyi a nga kotaka ku tirha handle ka inthanete, wa tindzimi to tala loyi a endleriweke ku nyika varimi matimba laha ku lavyekaka swinene. Switirhisiwa swa hina swi akiwe hi ta ntiyiso wa wena, ku nga ri wa le dorobeni.",
+      },
+      pricing: {
+        subtitle: "MANANA A KURISAKA NA WENA",
+        description:
+          "Switheko swa hina swi endleriwe ku va swa theko leyi faneleke na ku va na vuyelo. Hlawula manana lowu fikelelaka swilaveko swa wena na ku pfula switirhisiwa leswi tisaka nkoka wa xiviri emasin'wini ya wena. Modeli wa hina wa freemium wu nyikela hi switirhisiwa swa xisekelo mahala, hi ti-option ta premium eka lava va lavaka vuhlahluvi na vutivi bya le henhla.",
       },
     },
     services: [
       {
-        icon: "ShieldCheck",
-        heading: "Ku Lemuka Swisongo hi Nkarhi wa Xiviri",
+        icon: "Sprout",
+        heading: "Hyperlocal Focus",
         paragraph:
-          "Langutela na ku lemuka swisongo swa inthanete leswi nga humelelaka hi nkarhi wa kona, ku tiyisekisa nhlamulo ya ku hatlisa na ku hunguta.",
+          "Hi langutele hi ku kongoma ku nyika matimba varimi va le madorobeni na lava va le kusuhi na madoroba eGauteng, hi nga si kula hi va tiko hinkwaro. Swi tiyisisa leswaku switirhisiwa swa hina swi endleriwe swilaveko swa wena swo hlawuleka.",
       },
       {
-        icon: "MailWarning",
-        heading: "Vuhlayiseki bya Phishing",
+        icon: "Mic",
+        heading: "WhatsApp Voice Bot ya Tindzimi to Tala",
         paragraph:
-          "Lemuka na ku sivela mintlawa ya phishing, ku hlayisa vuxokoxoko bya wena bya nkoka eka vatirhi vo biha.",
+          "Kuma nseketelo wa nkarhi wa xiviri hi ririmi ra wena leri u ri rhandzaka. Voice bot ya hina yi tirha hi isiZulu, Sepedi, Setswana, isiXhosa, na Xinghezi, swi endla pulatifomo ya hina yi fikeleleka na ku katsa hinkwavo.",
       },
       {
-        icon: "Globe",
-        heading: "Nandziso wa Ku Languteka lowu Hlayisekeke",
+        icon: "WifiOff",
+        heading: "Ku Kumeka ka Switsotsi hi AI Handle ka Inthanete",
         paragraph:
-          "Aka vutivi bya wena bya ku languteka hi nandziso wa hina lowu ku lemukisaka hi tiwebusayiti na swi-download leswi nga hlayisekangiki.",
+          "Kuma vuvabyi bya swimilana hi ku hatlisa, hambi handle ka inthanete. Xitirhisiwa xa hina xa AI xi tirha handle ka inthanete leswaku u ta kuma vuxokoxoko lebyi u byi lavaka, hi nkarhi lowu u byi lavaka ha wona.",
       },
       {
-        icon: "Key",
-        heading: "Kambisiso wa Vuhlayiseki bya Ipasiwedi",
+        icon: "GraduationCap",
+        heading: "AgriThinkHub: Vumbhoni bya Vantshwa",
         paragraph:
-          "Hlola matimba ya tipasiwedi ta wena naswona u amukele switsundzuxo swa ku antswisa vuhlayiseki bya akhaonto ya wena.",
+          "Hi hlanganisa vuswikoti bya vaendli va switirhisiwa na varimi ku vumba switirhisiwa swin'we. Pipeline leyi ya vantshwa-swichudeni-varimi i ndhawu leyi mianakanyo leyintshwa na tindlela ti aviwaka no ringetiwa eka yona.",
       },
       {
-        icon: "BookOpen",
-        heading: "Xikimi xa Dyondzo ya Vuhlayiseki bya Inthanete",
+        icon: "Store",
+        heading: "Switheko Swa Mmaraka Swa Nkarhi Wa Xiviri",
         paragraph:
-          "Fikelela xuma xa swihlovo na tidyondzo ku dula u tiva hi mikhuva leyi antswaka eka vuhlayiseki bya inthanete.",
+          "Kuma vuxokoxoko bya switheko swa mmaraka lebyi tshembekaka na ku papalata switheko leswi nga lulamelang. Vavendzi va miganga na tikhampani ta vurimi na vona va nga tihlanganisa ku kuma vuxokoxoko lebyi bya nkoka bya mmaraka.",
+      },
+      {
+        icon: "Handshake",
+        heading: "Swihlanganisi Swa Vurimi",
+        paragraph:
+          "Hi ku hlanganisa hi ku kongoma na vaaka-vurimi hi pulatifomo ya hina, hi ku pfuneta ku kuma switirhisiwa leswi u swi lavaka ku kula.",
       },
     ],
     Pricing: {
-      proPlan: {
-        price: "R120",
-        description:
-          "Yi endleriwe mabhizinisi lamatsongo lama lavaka mintirho ya vuhlayiseki leyi tlakukile.",
-        features: [
-          "Mintirho hinkwayo eka Basic Plan",
-          "Kambisiso wa Vuhlayiseki bya Ipasiwedi",
-          "Xikimi xa Dyondzo ya Vuhlayiseki bya Inthanete",
-          "Nseketelo wa Xikongomelo",
-        ],
-      },
-      enterprisePlan: {
-        price: "R100",
-        description:
-          "Swintshunxiso swa vuhlayiseki leswi hetisekileke swa minhlangano leyikulu.",
-        features: [
-          "Mintirho hinkwayo eka Pro Plan",
-          "Swintshunxiso swa Vuhlayiseki leswi Endliweke hi Kuya hi Xilaveko",
-          "Maneja wa Akhaonto loyi a Tikumaka",
-          "Nseketelo wa 24/7",
-        ],
-      },
       basicPlan: {
         price: "Mahala",
         description:
-          "Yi faneleka eka vanhu lava lavaka switirhisiwa swa nkoka swa vuhlayiseki bya inthanete.",
+          "Ndhawu yo sungulela leyi hetisekeke eka murimi un'wana na un'wana. Kuma switirhisiwa swa nkoka mahala.",
         features: [
-          "Ku Lemuka Swisongo hi Nkarhi wa Xiviri",
-          "Nandziso wa Ku Languteka lowu Hlayisekeke",
-          "Vuhlayiseki bya Phishing",
-          "Nandziso wa Ku Languteka lowu Hlayisekeke",
+          "Nseketelo wa Nkarhi wa Xiviri (Voice Bot)",
+          "Ku Kumeka ka Switsotsi hi AI Handle ka Inthanete",
+          "Ku Averana hi Vaaki & Vutivi",
+          "Vutivi bya Mmaraka bya Xisekelo",
+        ],
+      },
+      enterprisePlan: {
+        price: "Rhambana Na Hina",
+        description:
+          "Switirhisiwa swo endliwa hi ku hlawuleka eka tikhampani ta vurimi, tikhoperativa, na mintlawa leyikulu.",
+        features: [
+          "Switirhisiwa Hinkwaswo swa Premium Plan",
+          "Vuhlahluvi na Swiviko swo Endliwa hi Ku Hlawuleka",
+          "Mufambisi wa Akaunti Loyi A Tikhomelaka",
+          "Nseketelo wa Priority wa 24/7",
+        ],
+      },
+      proPlan: {
+        price: "R50/n'hweti",
+        description:
+          "Eka varimi na tikhoperativa leti lavaka switirhisiwa swa le henhla na vutivi bya le hansi.",
+        features: [
+          "Switirhisiwa Hinkwaswo swa Basic Plan",
+          "Vuhlahluvi bya le Henhla & Vutivi bya Swimilana",
+          "Vutivi bya Mmaraka bya Subscription",
+          "Ku Fikelela eka AgriThinkHub ya Premium",
         ],
       },
     },
     getStartedSection: {
-      heading: "Pfula Vuhlayiseki Bya Wena Bya Digital",
+      heading: "Hlanganela eka Vaaki va AgriAssistSA",
       subHeading:
-        "Landzela nkongomiso wa hina lowu hatlisaka naswona u va na ntokoto wo languteka handle ka nkarhi.",
+        "Sungula hi AgriAssistSA hi swihlahla swin'wana swa ntsena. Swi olova, swa hatlisa, naswona swi akiwe hi ta wena.",
       steps: [
         {
-          step: "S/1",
-          subHeading: "Hlawula Xitlangu Xa Wena",
+          step: "01",
+          subHeading: "Tihlanganise & Hi Byela Hi Ta Purasi ra Wena",
           description:
-            "Hlawula pulani leyi faneleke vutomi bya wena bya inthanete. Basic hi ta swa nkoka, Pro hi ta matimba, Enterprise hi ta ku funengeta hi ku helela.",
+            "Vumba akaunti ya wena ya mahala u hi tivisa leswaku u rima yini na laha u kumekaka kona. Dizayini ya hina yi fambisana na ndhavuko hi swifaniso swo olova, rito, na mieyemo ya vukorhokeri lebyi olovaka eka munhu loyi a tirhisaka.",
         },
         {
-          step: "S/2",
-          subHeading: "Ku Hlamula Hi Ku Hatlisa",
+          step: "02",
+          subHeading: "Sungula Ku Tirhisa Switirhisiwa Swa Hina",
           description:
-            "Vumba akaonto ya wena hi swikati. Hi endla leswaku ku tsundzuka ku olova, leswaku u nga sungula ku tihlayisa hi ku hatlisa.",
+            "Kuma WhatsApp voice bot ya hina ku kuma vutlhari hi ku hatlisa, kumbe tirhisa ku kuma switsotsi hi AI handle ka inthanete ku rarolla swiphiqo emasin'wini ya wena.",
         },
         {
-          step: "S/3",
-          subHeading: "Faka & Aktivisa",
+          step: "03",
+          subHeading: "Hlanganela na Vaaki",
           description:
-            "Faka xandziso xa hina lexi olovaka kumbe app. Swi fana na swikhomelo swa vuvumburi, naswona vuhlayiseki bya wena byi kona – byi lunghekele ku hlayisa.",
+            "Tihlanganise na swichudeni na varimi van'wana eka AgriThinkHub ku averana hi mianakanyo, ku kuma switirhisiwa, na ku dyondza tindlela letintshwa.",
         },
         {
-          step: "S/4",
-          subHeading: "Vuhlayiseki Byo Olova",
+          step: "04",
+          subHeading: "Kurisa Hi Vutlhari, Kurisa Hi Matimba",
           description:
-            "Hi vuhlayiseki bya AI lebyi tlhariheke na vutivi lebyi vonakaka eka dashboard ya wena, tshama u hlayisekile handle ka ku va ngati ya vuhlayiseki bya inthanete. Hi endla ntirho lowu wukulu.",
+            "Hi AgriAssistSA, u ta kuma ku tiyela na ku endla xandla eka ikhonomi ya vurimi ya miganga leyi tiyeke, u tiyisisa nsirhelelo wa swakudya eka ndyangu wa wena na vaaki.",
         },
       ],
+    },
+    Footer: {
+      callToActionDescription:
+        "A hi vumbeni vumundzuku bya vurimi lebyi tiyeke swin'we.",
+      footerDescription:
+        "Sungula riendzo ra wena hi AgriAssistSA namuntlha. Rhambana na hina ku dyondza swo tala na a hi tirheni swin'we ku fikelela swikongomelo swa wena swa vurimi.",
+      Pagelinks: [
+        "Eka Kumba",
+        "Hi Ta Hina",
+        "Mintirho",
+        "Ndlandlametiso Wo Sungula",
+        "Rhambana",
+      ],
+      socialLinks: ["Instagram", "X", "Linkedin"],
+      Footprint: "Timfanelo Hinkwato Ti Sirheleriwile",
     },
   },
   {
     language: "Tshivenḓa",
     heroSection: {
-      headline: "Salani Phanda ha Khombo dza Cyber",
+      headline: "Ṱuṱuwedza Fama Yau, Alusa Vhumatshelo Hau",
       subHeadline:
-        "Ṱuṱuwedzani vhukona haṋu ha didzithali nga u sedza na u thusa nga tsireledzo ya cyber nga tshifhinga tsha nnete.",
-      callToAction: "Thomani",
+        "AgriAssistSA ndi tshigwada tshau tsha digital kha zwa vhulimi, i tshi shumisa zwishumiswa zwa AI na thikhedzo ya nangoho u thusa vhalimi vha maḓorobani na vha miṱunzi ya maḓorobani ngei Gauteng u alusa nga vhuṱali, nga maanḓa, na nga pfuno dzo engedzeaho. Ri khou vala gwaḓa vhukati ha vhalimi na mafhungo a vhulimi a a fulufhedzeaho.",
+      callToAction: "Thoma",
     },
     aboutSection: {
-      title: "NGA HA RINE",
-      whoWeAre: "Ri Vhonnyi: Ndaba yashu na ndivho yashu",
+      title: "NGA RIṋE",
+      whoWeAre: "Ri Vhonngana: Thaluso na Ndangulo Yanga",
       ourStory:
-        "Yo thomiwa nga tshigwada tsha vharati vha tsireledzo ya cyber, ro lavhelesa kha ṱhoḓea ine ya khou hula ya zwiko zwa tsireledzo ya nnete, zwine zwa khou tirhisea zwavhuḓi.\n\nLwendo lwashu lwo thoma nga pfunzo ya u sika zwishumiswa zwine zwa sa vhe fhedzi zwa u pfesesa khombo fhedzi zwa dovha zwa funza vhashumisi, zwa sika vhupo ha inthanete ho tsireledzeaho kha vhoṱhe.",
+        "Yo thewaho nga tshigwada tshi re na lutamo nga zwa ndugelo ya zwiḽiwa na u ṱuṱuwedzwa ha vhathu, AgriAssistSA yo sikiwa u vhaisa dzingaṱho dzo ṱangana na vhalimi vha maḓorobani, sa u vha na thivhelo kha u wana mafhungo a a fulufhedzeaho, u vha na ndaulo i si yone ya zwikhokhonono, na thengo dza zwirhange dza u sa fulufhedzea. Luendo lwa riṋe lwo thoma nga pfunzo ya pulatifomo ya u thoma ya mobile ye ya ṱuṱuwedza vhalimi u alusa kha lwa u vhaisa.",
       ourMission:
-        "U Ṱuṱuwedza vhashumisi nga zwishumiswa zwa tsireledzo ya cyber zwine zwa shuma zwavhuḓi na zwine zwa lelwa u shumiswa, u khwaṱhisedza mulalo wa muhumbulo kha shango lo vhambwaho nga maanḓa.",
+        "Ndangulo yashu ndi u vala gwaḓa vhukati ha vhalimi na thekhino ya vhulimi ya ndugelo nga u bveledza pulatifomo i re vhukati ha u pfana, ya lulimi lwo fhambanaho, na ya u thoma ya mobile ye ya ṱuṱuwedza vhalimi, ndugelo ya zwiḽiwa, na zwiṱalelo zwa vhulimi zwa fhethu hune ha vha na vhukati ha thekhino.",
       whyChooseUsSection: {
-        subtitle: "Ndi Ngani ni tshi ri Khetha?",
+        subtitle: "ZWISUMEDZO ZWE RA ZWI BVELEDZA",
         description:
-          "Shumisani maanḓa a AI u itela u khwaṱhisedza vhukoni haṋu kha web, u khwaṱhisedza uri ni fhike kha web nga u leluwa.",
+          "Ri mutekedzi wa vhulimi wa u thoma o livhiswaho kha ḓorobani, o no kona u shuma nga nḓila ya u sa thoma nga intaneti, wa lulimi lwo fhambanaho o no sikiwaho u ṱuṱuwedza vhalimi hune ha vha na thivhelo iṱu. Zwishumiswa zwa riṋe zwo fhaḓiwaho nga nḓila ya u vhaisana na nḓila ya vhukati, hu si nḓila ya u livhiswa kha ḓorobani.",
+      },
+      pricing: {
+        subtitle: "MANWANA A ALUSAKA NA WENA",
+        description:
+          "Thengo dza riṋe dzo sikiwa u vha dza theko iṱu na dza vhukati. Khetha manwana a a ṱanganelaho na vhutshilo hau na u vulela zwishumiswa zwi tshi ḓisa theko ya nangoho kha masimu au. Manwana ashu a freemium a bveledza zwithu zwa ndugelo mahala, na pfunzo dza premium dza vhane vha ṱoḓa u vha na thengedzo na vhuṱali ho engedzeaho.",
       },
     },
     services: [
       {
-        icon: "ShieldCheck",
-        heading: "U Lemoga Khombo nga Tshifhinga tsha Nnete",
+        icon: "Sprout",
+        heading: "Hyperlocal Focus",
         paragraph:
-          "Sedzani na u lemoga khombo dza cyber dzine dza nga vha hone musi dzi tshi bvelela, u khwaṱhisedza phindulo ya u ṱavhanya na u fhungudza.",
+          "Ri livhiswa nga nḓila yo livhaho kha u ṱuṱuwedza vhalimi vha maḓorobani na vha miṱunzi ya maḓorobani ngei Gauteng nga u thoma nga u alusa nga lwa vhukati ha shango. Hezwi zwi khwaṱhisa uri zwisumedzo zwa riṋe zwo lugiswaho kha vhutshilo hau vhuṱuṱuwedzaho.",
       },
       {
-        icon: "MailWarning",
-        heading: "Tsireledzo ya Phishing",
+        icon: "Mic",
+        heading: "WhatsApp Voice Bot Ya Lulimi Lwo Fhambanaho",
         paragraph:
-          "Lemogani na u thivhela maiteko a phishing, ni tshi tsireledza vhuḓidaba haṋu vhu vhukwaṱa kha vhashumi vhavhi.",
+          "Wana thikhedzo ya nangoho nga lulimi lu sa theko. Voice bot yashu i shuma nga isiZulu, Sepedi, Setswana, isiXhosa, na English, i tshi ita uri pulatifomo yashu i vhe vhukati ha u pfana na u pfana na vhoṱhe.",
       },
       {
-        icon: "Globe",
-        heading: "Ndandululo ya u Gundoṱa Yo Tsireledzeaho",
+        icon: "WifiOff",
+        heading:
+          "U Wanala Ha Zwikhokhonono Zwa AI Ndi Hone Hu Sa Vhe Na Intaneti",
         paragraph:
-          "Khaṱhisedzani vhuṱali haṋu ha u gundoṱa nga ndandululo yashu ine ya ni vhudza nga ha websaithi na zwi download zwine zwa sa tsireledzei.",
+          "Wana vhulwadzi ha zwimela nga nḓila yo livhaho, na nga u sa vhe na kgokagano ya intaneti. Zwishumiswa zwa riṋe zwa AI zwi shuma nga u sa vhe na intaneti uri u kone u wana mafhungo e u a ṱoḓaho, musi u tshi a ṱoḓa.",
       },
       {
-        icon: "Key",
-        heading: "U Vhambedza Tsireledzo ya Phasewede",
+        icon: "GraduationCap",
+        heading: "AgriThinkHub: U Sika Zwithu Zwiṱuku Nga Vhuswa",
         paragraph:
-          "Ṱahisani maanḓa a phasewede dzaṋu nahone ni wane nyelelo dza u khwaṱhisedza tsireledzo ya akhaunthu yaṋu.",
+          "Ri khou livhisa vhafunzi vha vhuswa na vhalimi u sika zwithu zwiṱuku nga u tevhedza nḓila yo bveledzwaho. Hezwi zwi vha kha tshiphiri tsha vhaswa-vhana-vhalimi hune mafhungo maswa na nḓila dzo fhambanaho dza vha dza u fana na u edzwa.",
       },
       {
-        icon: "BookOpen",
-        heading: "Tsireledzo ya Cyber Education Hub",
+        icon: "Store",
+        heading: "Thengo Dza Zwirhange Dza Nangoho",
         paragraph:
-          "Fhelekedzani vhuvhuthi ha zwishumiswa na thuto u itela u dzula ni na ndivho nga ha maitele avhuḓi a tsireledzo ya inthanete.",
+          "Wana mafhungo a thengo dza zwirhange a a fulufhedzeaho na u thivhela thengo dza u sa fulufhedzea. Vharengisi vha fhethu na vhaṅwe vha vhulimi vha nga dovha vha ḓiṅwalisa u wana mafhungo aya a thengo dza zwirhange a a theko.",
+      },
+      {
+        icon: "Handshake",
+        heading: "Makhonani A Zwishumiswa Zwa Vhulimi",
+        paragraph:
+          "Ri khou livhisa nga nḓila yo livhaho vhavhukesi vha zwishumiswa zwa vhulimi nga pulatifomo yashu, ri tshi u thusa u wana zwishumiswa zwe u zwi ṱoḓaho u alusa.",
       },
     ],
     Pricing: {
-      proPlan: {
-        price: "R120",
-        description:
-          "Yo vhumbiwa kha dzaibisindisi nḓuku dzi ṱoḓaho zwiko zwa tsireledzo zwo khwaṱhiswaho.",
-        features: [
-          "Zwiko zwoṱhe kha Basic Plan",
-          "U Vhambedza Tsireledzo ya Phasewede",
-          "Tsireledzo ya Cyber Education Hub",
-          "Thuseledzo ya U Vhuedzedza",
-        ],
-      },
-      enterprisePlan: {
-        price: "R100",
-        description: "Zwiko zwa tsireledzo zwo fhelelaho zwa mithelo mikulu.",
-        features: [
-          "Zwiko zwoṱhe kha Pro Plan",
-          "Zwiko zwa Tsireledzo Zwo Itevhedzwaho",
-          "Maneja wa Akhaunthu O Itevhedzwaho",
-          "Thuseledzo ya 24/7",
-        ],
-      },
       basicPlan: {
         price: "Mahala",
         description:
-          "I fanela vhathu vhane vha ṱoḓa zwishumiswa zwa tsireledzo ya cyber zwa ndeme.",
+          "Ndivho ya u thoma yo lugaho kha muvhulimi naho e nnyi. Wana zwishumiswa zwa ndugelo mahala.",
         features: [
-          "U Lemoga Khombo nga Tshifhinga tsha Nnete",
-          "Ndandululo ya u Gundoṱa Yo Tsireledzeaho",
-          "Tsireledzo ya Phishing",
-          "Ndandululo ya u Gundoṱa Yo Tsireledzeaho",
+          "Thikhedzo Ya Nangoho (Voice Bot)",
+          "U Wanala Ha Zwikhokhonono Zwa AI Ndi Hone Hu Sa Vhe Na Intaneti",
+          "U Fhanela Ha Vhathu & Nḓivho",
+          "Mafhungo A Zwirhange A Ndugelo",
+        ],
+      },
+      enterprisePlan: {
+        price: "Kopana Na Riṋe",
+        description:
+          "Zwishumiswa zwo lugiswaho kha vhulimi, zwa u vha na makhonani, na mitambo mikulu.",
+        features: [
+          "Zwishumiswa zwoṱhe zwa Manwana a Premium",
+          "U Khwaṱhisa Zwa U Lugisa & U Khwaṱhisa",
+          "Mulauli wa Akhaunt wa Dedikhethed",
+          "24/7 Thikhedzo Ya Nguvho",
+        ],
+      },
+      proPlan: {
+        price: "R50/ṅwedzi",
+        description:
+          "Kha vhalimi na vha u vha na makhonani vhane vha ṱoḓa zwishumiswa zwo engedzeaho na vhuṱali ho engedzeaho.",
+        features: [
+          "Zwishumiswa zwoṱhe zwa Manwana a Basic",
+          "U Khwaṱhisa Zwa U Lugisa & Mafhungo A Zwimela",
+          "U Ḓiṅwalisa Kha Mafhungo A Zwirhange",
+          "U Swikela Kha AgriThinkHub Ya Premium",
         ],
       },
     },
     getStartedSection: {
-      heading: "Vula Tsireledzo Yaṋu Ya Dijithali",
+      heading: "Vha Kha Vhukati Ha Vhathu Vha AgriAssistSA",
       subHeading:
-        "Teledzani nyeletshedzo yashu yo ṱavhanyaho nahone ni wane vhuṱali ha u gundoṱa hu si na u vhilaela.",
+        "Thoma nga AgriAssistSA nga thabelo ṱuku. Ndi zwiṱuku, zwi a fhedza, na zwo fhaḓiwaho nga u vha na wena.",
       steps: [
         {
-          step: "S/1",
-          subHeading: "Khetha Tshivhulelo Tshaṋu",
+          step: "01",
+          subHeading: "Ḓiṅwalisa & Ri Vhudze Nga Fama Yau",
           description:
-            "Khetha phulane yo teaho ine ya pfana na vhutshilo haṋu ha inthanete. Basic ya zwa ndeme, Pro ya maanḓa, Enterprise ya u fukedza zwoṱhe.",
+            "Sika akhaunt yau ya mahala u ri ḓivhadza uri u khou lima mini na uri u ngafhi. Design yashu yo livhisa nga nḓila ya u vha na pfunzo na zwifanyiso zwiṱuku, thethavhudziso, na emojis dza u vha na vhutshilo vhu sa vhaisa.",
         },
         {
-          step: "S/2",
-          subHeading: "U Vhea Kha Thikho Nga U Ṱavhanya",
+          step: "02",
+          subHeading: "Thoma U Shumisa Zwishumiswa Zwashu",
           description:
-            "Sikani akhaunthu yaṋu nga u ṱavhanya. Ri ita uri u ṅwalisa hu vhe ha u ṱavhanya, uri ni kone u thoma u ḓitsireledza nga u ṱavhanya.",
+            "Wana WhatsApp voice bot yashu kha u wana nyeletshedzo ya nangoho, kana shumisa u wana zwikhokhonono zwa AI nga u sa vhe na intaneti u vhaisa thaidzo kha masimu au.",
         },
         {
-          step: "S/3",
-          subHeading: "Vhea & Shomisa",
+          step: "03",
+          subHeading: "Kopana Na Vhathu",
           description:
-            "Vheani na u shomisa vhufhinduleli vhu bobebe kana app yaṋu. Ni a tshenuwa, nahone tsireledzo yaṋu i kha ḓi shuma – yo vhiledzela u tsireledza.",
+            "Vha kha vhukati ha vhafunzi na vhalimi vhaṅwe kha AgriThinkHub u fhanana nga mafhungo, u wana zwisumedzo, na u guda nḓila ntswa.",
         },
         {
-          step: "S/4",
-          subHeading: "Tsireledzo I Sa Netisaho",
+          step: "04",
+          subHeading: "Alusa Nga Vhuṱali, Alusa Nga Maanḓa",
           description:
-            "Nga tsireledzo ya AI ya vhuṱali na vhuṱali vhu pfalaho kha dashboard yaṋu, ni dzula no tsireledzea hu si na u vha tsetsebi ya tsireledzo ya inthanete. Ri ita mushumo muhulu.",
+            "Nga AgriAssistSA, u ḓo wana vhulimi na u fhanana nga u vha na vhulimi ha fhethu huṱuṱuwedzaho, u tshi khwaṱhisa ndugelo ya zwiḽiwa kha muṱa wau na vhathu.",
         },
       ],
+    },
+    Footer: {
+      callToActionDescription:
+        "Nga ri fhaḓe vhumatshelo ha vhulimi ho thewaho nga u vha vhukati ha thethavhudziso.",
+      footerDescription:
+        "Thoma luendo lwau na AgriAssistSA ṋamusi. Kopana na riṋe u guda zwo engedzeaho na nga ri shume nga u vha vhukati ha thethavhudziso u swikela kha zwipikwa zwau zwa vhulimi.",
+      Pagelinks: [
+        "Hayani",
+        "Nga Riṋe",
+        "Zwishumiswa",
+        "Nḓila Ya U Thoma",
+        "Kopana",
+      ],
+      socialLinks: ["Instagram", "X", "Linkedin"],
+      Footprint: "Mfanelo Dzoṱhe Dzo Bolokwa",
     },
   },
   {
     language: "Afrikaans",
     heroSection: {
-      headline: "Bly Voor Cyberbedreigings",
+      headline: "Bemagtig Jou Plaas, Kweek Jou Toekoms",
       subHeadline:
-        "Bemagtig jou digitale teenwoordigheid met intydse kuberveiligheidsmonitering en bystand.",
-      callToAction: "Begin",
+        "AgriAssistSA is jou digitale landbou-metgesel, wat KI-gereedskap en intydse ondersteuning gebruik om township- en peri-urbane boere in Gauteng te help om slimmer, sterker en meer winsgewend te groei. Ons oorbrug die gaping tussen boere en betroubare landbou-inligting.",
+      callToAction: "Begin Nou",
     },
     aboutSection: {
       title: "OOR ONS",
-      whoWeAre: "Wie ons is: Ons storie en missie",
+      whoWeAre: "Wie Ons Is: Ons Storie en Missie",
       ourStory:
-        "Gestig deur 'n span kuberveiligheidsentoesiaste, het ons die groeiende behoefte aan intydse, gebruikersvriendelike sekuriteitsoplossings erken.\n\nOns reis het begin met die visie om instrumente te skep wat nie net bedreigings opspoor nie, maar ook gebruikers opvoed, en sodoende 'n veiliger aanlyn omgewing vir almal bevorder.",
+        "Gestig deur 'n span wat passievol is oor voedselsekerheid en gemeenskapsbemagtiging, is AgriAssistSA geskep om die uitdagings wat township-boere in die gesig staar, soos beperkte toegang tot betroubare inligting, swak plaagbeheer en onbillike markpryse, aan te spreek. Ons reis het begin met die visie van 'n mobiel-eerste platform wat boere bemagtig om te floreer in 'n uitdagende landskap.",
       ourMission:
-        "Om gebruikers te bemagtig met proaktiewe kuberveiligheidsinstrumente wat beide effektief en maklik is om te gebruik, en sodoende gemoedsrus in 'n toenemend gekoppelde wêreld te verseker.",
+        "Ons missie is om die gaping tussen boere en noodsaaklike landbou-tegnologie te oorbrug deur 'n toeganklike, veeltalige en mobiel-eerste platform te verskaf wat boer-veerkragtigheid, voedselsekerheid en plaaslike landbou-ekonomieë verhoog.",
       whyChooseUsSection: {
-        subtitle: "Hoekom Kies Ons?",
+        subtitle: "OPLOSSINGS WAT ONS VERSKAF",
         description:
-          "Gebruik die krag van KI om jou ervaring op die web te optimaliseer, en verseker dat jy die web met gemak kan verken.",
+          "Ons is die eerste township-gefokusde, vanlyn-begaafde, veeltalige landbou-metgesel wat ontwerp is om boere te bemagtig waar die behoefte die grootste is. Ons gereedskap is gebou vir jou werklikheid, nie 'n stedelike-gesentreerde een nie.",
+      },
+      pricing: {
+        subtitle: "PLANNE WAT SAAM MET JOU GROEI",
+        description:
+          "Ons pryse is ontwerp om bekostigbaar en impakvol te wees. Kies 'n plan wat aan jou behoeftes voldoen en gereedskap ontsluit wat werklike waarde vir jou lande bring. Ons 'freemium'-model bied basiese funksies gratis, met premium opsies vir diegene wat gevorderde analise en insigte wil hê.",
       },
     },
     services: [
       {
-        icon: "ShieldCheck",
-        heading: "Intydse Bedreigingbespeuring",
+        icon: "Sprout",
+        heading: "Hiperlokale Fokus",
         paragraph:
-          "Monitor en identifiseer potensiële kuberveiligheidsbedreigings soos dit voorkom, en verseker onmiddellike reaksie en versagting.",
+          "Ons is spesifiek gefokus op die bemagtiging van Gauteng se township- en peri-urbane boere voordat ons nasionaal skaal. Dit verseker dat ons oplossings op jou unieke behoeftes aangepas is.",
       },
       {
-        icon: "MailWarning",
-        heading: "Uitvissing (Phishing) Beskerming",
+        icon: "Mic",
+        heading: "Veeltalige WhatsApp Stem Bot",
         paragraph:
-          "Bespeur en blokkeer uitvissingpogings, en beskerm jou sensitiewe inligting teen kwaadwillige akteurs.",
+          "Kry intydse ondersteuning in jou voorkeurtaal. Ons stem-bot werk in isiZulu, Sepedi, Setswana, IsiXhosa, en Engels, wat ons platform toeganklik en inklusief maak.",
       },
       {
-        icon: "Globe",
-        heading: "Veilige Blaai-uitbreiding",
+        icon: "WifiOff",
+        heading: "Vanlyn KI Plaagopsporing",
         paragraph:
-          "Verbeter jou blaai-ervaring met ons uitbreiding wat jou waarsku vir onveilige webwerwe en aflaaie.",
+          "Diagnoseer gewassiekte onmiddellik, selfs sonder 'n internetverbinding. Ons KI-gereedskap werk vanlyn sodat jy die inligting wat jy benodig, kan kry, wanneer jy dit benodig.",
       },
       {
-        icon: "Key",
-        heading: "Wagwoordsekuriteitsanalise",
+        icon: "GraduationCap",
+        heading: "AgriThinkHub: Jeug Saam-skepping",
         paragraph:
-          "Evalueer die sterkte van jou wagwoorde en ontvang aanbevelings om jou rekeningsekuriteit te verbeter.",
+          "Ons verbind studente-innoveerders met boere om saam oplossings te skep. Hierdie jeug-student-boer-pyplyn is 'n sentrum waar nuwe idees en tegnieke gedeel en getoets word.",
       },
       {
-        icon: "BookOpen",
-        heading: "Kuberveiligheidsopvoedingsentrum",
+        icon: "Store",
+        heading: "Intydse Markpryse",
         paragraph:
-          "Kry toegang tot 'n magdom hulpbronne en tutoriale om op hoogte te bly van beste praktyke in aanlyn sekuriteit.",
+          "Kry toegang tot betroubare markprys-inligting en vermy onbillike pryse. Plaaslike verskaffers en landboubesighede kan ook inteken vir toegang tot hierdie waardevolle markinsigte.",
+      },
+      {
+        icon: "Handshake",
+        heading: "Landbou-insette Vennootskappe",
+        paragraph:
+          "Ons verbind jou direk met landbou-insette verskaffers deur ons platform, wat jou help om die gereedskap wat jy nodig het om te groei te kry.",
       },
     ],
     Pricing: {
-      proPlan: {
-        price: "R120",
-        description:
-          "Ontwerp vir klein besighede wat gevorderde sekuriteitskenmerke benodig.",
-        features: [
-          "Alle kenmerke in Basiese Plan",
-          "Wagwoordsekuriteitsanalise",
-          "Kuberveiligheidsopvoedingsentrum",
-          "Prioriteitsondersteuning",
-        ],
-      },
-      enterprisePlan: {
-        price: "R100",
-        description: "Omvattende sekuriteitsoplossings vir groot organisasies.",
-        features: [
-          "Alle kenmerke in Pro Plan",
-          "Aangepaste Sekuriteitsoplossings",
-          "Toegewyde Rekeningbestuurder",
-          "24/7 Ondersteuning",
-        ],
-      },
       basicPlan: {
         price: "Gratis",
         description:
-          "Ideaal vir individue wat noodsaaklike kuberveiligheidsinstrumente soek.",
+          "Die perfekte beginpunt vir enige boer. Kry noodsaaklike gereedskap teen geen koste nie.",
         features: [
-          "Intydse Bedreigingbespeuring",
-          "Veilige Blaai-uitbreiding",
-          "Uitvissing (Phishing) Beskerming",
-          "Veilige Blaai-uitbreiding",
+          "Intydse Ondersteuning (Stem Bot)",
+          "Vanlyn KI Plaagopsporing",
+          "Gemeenskap & Kennisdeling",
+          "Basiese Markinsigte",
+        ],
+      },
+      enterprisePlan: {
+        price: "Kontak Ons",
+        description:
+          "Pasgemaakte oplossings vir landboubesighede, koöperasies en groot organisasies.",
+        features: [
+          "Alle funksies van die Premium Plan",
+          "Aangepaste Analise & Verslagdoening",
+          "Toegewyde Rekeningbestuurder",
+          "24/7 Prioriteit Ondersteuning",
+        ],
+      },
+      proPlan: {
+        price: "R50/maand",
+        description:
+          "Vir boere en koöperasies wat gevorderde gereedskap en dieper insigte soek.",
+        features: [
+          "Alle funksies van die Basiese Plan",
+          "Gevorderde Analise & Gewasinsigte",
+          "Markinsigte-inskrywing",
+          "Premium AgriThinkHub Toegang",
         ],
       },
     },
     getStartedSection: {
-      heading: "Ontsluit Jou Digitale Sekuriteit",
-      subHeading: "Volg ons vinnige gids en ervaar sorgvrye blaaiery.",
+      heading: "Sluit Aan by die AgriAssistSA Gemeenskap",
+      subHeading:
+        "Begin met AgriAssistSA in slegs 'n paar stappe. Dit is eenvoudig, vinnig en vir jou gebou.",
       steps: [
         {
-          step: "S/1",
-          subHeading: "Kies Jou Skild",
+          step: "01",
+          subHeading: "Teken In en Vertel Ons van Jou Plaas",
           description:
-            "Kies die perfekte plan wat by jou aanlyn lewe pas. Basies vir noodsaaklikhede, Pro vir krag, Onderneming vir totale dekking.",
+            "Skep jou gratis rekening en laat ons weet wat jy verbou en waar jy geleë is. Ons ontwerp is kultureel in lyn met eenvoudige ikone, oudio en emosiekone wat aangepas is vir plaaslike gebruikers.",
         },
         {
-          step: "S/2",
-          subHeading: "Vinnige Opstelling",
+          step: "02",
+          subHeading: "Begin Ons Gereedskap Gebruik",
           description:
-            "Skep jou rekening in 'n oogwink. Ons maak registrasie vinnig, sodat jy dadelik kan begin beskerm.",
+            "Kry toegang tot ons WhatsApp stem-bot vir onmiddellike raad, of gebruik die vanlyn KI plaagopsporing om probleme op jou lande op te los.",
         },
         {
-          step: "S/3",
-          subHeading: "Aktiveer & Begin",
+          step: "03",
+          subHeading: "Verbind Met die Gemeenskap",
           description:
-            "Installeer ons liggewig uitbreiding of app. Net 'n paar klieks, en jou beskerming is lewendig – gereed om te verdedig.",
+            "Skakel met studente en ander boere in die AgriThinkHub om idees te deel, oplossings te vind en nuwe tegnieke te leer.",
         },
         {
-          step: "S/4",
-          subHeading: "Moeitelose Beskerming",
+          step: "04",
+          subHeading: "Groei Slimmer, Groei Sterker",
           description:
-            "Met intelligente KI en duidelike insigte op jou paneelbord, bly veilig sonder om 'n kuberveiligheidskenner te word. Ons doen die swaar werk.",
+            "Met AgriAssistSA sal jy veerkragtigheid verkry en bydra tot 'n sterker plaaslike landbou-ekonomie, wat voedselsekerheid vir jou huishouding en gemeenskap verseker.",
         },
       ],
+    },
+    Footer: {
+      callToActionDescription:
+        "Kom ons vorm saam die toekoms van volhoubare boerdery.",
+      footerDescription:
+        "Begin vandag jou boerderyreis met AgriAssistSA. Kontak ons om meer te leer en laat ons saamwerk om jou boerderydoelwitte te bereik.",
+      Pagelinks: ["Tuis", "Oor Ons", "Dienste", "Hoe Om te Begin", "Kontak"],
+      socialLinks: ["Instagram", "X", "Linkedin"],
+      Footprint: "Alle Regte Voorbehou",
+    },
+  },
+  {
+    language: "SiSwati",
+    heroSection: {
+      headline: "Nika Amandla Ipulazi Lakho, Khulisa Ikusasa Lakho",
+      subHeadline:
+        "I-AgriAssistSA ingumsizi wakho wezolimo wedijithali, osebenzisa amathuluzi e-AI nokwesekwa kwesikhathi sangempela ukusiza abalimi basemakhaya nasemadolobheni aseGauteng ukuthi balime ngobuchule, ngamandla, nangenzuzo. Sihlanganisa igebe phakathi kwabalimi nolwazi oluthembekile lwezolimo.",
+      callToAction: "Qalisa",
+    },
+    aboutSection: {
+      title: "NGATHI",
+      whoWeAre: "Singobani: Indaba Yethu Nomgomo Wethu",
+      ourStory:
+        "Isungulwe ithimba elinothando lokuphepha kokudla kanye nokunika amandla umphakathi, i-AgriAssistSA yakhelwe ukubhekana nezinselele ezibhekene nabalimi basemakhaya, njengokungafinyeleli olwazini oluthembekile, ukulawulwa okungekuhle kwezinambuzane, nezintengo zemakethe ezingalungile. Uhambo lwethu lwaqala ngombono wesikhulumi esiphambili seselula esinika amandla abalimi ukuthi baphumelele esimweni esiyinselele.",
+      ourMission:
+        "Umgomo wethu uwukuhlanganisa igebe phakathi kwabalimi nobuchwepheshe bezolimo obubalulekile ngokunikeza isikhulumi esifinyelelekayo, esilwimi oluningi, neselula esikhuthaza ukukhuthazela kwabalimi, ukuphepha kokudla, kanye nomnotho wezolimo wendawo.",
+      whyChooseUsSection: {
+        subtitle: "IZIXAZULULO ESIZIHLABHULAYO",
+        description:
+          "Singumsizi wokuqala wezolimo ogxile emakhaya, okwazi ukusebenza ngaphandle kwe-intanethi, onezilimi eziningi oklanyelwe ukunika amandla abalimi lapho isidingo sikhulu kakhulu. Amathuluzi ethu akhelwe isimo sakho sangempela, hhayi esigxile emadolobheni.",
+      },
+      pricing: {
+        subtitle: "AMAHLELO AKHULA NAWE",
+        description:
+          "Intengo yethu yakhelwe ukuthi ibe nokwethengeka futhi ibe nomthelela. Khetha uhlelo oluhlangabezana nezidingo zakho futhi uvule amathuluzi aletha inani langempela emasimini akho. Imodeli yethu ye-freemium ihlinzeka ngezici eziyisisekelo mahhala, ngezinketho ze-premium zalabo abafuna ukuhlaziywa okuthuthukile nemininingwane.",
+      },
+    },
+    services: [
+      {
+        icon: "Sprout",
+        heading: "Ukugxila Kwasendaweni",
+        paragraph:
+          "Sigxile ngqo ekunika amandla abalimi basemakhaya nasemadolobheni aseGauteng ngaphambi kokukala ezweni lonke. Lokhu kuqinisekisa ukuthi izixazululo zethu zenzelwe izidingo zakho eziyingqayizivele.",
+      },
+      {
+        icon: "Mic",
+        heading: "I-Multilingual WhatsApp Voice Bot",
+        paragraph:
+          "Thola ukwesekwa kwesikhathi sangempela ngolimi olukhethayo. I-voice bot yethu isebenza ngesiZulu, Sepedi, Setswana, IsiXhosa, nesiNgisi, okwenza isikhulumi sethu sifinyeleleke futhi sifake wonke umuntu.",
+      },
+      {
+        icon: "WifiOff",
+        heading: "I-Offline AI Pest Detection",
+        paragraph:
+          "Thola izifo zezitshalo ngokushesha, ngisho nangaphandle kokuxhuma ku-inthanethi. Ithuluzi lethu le-AI lisebenza ngaphandle kwe-intanethi ukuze uthole ulwazi oludingayo, uma uludinga.",
+      },
+      {
+        icon: "GraduationCap",
+        heading: "I-AgriThinkHub: Ukudalwa Kwentsha",
+        paragraph:
+          "Sixhumanisa abasunguli abafundi nabalimi ukuze badale izixazululo ngokubambisana. Le nhlanganisela yentsha-umfundi-umlami iyisikhungo lapho kwabelwana khona ngemibono emisha namasu.",
+      },
+      {
+        icon: "Store",
+        heading: "Izintengo Zemakethe Zesikhathi Sangempela",
+        paragraph:
+          "Finyelela olwazini lwentengo yemakethe oluthembekile futhi ugweme izintengo ezingalungile. Abathengisi bendawo nama-agribusiness nawo angafaka isandla ukuze afinyelele kule mininingwane yemakethe ebalulekile.",
+      },
+      {
+        icon: "Handshake",
+        heading: "Agri-Input Partnerships",
+        paragraph:
+          "Sixhumanisa wena ngqo nabahlinzeki be-agri-input ngesikhulumi sethu, sikusize uthole amathuluzi owadingayo ukuze ukhule.",
+      },
+    ],
+    Pricing: {
+      basicPlan: {
+        price: "Mahhala",
+        description:
+          "Indawo yokuqala ephelele kunoma yimuphi umlimi. Thola amathuluzi abalulekile mahhala.",
+        features: [
+          "Ukwesekwa Kwesikhathi Sangempela (Voice Bot)",
+          "I-Offline AI Pest Detection",
+          "Ukwabelana Ngomphakathi Nolwazi",
+          "Imininingwane Eyisisekelo Yemakethe",
+        ],
+      },
+      enterprisePlan: {
+        price: "Xhumana Nathi",
+        description:
+          "Izixazululo ezenziwe ngokwezifiso zama-agribusinesses, izinhlangano, nezinhlangano ezinkulu.",
+        features: [
+          "Zonke izici ezivela ku-Premium Plan",
+          "Ukuhlaziywa Okwenziwe Ngokwezifiso & Ukubika",
+          "Umphathi We-Akhawunti Ozimele",
+          "24/7 Ukwesekwa Kwababalulekile",
+        ],
+      },
+      proPlan: {
+        price: "R50/ngenyanga",
+        description:
+          "Kuwabalimi nezinhlangano ezifuna amathuluzi athuthukile nemininingwane ejulile.",
+        features: [
+          "Zonke izici ezivela ku-Basic Plan",
+          "Ukuhlaziywa Okuthuthukile Kwezitshalo & Imininingwane Yezitshalo",
+          "I-Store Insights Subscription",
+          "I-Premium AgriThinkHub Access",
+        ],
+      },
+    },
+    getStartedSection: {
+      heading: "Joyina Umphakathi we-AgriAssistSA",
+      subHeading:
+        "Qalisa nge-AgriAssistSA ngezinyathelo ezimbalwa nje. Kulula, kuyashesha, futhi kwakhelwe wena.",
+      steps: [
+        {
+          step: "01",
+          subHeading: "Bhalisa & Sitshele Ngepulazi Lakho",
+          description:
+            "Dala i-akhawunti yakho yamahhala futhi usazise ukuthi ulimani nokuthi ukuphi. Umklamo wethu uhambisana namasiko ngezithonjana ezilula, umsindo, nama-emoji ukuze uthole isipiliyoni esisebenziseka kalula.",
+        },
+        {
+          step: "02",
+          subHeading: "Qalisa Ukusebenzisa Amathuluzi Ethu",
+          description:
+            "Finyelela i-WhatsApp voice bot yethu ukuze uthole iseluleko esisheshayo, noma usebenzise i-offline AI pest detection ukuze uxazulule izinkinga emasimini akho.",
+        },
+        {
+          step: "03",
+          subHeading: "Xhumana Nomphakathi",
+          description:
+            "Hlanganyela nabafundi nabanye abalimi ku-AgriThinkHub ukuze nabelane ngemibono, bathole izixazululo, futhi bafunde amasu amasha.",
+        },
+        {
+          step: "04",
+          subHeading: "Lima Ngobuchule, Lima Ngamandla",
+          description:
+            "Nge-AgriAssistSA, uzothola ukukhuthazela futhi unikele emnothweni wezolimo wendawo oqinile, uqinisekise ukuphepha kokudla emndenini wakho nasemphakathini.",
+        },
+      ],
+    },
+    Footer: {
+      callToActionDescription: "Asishape ikusasa lezolimo ezisimeme ndawonye.",
+      footerDescription:
+        "Qalisa uhambo lwakho nge-AgriAssistSA namuhla. Xhumana nathi ukuze ufunde kabanzi futhi sisebenze ndawonye ukuze sifinyelele izinhloso zakho zokulima.",
+      Pagelinks: [
+        "Ikhaya",
+        "Ngathi",
+        "Izinsizakalo",
+        "Ungaqalisa Kanjani",
+        "Xhumana Nathi",
+      ],
+      socialLinks: ["Instagram", "X", "Linkedin"],
+      Footprint: "Wonke Amalungelo Agodliwe",
     },
   },
   {
     language: "IsiNdebele",
     heroSection: {
-      headline: "Hlala Phambili Ezinsongweni Zobulelesi Besi-inthanethi",
+      headline: "Nika Amandla Ipulazi Lakho, Khulisa Ikusasa Lakho",
       subHeadline:
-        "Nika amandla ukuba khona kwakho kwedijithali ngokuhlola nangosizo lwe-cybersecurity ngesikhathi sangempela.",
-      callToAction: "Thoma",
+        "I-AgriAssistSA ingumsizi wakho wezolimo wedijithali, osebenzisa amathuluzi e-AI nokwesekwa kwesikhathi sangempela ukusiza abalimi basemakhaya nasemadolobheni aseGauteng ukuthi balime ngobuchule, ngamandla, nangenzuzo. Sihlanganisa igebe phakathi kwabalimi nolwazi oluthembekile lwezolimo.",
+      callToAction: "Qalisa",
     },
     aboutSection: {
       title: "NGATHI",
-      whoWeAre: "Singobani: Indaba yethu nomgomo wethu",
+      whoWeAre: "Singobani: Indaba Yethu Nomgomo Wethu",
       ourStory:
-        "Yasungulwa lithimba labathandi bezokuphepha kwe-inthanethi, sabona isidingo esikhulayo sezixazululo zokuphepha zesikhathi sangempela, ezisebenziseka kalula.\n\nUhambo lwethu lwaqala ngombono wokudala amathuluzi angatholi nje kuphela izinsongo kodwa futhi afundise abasebenzisi, akhe indawo ephephile ye-inthanethi kubo bonke.",
+        "Isungulwe lithimba elinothando lokuphepha kokudla kanye nokunika amandla umphakathi, i-AgriAssistSA yakhelwe ukubhekana nezinselele ezibhekene nabalimi basemakhaya, njengokungafinyeleli olwazini oluthembekile, ukulawulwa okungekuhle kwezinambuzane, nezintengo zemakethe ezingalungile. Uhambo lwethu lwaqala ngombono wesikhulumi esiphambili seselula esinika amandla abalimi ukuthi baphumelele esimweni esiyinselele.",
       ourMission:
-        "Ukunika abasebenzisi amandla ngamathuluzi e-cybersecurity asebenzayo futhi alula ukuwasebenzisa, aqinisekise ukuthula kwengqondo ezweni elixhumene kakhulu.",
+        "Umgomo wethu uwukuhlanganisa igebe phakathi kwabalimi nobuchwepheshe bezolimo obubalulekile ngokunikeza isikhulumi esifinyelelekayo, esilwimi oluningi, neselula esikhuthaza ukukhuthazela kwabalimi, ukuphepha kokudla, kanye nomnotho wezolimo wendawo.",
       whyChooseUsSection: {
-        subtitle: "Kungani Usikhetha?",
+        subtitle: "IZIXAZULULO ESIZIHLABHULAYO",
         description:
-          "Sebenzisa amandla e-AI ukuze uthuthukise isipiliyoni sakho kuwebhu, uqinisekise ukuthi ungahlola iwebhu kalula.",
+          "Singumsizi wokuqala wezolimo ogxile emakhaya, okwazi ukusebenza ngaphandle kwe-intanethi, onezilimi eziningi oklanyelwe ukunika amandla abalimi lapho isidingo sikhulu kakhulu. Amathuluzi ethu akhelwe isimo sakho sangempela, hhayi esigxile emadolobheni.",
+      },
+      pricing: {
+        subtitle: "AMAHLELO AKHULA NAWE",
+        description:
+          "Intengo yethu yakhelwe ukuthi ibe nokwethengeka futhi ibe nomthelela. Khetha uhlelo oluhlangabezana nezidingo zakho futhi uvule amathuluzi aletha inani langempela emasimini akho. Imodeli yethu ye-freemium ihlinzeka ngezici eziyisisekelo mahhala, ngezinketho ze-premium zalabo abafuna ukuhlaziywa okuthuthukile nemininingwane.",
       },
     },
     services: [
       {
-        icon: "ShieldCheck",
-        heading: "Ukuthola Izinsongo Ngesikhathi Sangempela",
+        icon: "Sprout",
+        heading: "Ukugxila Kwasendaweni",
         paragraph:
-          "Qapha futhi uhlonze izinsongo ezingaba khona zobulelesi besi-inthanethi njengoba zenzeka, uqinisekise impendulo esheshayo nokunciphisa.",
+          "Sigxile ngqo ekunika amandla abalimi basemakhaya nasemadolobheni aseGauteng ngaphambi kokukala ezweni lonke. Lokhu kuqinisekisa ukuthi izixazululo zethu zenzelwe izidingo zakho eziyingqayizivele.",
       },
       {
-        icon: "MailWarning",
-        heading: "Ukuvikela Ubugebengu Bobucwebecwebe",
+        icon: "Mic",
+        heading: "I-Multilingual WhatsApp Voice Bot",
         paragraph:
-          "Thola futhi uvimbele imizamo yobugebengu bobucwebecwebe, uvikele imininingwane yakho ebucayi kubantu ababi.",
+          "Thola ukwesekwa kwesikhathi sangempela ngolimi olukhethayo. I-voice bot yethu isebenza ngesiZulu, Sepedi, Setswana, IsiXhosa, nesiNgisi, okwenza isikhulumi sethu sifinyeleleke futhi sifake wonke umuntu.",
       },
       {
-        icon: "Globe",
-        heading: "Isandiso Sokuphepha Sokuphequlula",
+        icon: "WifiOff",
+        heading: "I-Offline AI Pest Detection",
         paragraph:
-          "Thuthukisa isipiliyoni sakho sokuphequlula ngesandiso sethu esikwazisa ngamawebhusayithi angafanelekile nokulandiwe.",
+          "Thola izifo zezitshalo ngokushesha, ngisho nangaphandle kokuxhuma ku-inthanethi. Ithuluzi lethu le-AI lisebenza ngaphandle kwe-intanethi ukuze uthole ulwazi oludingayo, uma uludinga.",
       },
       {
-        icon: "Key",
-        heading: "Ukuhlaziya Ukuphepha Kwephasiwedi",
+        icon: "GraduationCap",
+        heading: "I-AgriThinkHub: Ukudalwa Kwentsha",
         paragraph:
-          "Hlola amandla wamaphasiwedi akho futhi uthole izincomo zokuthuthukisa ukuphepha kwe-akhawunti yakho.",
+          "Sixhumanisa abasunguli abafundi nabalimi ukuze badale izixazululo ngokubambisana. Le nhlanganisela yentsha-umfundi-umlami iyisikhungo lapho kwabelwana khona ngemibono emisha namasu.",
       },
       {
-        icon: "BookOpen",
-        heading: "Isikhungo Semfundo Yezokuphepha Kwe-inthanethi",
+        icon: "Store",
+        heading: "Izintengo Zemakethe Zesikhathi Sangempela",
         paragraph:
-          "Finyelela ingcebo yezinsiza nezifundo ukuze uhlale unolwazi mayelana nemikhuba engcono kakhulu kwezokuphepha kwe-inthanethi.",
+          "Finyelela olwazini lwentengo yemakethe oluthembekile futhi ugweme izintengo ezingalungile. Abathengisi bendawo nama-agribusiness nawo angafaka isandla ukuze afinyelele kule mininingwane yemakethe ebalulekile.",
+      },
+      {
+        icon: "Handshake",
+        heading: "Agri-Input Partnerships",
+        paragraph:
+          "Sixhumanisa wena ngqo nabahlinzeki be-agri-input ngesikhulumi sethu, sikusize uthole amathuluzi owadingayo ukuze ukhule.",
       },
     ],
     Pricing: {
-      proPlan: {
-        price: "R120",
+      basicPlan: {
+        price: "Mahhala",
         description:
-          "Yakhelwe amabhizinisi amancane adinga izici zokuphepha ezithuthukisiwe.",
+          "Indawo yokuqala ephelele kunoma yimuphi umlimi. Thola amathuluzi abalulekile mahhala.",
         features: [
-          "Zonke izici ku-Basic Plan",
-          "Ukuhlaziya Ukuphepha Kwephasiwedi",
-          "Isikhungo Semfundo Yezokuphepha Kwe-inthanethi",
-          "Ukusekelwa Okusemqoka",
+          "Ukwesekwa Kwesikhathi Sangempela (Voice Bot)",
+          "I-Offline AI Pest Detection",
+          "Ukwabelana Ngomphakathi Nolwazi",
+          "Imininingwane Eyisisekelo Yemakethe",
         ],
       },
       enterprisePlan: {
-        price: "R100",
+        price: "Xhumana Nathi",
         description:
-          "Izixazululo zokuphepha eziphelele zezinhlangano ezinkulu.",
+          "Izixazululo ezenziwe ngokwezifiso zama-agribusinesses, izinhlangano, nezinhlangano ezinkulu.",
         features: [
-          "Zonke izici ku-Pro Plan",
-          "Izixazululo Zokuphepha Ezenziwe Ngokwezifiso",
-          "Umphathi We-akhawunti Ozinikele",
-          "Ukusekelwa Okungu-24/7",
+          "Zonke izici ezivela ku-Premium Plan",
+          "Ukuhlaziywa Okwenziwe Ngokwezifiso & Ukubika",
+          "Umphathi We-Akhawunti Ozimele",
+          "24/7 Ukwesekwa Kwababalulekile",
         ],
       },
-      basicPlan: {
-        price: "Mahala",
+      proPlan: {
+        price: "R50/ngenyanga",
         description:
-          "Ilungele abantu abafuna amathuluzi abalulekile we-cybersecurity.",
+          "Kuwabalimi nezinhlangano ezifuna amathuluzi athuthukile nemininingwane ejulile.",
         features: [
-          "Ukuthola Izinsongo Ngesikhathi Sangempela",
-          "Isandiso Sokuphepha Sokuphequlula",
-          "Ukuvikela Ubugebengu Bobucwebecwebe",
-          "Isandiso Sokuphepha Sokuphequlula",
+          "Zonke izici ezivela ku-Basic Plan",
+          "Ukuhlaziywa Okuthuthukile Kwezitshalo & Imininingwane Yezitshalo",
+          "I-Store Insights Subscription",
+          "I-Premium AgriThinkHub Access",
         ],
       },
     },
-
     getStartedSection: {
-      heading: "Vula Ukuphepha Kwakho Kwedijithali",
+      heading: "Joyina Umphakathi we-AgriAssistSA",
       subHeading:
-        "Landela umhlahlandlela wethu osheshayo bese ukhumbula ukuphepha ngaphandle kokukhathazeka.",
+        "Qalisa nge-AgriAssistSA ngezinyathelo ezimbalwa nje. Kulula, kuyashesha, futhi kwakhelwe wena.",
       steps: [
         {
-          step: "S/1",
-          subHeading: "Khetha Isivikelo Sakho",
+          step: "01",
+          subHeading: "Bhalisa & Sitshele Ngepulazi Lakho",
           description:
-            "Khetha uhlelo olufanele kakhulu impilo yakho ye-inthanethi. Okuyisisekelo okudingekayo, i-Pro ngamandla, i-Enterprise ukuze ube nokuvikelwa okuphelele.",
+            "Dala i-akhawunti yakho yamahhala futhi usazise ukuthi ulimani nokuthi ukuphi. Umklamo wethu uhambisana namasiko ngezithonjana ezilula, umsindo, nama-emoji ukuze uthole isipiliyoni esisebenziseka kalula.",
         },
         {
-          step: "S/2",
-          subHeading: "Ukusetha Okusheshayo",
+          step: "02",
+          subHeading: "Qalisa Ukusebenzisa Amathuluzi Ethu",
           description:
-            "Dala i-akhawunti yakho ngaso leso sikhathi. Senza ukubhalisa kusheshe, ukuze uqale ukuvikela ngokushesha.",
+            "Finyelela i-WhatsApp voice bot yethu ukuze uthole iseluleko esisheshayo, noma usebenzise i-offline AI pest detection ukuze uxazulule izinkinga emasimini akho.",
         },
         {
-          step: "S/3",
-          subHeading: "Faka & Yenza Kusebenze",
+          step: "03",
+          subHeading: "Xhumana Nomphakathi",
           description:
-            "Faka isandiso sethu esincane noma uhlelo lokusebenza. Izikhathi ezimbalwa nje, futhi ukuvikela kwakho kusasebenza – kumi ngomumo ukuze kuvikele.",
+            "Hlanganyela nabafundi nabanye abalimi ku-AgriThinkHub ukuze nabelane ngemibono, bathole izixazululo, futhi bafunde amasu amasha.",
         },
         {
-          step: "S/4",
-          subHeading: "Ukuvikela Ngaphandle Kobunzima",
+          step: "04",
+          subHeading: "Lima Ngobuchule, Lima Ngamandla",
           description:
-            "Ngokuvikela kwe-AI okuhlakaniphile nemininingwane ecacile kudeshibhodi yakho, hlala uphephile ngaphandle kokuba uchwepheshe wezokuphepha ku-inthanethi. Siyenza lula imisebenzi enzima.",
+            "Nge-AgriAssistSA, uzothola ukukhuthazela futhi unikele emnothweni wezolimo wendawo oqinile, uqinisekise ukuphepha kokudla emndenini wakho nasemphakathini.",
         },
       ],
+    },
+    Footer: {
+      callToActionDescription: "Asishape ikusasa lezolimo ezisimeme ndawonye.",
+      footerDescription:
+        "Qalisa uhambo lwakho nge-AgriAssistSA namuhla. Xhumana nathi ukuze ufunde kabanzi futhi sisebenze ndawonye ukuze sifinyelele izinhloso zakho zokulima.",
+      Pagelinks: [
+        "Ikhaya",
+        "Ngathi",
+        "Izinsizakalo",
+        "Ungaqalisa Kanjani",
+        "Xhumana Nathi",
+      ],
+      socialLinks: ["Instagram", "X", "Linkedin"],
+      Footprint: "Wonke Amalungelo Agodliwe",
     },
   },
 ];
