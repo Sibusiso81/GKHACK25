@@ -14,11 +14,14 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { resetPassword } from "../Actions/Actions";
+import { Sprout } from "lucide-react";
+import { Toaster } from "sonner";
 
 const formSchema = z.object({
   email: z
     .string()
     .email({ message: "Please enter a valid email address." })
+    .min(10,{ message: "Email is required." })
     .max(100, { message: "Email must be no longer than 100 characters." }),
 });
 
@@ -66,22 +69,26 @@ function ProfileForm() {
 
 function page() {
   return (
-    <section className="w-screen h-screen flex flex-col p-4 justify-center lg:items-center   ">
-      <div className="flex flex-col lg:flex-row mx-auto justify-between h-3/4  w-full max-w-screen-xl">
-        <div className="rounded-md hidden lg:flex  items-end  lg:w-1/2 bg-[url(/oliver-sjostrom-y-GMWtWW_H8-unsplash.jpg)]  bg-center bg-cover">
-          <div className="text-white  p-4 b rounded-lg">
-            <h1 className="text-5xl font-bold mb-2">
-              Browse Boldly{" "}
-              <h1 className="place-self-start text-lg font-semibold">
-                Spartan <span className="text-lime-400 text-3xl">Sentinel</span>
-              </h1>{" "}
-            </h1>
+     <section className="w-screen h-screen flex flex-col p-4 :items-center justify-center   bg-[#122023] text-[#e1fcad]  ">
+      <Toaster position="top-center" richColors/>
+      <div className="flex flex-col lg:flex-row mx-auto justify-center items-center lg:h-3/4  w-full md:max-w-screen-sm lg:max-w-5xl">
+     <div className="rounded-md hidden lg:flex  items-end h-[40vh] lg:h-5/6 my-a md:w-full lg:w-1/2 bg-[url(/tim-mossholder-xDwEa2kaeJA-unsplash.jpg)]  bg-center bg-cover">
+
+          <div className="text-white  p-4 b rounded-lg ">
+            <div className="text-5xl font-bold mb-2">
+              Growth Together.{" "}
+              <span className="place-self-start text-lg font-semibold">
+                
+                <span className="text-lime-400 text-3xl">AgriAssist</span>
+              </span>{" "}
+            </div>
           </div>
         </div>
-        <div className="flex flex-col space-y-4 lg:w-1/2 max-w-screen-sm justify-center w-1/2   p-24 ">
-          <p className="text-center font-medium text-md ">
-            Rest Your Password{" "}
-          </p>
+        <div className="flex flex-col space-y-10 w-full lg:w-1/2  max-w-screen-sm mx-auto justify-center my-auto  p-10 ">
+         <div className="flex space-x-2 items-center w-2/3 mx-auto justify-center">
+                    <Sprout className="w-8 h-8 stroke-lime-400" />
+                    <h1 className="font-medium text-white text-md">AgriAssist</h1>
+                  </div>
           <ProfileForm />
         </div>
       </div>

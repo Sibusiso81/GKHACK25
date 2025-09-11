@@ -13,10 +13,12 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { login } from "../Actions/Actions";
+import { login, signInWithOAuth } from "../Actions/Actions";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { toast, Toaster } from "sonner";
+import Google from "@/app/Componets/Google";
+import { Sprout } from "lucide-react";
 const formSchema = z.object({
   password: z
     .string()
@@ -58,7 +60,7 @@ async function handleLogin(formData: FormData) {
               <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input
-                  className="p-4"
+                  className="p-5 "
                   placeholder="Enter your email"
                   type="email"
                   {...field}
@@ -76,8 +78,8 @@ async function handleLogin(formData: FormData) {
               <FormLabel>Password</FormLabel>
               <FormControl>
                 <Input
-                  className="p-4"
-                  placeholder="Enter your password"
+                  className="p-5  "
+                  placeholder="Enter you password"
                   type="password"
                   {...field}
                 />
@@ -90,13 +92,15 @@ async function handleLogin(formData: FormData) {
         <div className="flex flex-col  max-w-screen-sm space-y-2">
           <Link href={"/Auth/ResetPassword"}>
             <button className="p-1 place-self-end text-sm">
-              <span className="text-muted-foreground">Forgot Password ?</span>
+              <span className="text-white">Forgot Password ?</span>
             </button>
           </Link>
+          
 
           <Button
-            variant={"default"}
+            variant={"secondary"}
             formAction={handleLogin}
+            className="p-6"
           >
             Login
           </Button>
@@ -106,11 +110,12 @@ async function handleLogin(formData: FormData) {
             <div className="border w-full bg-neutral-900"></div>
           </div>
 
-          <Link href={"/Auth/SignUp"}>
-            <Button variant={"default"} className="w-full ">
-              Signup
+          
+            <Button variant={"ghost"} className="w-full active:bg-transparent p-6 " formAction={signInWithOAuth}>
+              <Google className="w-8 h-8 "/>
+              <p className="pl-2">Sign in with Google</p>
             </Button>
-          </Link>
+          
         </div>
       </form>
     </Form>
@@ -119,25 +124,26 @@ async function handleLogin(formData: FormData) {
 
 function Login() {
   return (
-    <section className="w-screen h-screen flex flex-col p-4 lg:items-center lg:justify-center    ">
+    <section className="w-screen h-screen flex flex-col p-4 :items-center justify-center     ">
       <Toaster position="top-center" richColors/>
-      <div className="flex flex-col lg:flex-row mx-auto justify-center items-center lg:h-3/4  w-full max-w-screen-xl">
-     <div className="rounded-md hidden md:flex  items-end h-[300px] lg:h-5/6 my-a md:w-full lg:w-1/2 bg-[url(/tim-mossholder-xDwEa2kaeJA-unsplash.jpg)]  bg-center bg-cover">
+      <div className="flex flex-col lg:flex-row mx-auto justify-center items-center lg:h-3/4  w-full md:max-w-screen-sm lg:max-w-5xl text-green-950">
+     <div className="rounded-md hidden lg:flex  items-end h-[40vh] lg:h-5/6 my-a md:w-full lg:w-1/2 bg-[url(/tim-mossholder-xDwEa2kaeJA-unsplash.jpg)]  bg-center bg-cover">
 
           <div className="text-white  p-4 b rounded-lg ">
             <div className="text-5xl font-bold mb-2">
               Growth Together.{" "}
               <span className="place-self-start text-lg font-semibold">
                 
-                <span className="text-lime-400 text-3xl">Spartans</span>
+                <span className="text-lime-400 text-3xl">AgriAssist</span>
               </span>{" "}
             </div>
           </div>
         </div>
-        <div className="flex flex-col space-y-4 w-full lg:w-1/2  max-w-screen-sm mx-auto justify-center my-auto  p-10 ">
-          <p className="text-center font-medium text-md ">
-            Log into your account{" "}
-          </p>
+        <div className="flex flex-col space-y-10 w-full lg:w-1/2  max-w-screen-sm mx-auto justify-center my-auto  p-10 ">
+         <div className="flex space-x-2 items-center w-2/3 mx-auto justify-center">
+                    <Sprout className="w-8 h-8 stroke-lime-400" />
+                    <h1 className="font-medium  text-md">AgriAssist</h1>
+                  </div>
           <ProfileForm />
         </div>
       </div>

@@ -15,10 +15,7 @@ import Clock from "./Clock";
 
 function LandingPage({ index }: LandingPageProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  langData[index]?.Footer?.socialLinks.map((link, _idx) =>
-    console.log(`id:${_idx},link:${link}`)
-  );
-
+  
   useEffect(() => {
     localStorage.setItem("Language", langData[index]?.language ?? "");
     toast.success(`Language set to ${langData[index]?.language}`);
@@ -39,8 +36,9 @@ function LandingPage({ index }: LandingPageProps) {
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
           <source
-            src="/9136347-uhd_2560_1440_25fps (2) (1).mp4"
+            src="/AgriAssistSAHomeVideo.mp4"
             type="video/mp4"
+         
           />
         </video>
         <div className=" flex justify-between items-center relative z-40  p-5 w-full ">

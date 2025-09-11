@@ -11,7 +11,8 @@ export default function BrowsePage() {
   const [posts, setPosts] = useState<PostData[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-
+  
+console.log(`posts fetched${posts.map((post)=>post.student_id)} , Current Student id:${posts.map((post)=>post.profile.id)}`)
   useEffect(() => {
     async function fetchPosts() {
       try {
@@ -41,9 +42,9 @@ export default function BrowsePage() {
           <Skeleton className="h-4 w-32" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {Array.from({ length: 4 }).map((_, index) => (
-            <Card key={index} className="border-gray-200 bg-white">
+            <Card key={index} className="border-gray-200 bg-white w-full ">
               <CardHeader className="pb-3">
                 <div className="flex items-start justify-between">
                   <div className="flex-1 space-y-3">

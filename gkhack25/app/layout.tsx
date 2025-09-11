@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "AgriAssist",
   description: "Created by Spartans",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/ChatGPT Image Sep 1, 2025, 02_45_28 AM.png",
   },
 };
 

@@ -71,10 +71,11 @@ export async function login(formData: FormData) {
   revalidatePath("/", "layout");
   redirect("/Dashboard");
 }
+
 export async function signInWithOAuth() {
   const supabase = await createClient();
   const { data, error } = await supabase.auth.signInWithOAuth({
-    provider: "github",
+    provider: "google",
     options: {
       redirectTo: "http://localhost:3000/Auth/Callback", // or wherever you want to redirect after login
     },
@@ -89,7 +90,8 @@ export async function signInWithOAuth() {
   if (data.url) {
     redirect(data.url); // use the redirect API for your server framework
   }
-}
+  }
+
 
 export async function signup(data: FormData) {
   console.log("signup called");
@@ -131,7 +133,7 @@ export async function resetPassword(formData: FormData) {
   }
   const supabase = await createClient();
   await supabase.auth.resetPasswordForEmail(data, {
-    redirectTo: "https://task-manager-zeta-green.vercel.app/ChangePassword",
+    redirectTo: "/Auth/ChangePassword",
   });
 }
 
@@ -343,11 +345,11 @@ export async function getUserPosts() {
     }
 
     // Fetch posts for that student with profile data
-    const { data: posts, error: postError } = await supabase
-      .from("post")
-      .select("*")
-      .eq("student_id", studentData.id)
-      .order("created_at", { ascending: false });
+   const { data: posts, error: postError } = await supabase
+  .from("post")
+  .select("*")
+  .eq("student_id", studentData.id)
+  .order("created_at", { ascending: false });
 
     if (postError) {
       console.log("Error fetching posts:", postError);
@@ -355,6 +357,7 @@ export async function getUserPosts() {
     }
 
     // Transform the data to include the profile
+   
     const transformedPosts =
       posts?.map((post) => ({
         id: post.id,
