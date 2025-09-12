@@ -77,7 +77,7 @@ export async function signInWithOAuth() {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
-      redirectTo: "https://gkhack-25.vercel.app//Auth/Callback", 
+      redirectTo: "https://gkhack-25.vercel.app/Auth/Callback", // or wherever you want to redirect after login
     },
   });
   if (error) {

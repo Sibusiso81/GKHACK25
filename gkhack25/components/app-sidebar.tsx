@@ -87,13 +87,14 @@ const comingSoonItems = [
 
 export function AppSidebar() {
   const [user, setUser] = useState("");
-  const [, setDefaultEmail] = useState("");
+  const [defaultEmail, setDefaultEmail] = useState("");
 
   useEffect(() => {
     const stored = localStorage.getItem("email");
     if (stored) {
       try {
         setDefaultEmail(stored);
+        console.log(`Stored email found: ${stored} and defult set to ${defaultEmail}` );
       } catch {
         const user = async () => await getUser();
         user().then((data) => {
