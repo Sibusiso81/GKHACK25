@@ -1,6 +1,6 @@
 'use client'
-import React, { useEffect } from 'react'
-import { createStudentProfile, getAllPosts } from '../Auth/Actions/Actions'
+import React, { useEffect} from 'react'
+import { createFarmerProfile, createStudentProfile, getAllPosts } from '../Auth/Actions/Actions'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -22,6 +22,7 @@ import {
   Globe,
   MessageCircle,
 } from "lucide-react"
+import { Toaster } from 'sonner'
 /* 
 
 Tables for studetns
@@ -53,31 +54,69 @@ numberOfAdpotations:number,
 */
 
 
+
 function Page() {
+
+
   
+
   useEffect(() => {
-  const run = async () => {
-   const savedData = localStorage.getItem("studentData");
-   if (savedData) {
-    const parsedData = JSON.parse(savedData);
-    console.log(parsedData.email);
-    await createStudentProfile({
-       email: parsedData.email,
-      name: parsedData.name,
-      field_of_study: parsedData.fieldOfStudy,
-      year_of_study: parsedData.yearOfStudy,
-      university: parsedData.university,
-    });
-    const posts = await getAllPosts()
-    console.log("Posts fetched",posts);
-   
-  }
-   
-  };
-  run();
-}, []);
+    let isMounted = true;
+    // Prevent running twice in React StrictMode (dev)
+    if (typeof window === "undefined") return;
+
+    const run = async () => {
+      try {
+        // Only allow one profile creation per mount
+        const studentData = localStorage.getItem("studentData");
+        const farmerData = localStorage.getItem("farmerData");
+
+        if (studentData && !farmerData) {
+          const parsedData = JSON.parse(studentData);
+          await createStudentProfile({
+            email: parsedData.email,
+            name: parsedData.name,
+            field_of_study: parsedData.fieldOfStudy,
+            year_of_study: parsedData.yearOfStudy,
+            university: parsedData.university,
+          });
+          localStorage.removeItem("studentData");
+          if (isMounted) {
+            const posts = await getAllPosts();
+            console.log("Posts fetched", posts);
+          }
+        } else if (farmerData && !studentData) {
+          const parsedFarmer = JSON.parse(farmerData);
+          await createFarmerProfile({
+            age_group: parsedFarmer.ageGroup,
+            email: parsedFarmer.email,
+            name: parsedFarmer.name,
+            location: parsedFarmer.location,
+            farming_goal: parsedFarmer.farmingGoal,
+            farming_experience_level: parsedFarmer.farmingExperienceLevel,
+            crops_grown: parsedFarmer.cropsGrown,
+            farming_vision: parsedFarmer.farmingVision,
+          });
+          localStorage.removeItem("farmerData");
+          if (isMounted) {
+            const posts = await getAllPosts();
+            console.log("Posts fetched", posts);
+          }
+        }
+      } catch (err) {
+        console.error("Profile creation error:", err);
+      }
+    };
+
+    run();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
   return (
    <div className="min-h-screen">
+    <Toaster/>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-green-50 via-white to-gray-50 px-6 py-16">
         <div className="absolute inset-0 bg-grid-black/[0.02] bg-[size:60px_60px]" />

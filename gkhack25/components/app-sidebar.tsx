@@ -9,6 +9,7 @@ import {
   Clock,
   Target,
   ArrowRightCircleIcon,
+  Calendar,
 } from "lucide-react";
 import {
   Sidebar,
@@ -34,7 +35,7 @@ import logout, { getUser } from "@/app/Auth/Actions/Actions";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 
-const availableItems = [
+const studentAvailableItems = [
   {
     title: "Home",
     url: "/Dashbard",
@@ -51,10 +52,44 @@ const availableItems = [
     url: "/Dashboard/my-posts",
     icon: FileText,
   },
+  {
+    title: "Research Challenges",
+    url: "/Dashboard/research-challanges",
+    icon: Award,
+    comingSoon: true,
+    description: "Compete in innovation challenges",
+  },
+];
+const farmerAvailableItems = [
+  {
+    title: 'Home',
+    url: '/Dashboard',
+    icon: Home,
+  },
+  {
+    title: 'Schedule',
+    url: '/Dashboard/schedule',
+    icon: Calendar,
+  },
+  {
+    title: 'Post Challange ',
+    url: '/Dashboard/create-challange',
+    icon: Plus,
+  },
+  {
+    title: 'Learn',
+    url: '/Dashboard/learn',
+    icon: FileText,
+  },
+  {
+    title: 'Posts',
+    url: '/Dashboard/my-posts',
+    icon: Users,
+  },
+  
 ];
 
-// Coming soon features
-const comingSoonItems = [
+const StudentComingSoonItems = [
   {
     title: "Student Network",
     url: "#",
@@ -76,35 +111,62 @@ const comingSoonItems = [
     comingSoon: true,
     description: "Get feedback from farmers",
   },
-  {
-    title: "Research Challenges",
-    url: "#",
-    icon: Award,
-    comingSoon: true,
-    description: "Compete in innovation challenges",
-  },
+  
 ];
+/* Farmer Coming soon items 
+1.Pest Detection
+2.Whatapp Chatbot
 
+*/
 export function AppSidebar() {
   const [user, setUser] = useState("");
-  const [defaultEmail, setDefaultEmail] = useState("");
+  const [userType, setUserType] = useState<"student" | "farmer" | null>(null);
 
   useEffect(() => {
-    const stored = localStorage.getItem("email");
-    if (stored) {
-      try {
-        setDefaultEmail(stored);
-        console.log(`Stored email found: ${stored} and defult set to ${defaultEmail}` );
-      } catch {
-        const user = async () => await getUser();
-        user().then((data) => {
-          if (data) {
-            setUser(data.email ?? "");
-          }
-        });
+    const fetchUser = async () => {
+      const studentData = localStorage.getItem("studentData");
+      const farmerData = localStorage.getItem("farmerData");
+
+      if (studentData) {
+        const parsed = JSON.parse(studentData);
+        console.log("Parsed studentData:", parsed);
+        setUser(parsed.email ?? "");
+        if (parsed.fieldOfStudy || parsed.field_of_study) {
+          setUserType("student");
+          return;
+        }
       }
-    }
+      if (farmerData) {
+        const parsed = JSON.parse(farmerData);
+        console.log("Parsed farmerData:", parsed);
+        setUser(parsed.email ?? "");
+        if (parsed.location || parsed["location"]) {
+          setUserType("farmer");
+          return;
+        }
+      }
+      // fallback to server-side getUser
+      const data = await getUser();
+      console.log("Fetched user data:", data);
+      if (data && data.email) {
+        setUser(data.email);
+        if (data.type === "student") setUserType("student");
+        else if (data.type === "farmer") setUserType("farmer");
+        else setUserType(null);
+      }
+    };
+    fetchUser();
   }, []);
+console.log("User Type:", userType);
+  const availableItems = userType === "student"
+    ? studentAvailableItems
+    : userType === null
+    ? farmerAvailableItems
+    : [{'title': 'Home', 'url': '/Dashboard', 'icon': Home}];
+
+  const comingSoonItems = userType === "student"
+    ? StudentComingSoonItems
+    : [];
 
   return (
     <Sidebar className="bg-gradient-to-br from-green-50 via-white to-gray-50 ">
@@ -114,17 +176,20 @@ export function AppSidebar() {
             AgriThinkHub
           </SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu className="gap-1.5 font-medium">
-              {availableItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <Link href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+            <SidebarMenu className="gap-3 font-medium  text-lg">
+              {availableItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton asChild>
+                      <Link href={item.url}>
+                        <Icon />
+                        <span>{item.title}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
@@ -134,33 +199,36 @@ export function AppSidebar() {
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {comingSoonItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton
-                    className="opacity-60 cursor-not-allowed hover:bg-transparent flex-col items-start h-auto py-2 text-gray-600"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <div className="flex items-center justify-between w-full">
-                      <div className="flex items-center gap-2">
-                        <item.icon className="h-4 w-4 text-gray-400" />
-                        <span className="font-medium">{item.title}</span>
+              {comingSoonItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton
+                      className="opacity-60 cursor-not-allowed hover:bg-transparent flex-col items-start h-auto py-2 text-gray-600"
+                      onClick={(e) => e.preventDefault()}
+                    >
+                      <div className="flex items-center justify-between w-full">
+                        <div className="flex items-center gap-2">
+                          <Icon className="h-4 w-4 text-gray-400" />
+                          <span className="font-medium">{item.title}</span>
+                        </div>
+                        <Badge
+                          variant="outline"
+                          className="text-xs border-gray-300 text-gray-500"
+                        >
+                          <Clock className="h-3 w-3 mr-1" />
+                          Soon
+                        </Badge>
                       </div>
-                      <Badge
-                        variant="outline"
-                        className="text-xs border-gray-300 text-gray-500"
-                      >
-                        <Clock className="h-3 w-3 mr-1" />
-                        Soon
-                      </Badge>
-                    </div>
-                    {item.description && (
-                      <p className="text-xs text-gray-500 mt-1 ml-6">
-                        {item.description}
-                      </p>
-                    )}
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+                      {item.description && (
+                        <p className="text-xs text-gray-500 mt-1 ml-6">
+                          {item.description}
+                        </p>
+                      )}
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
@@ -200,5 +268,5 @@ export function AppSidebar() {
         </SidebarMenu>
       </SidebarFooter>
     </Sidebar>
-  );
+  )
 }

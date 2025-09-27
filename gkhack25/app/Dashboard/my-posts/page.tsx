@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { PostData } from "@/lib/types"
 import { getAllPosts } from "@/app/Auth/Actions/Actions"
 import { PostsGrid } from "@/app/Componets/posts-grid"
+import { createClient } from "@/app/utils/supabse/client"
 
 export default function BrowsePage() {
   const [posts, setPosts] = useState<PostData[]>([])
@@ -29,6 +30,24 @@ console.log(`posts fetched${posts.map((post)=>post.student_id)} , Current Studen
 
     fetchPosts()
   }, [])
+useEffect(() => {
+     async function fetchUpdaredPosts(){
+  const supabase = await createClient();
+  const channel = supabase.channel("posts-channel");
+  channel.on(
+    "postgres_changes",
+    {event:'INSERT',schema:"public",table:"posts"},
+  (payload)=>{
+    const newPost = payload.new as PostData;
+    setPosts((prevPosts)=>[...prevPosts,newPost])
+  }
+  ).subscribe((status)=>{
+    console.log('Subsciption status',status)
+  })
+  
+}
+fetchUpdaredPosts()
+},[])
 
   if (loading) {
     return (

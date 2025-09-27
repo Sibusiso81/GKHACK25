@@ -1,10 +1,8 @@
 'use client'
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import { LandingPageProps } from "@/lib/types";
-import { AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Menu, Sprout, X } from "lucide-react";
+import { ArrowUpRight,Sprout} from "lucide-react";
 import Link from "next/link";
-import Navbar from "./Navbar";
 import { langData } from "./LangData";
 import HowItWorksCard from "./HowItWorksCard";
 import PricingCard from "./PricingCard";
@@ -14,7 +12,6 @@ import { toast, Toaster } from "sonner";
 import Clock from "./Clock";
 
 function LandingPage({ index }: LandingPageProps) {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
   
   useEffect(() => {
     localStorage.setItem("Language", langData[index]?.language ?? "");
@@ -47,24 +44,17 @@ function LandingPage({ index }: LandingPageProps) {
             <Sprout className="w-8 h-8 stroke-lime-400" />
           </div>
           <div className="flex flex-row space-x-2 items-cente justify-between pr-4">
-            <Menu
-              className={`cursor-pointer stroke-lime-400  w-8 h-8 ${
-                isOpen ? "hidden" : ""
-              }`}
-              onClick={() => setIsOpen(!isOpen)}
-            />
-            <X
-              className={`cursor-pointer stroke-lime-400 w-8 h-8 ${
-                isOpen ? "mx-2" : "hidden"
-              }`}
-              onClick={() => setIsOpen(!isOpen)}
-            />
+            <Link href="/Auth/Login" className="w-full hover:cursor-pointer p-2 lg:p-3 text-center bg-white text-lime-600">
+       <p className="font-medium text-white text-xl"> Login </p>
+       </Link>
           </div>
         </div>
 
-        <AnimatePresence mode="wait">
+        {/* <AnimatePresence mode="wait">
           {isOpen ? <Navbar /> : null}
-        </AnimatePresence>
+        </AnimatePresence> */}
+
+       
         <div
           className="flex flex-1 flex-col   place-content-end place-self-start md:w-2/3 lg:w-1/2 md:p-10  space-y-4 p-4 m-4  z-10  
         

@@ -27,9 +27,9 @@ import {
   CardDescription,
   CardTitle,
 } from "@/components/ui/card";
-import {  Mail, Loader2 } from "lucide-react";
+import {  Mail, Loader2, Link } from "lucide-react";
 import Google from "@/app/Componets/Google";
-import { signInWithOAuth, signup } from "../Actions/Actions";
+import { signup } from "../Actions/Actions";
 
 function StudentForm() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -76,7 +76,7 @@ function StudentForm() {
     });
     signup(formData);
   }
-  async function handleGoogleSignup(e: React.MouseEvent<HTMLButtonElement>) {
+  /* async function handleGoogleSignup(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault(); // Prevent form submit
     // Get current form values
     const data = form.getValues();
@@ -85,7 +85,7 @@ function StudentForm() {
     setIsSubmitting(true);
     await signInWithOAuth();
     setIsSubmitting(false);
-  }
+  } */
   if (formSubmitted) {
     return (
       <Card className="border-0 shadow-none bg-transparent">
@@ -117,6 +117,10 @@ function StudentForm() {
         <h3 className="text-lg font-semibold">Student Information</h3>
         <p className="text-sm text-muted-foreground">
           Please provide your academic details
+        </p>
+         <p>Please note the following information will be shared with third parties 
+
+          <Button variant={'link'}><Link href={'Auth/Signup/Terms'} className="text-lime-400 cursor-pointer">View details</Link></Button>
         </p>
       </div>
 
@@ -272,12 +276,12 @@ function StudentForm() {
               "Create Student Account"
             )}
           </Button>
-          <div className="flex flex-row space-x-2 items-center">
+          {/* <div className="flex flex-row space-x-2 items-center">
             <div className="border w-full bg-neutral-900"></div>
             <p className="text-center text-muted-foreground">or</p>
             <div className="border w-full bg-neutral-900"></div>
-          </div>
-          <Button
+          </div> */}
+         {/*  <Button
             variant={"ghost"}
             className="w-full active:bg-transparent p-6 "
             onClick={handleGoogleSignup}
@@ -287,7 +291,7 @@ function StudentForm() {
             <Google className="w-8 h-8 " />
 
             {isSubmitting ? "Creating Account..." : "Sign up with Google"}
-          </Button>
+          </Button> */}
         </form>
       </Form>
     </div>

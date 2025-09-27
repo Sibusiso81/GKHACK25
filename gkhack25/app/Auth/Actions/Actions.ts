@@ -55,7 +55,62 @@ export async function createStudentProfile({
   }
   return { success: true };
 }
+export async function createFarmerProfile({
+  email,
+  name,
+  location,
+  age_group,
+  farming_goal,
+  farming_experience_level,
+  crops_grown, // <-- update argument name
+  farming_vision,
+}: {
+  email: string;
+  name: string;
+  location: string;
+  age_group: string;
+  farming_goal: string;
+  farming_experience_level: string;
+  crops_grown: string; // <-- update type
+  farming_vision: string;
+}) {
+  const supabase = await createClient();
 
+  // Check if the farmer already exists
+  const { data: existing, error: fetchError } = await supabase
+    .from("farmer")
+    .select("id")
+    .eq("email", email)
+    .single();
+
+  if (fetchError && fetchError.code !== "PGRST116") {
+    console.log(fetchError.message);
+    return { error: fetchError.message };
+  }
+
+  if (existing) {
+    console.log("Farmer already exists");
+    return { error: "Farmer already exists." };
+  }
+
+  // Insert new farmer with correct column name
+  const { error } = await supabase.from("farmer").insert({
+    email,
+    name,
+    location,
+    age_group,
+    farming_goal,
+    farming_experience_level,
+    crops_grown, // <-- use correct column name
+    farming_vision,
+  });
+
+  if (error) {
+    console.log(error.message);
+    return { error: error.message };
+  }
+  return { success: true };
+}
 export async function login(formData: FormData) {
   const supabase = await createClient();
   const data = {
@@ -77,7 +132,7 @@ export async function signInWithOAuth() {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
-      redirectTo: "https://gkhack-25.vercel.app/Dashboard", // or wherever you want to redirect after login
+      redirectTo: "http://localhost:3000/Dashboard",
     },
   });
   if (error) {
@@ -90,8 +145,7 @@ export async function signInWithOAuth() {
   if (data.url) {
     redirect(data.url); // use the redirect API for your server framework
   }
-  }
-
+}
 
 export async function signup(data: FormData) {
   console.log("signup called");
@@ -166,8 +220,38 @@ export const getUser = async () => {
     return null;
   }
 
-  // Return the user object or just the email
-  return { email: user.email };
+  // Try to find a student profile
+  const { data: student, error: studentError } = await supabase
+    .from("student")
+    .select("*")
+    .eq("email", user.email)
+    .single();
+
+  if (student && !studentError) {
+    return {
+      type: "student",
+      email: user.email,
+      profile: student,
+    };
+  }
+
+  // Try to find a farmer profile
+  const { data: farmer, error: farmerError } = await supabase
+    .from("farmer")
+    .select("*")
+    .eq("email", user.email)
+    .single();
+
+  if (farmer && !farmerError) {
+    return {
+      type: "farmer",
+      email: user.email,
+      profile: farmer,
+    };
+  }
+
+  // If neither profile found, just return the email
+  return { type: "unknown", email: user.email, profile: null };
 };
 
 const getUserID = async () => {
@@ -345,11 +429,11 @@ export async function getUserPosts() {
     }
 
     // Fetch posts for that student with profile data
-   const { data: posts, error: postError } = await supabase
-  .from("post")
-  .select("*")
-  .eq("student_id", studentData.id)
-  .order("created_at", { ascending: false });
+    const { data: posts, error: postError } = await supabase
+      .from("post")
+      .select("*")
+      .eq("student_id", studentData.id)
+      .order("created_at", { ascending: false });
 
     if (postError) {
       console.log("Error fetching posts:", postError);
@@ -357,7 +441,7 @@ export async function getUserPosts() {
     }
 
     // Transform the data to include the profile
-   
+
     const transformedPosts =
       posts?.map((post) => ({
         id: post.id,
@@ -415,25 +499,26 @@ export async function getAllPosts() {
 
     // Transform the data to match our PostData interface
     const transformedPosts =
-      posts?.map((post) => ({
-        id: post.id,
-        created_at: post.created_at,
-        title: post.title,
-        description: post.description,
-        image_urls: post.image_urls || [],
-        document_urls: post.document_urls || [],
-        student_id: post.student_id,
-        profile: {
-          id: post.student.id,
-          created_at: post.student.created_at,
-          name: post.student.name,
-          email: post.student.email,
-          field_of_study: post.student.field_of_study,
-          year_of_study: post.student.year_of_study,
-          university: post.student.university,
-        },
-      })) || [];
-
+      posts
+        ?.filter((post) => post.student) // Only include posts with a valid student
+        .map((post) => ({
+          id: post.id,
+          created_at: post.created_at,
+          title: post.title,
+          description: post.description,
+          image_urls: post.image_urls || [],
+          document_urls: post.document_urls || [],
+          student_id: post.student_id,
+          profile: {
+            id: post.student.id,
+            created_at: post.student.created_at,
+            name: post.student.name,
+            email: post.student.email,
+            field_of_study: post.student.field_of_study,
+            year_of_study: post.student.year_of_study,
+            university: post.student.university,
+          },
+        })) || [];
     return transformedPosts;
   } catch (error) {
     console.error("Error in getAllPosts:", error);

@@ -12,9 +12,11 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card"
 import {  Mail, Loader2 } from "lucide-react"
 import Google from "@/app/Componets/Google"
+import { signup } from "../Actions/Actions"
+import Link from "next/link"
 
 function FarmerForm() {
-  const [formSubmitted, setFormSubmitted] = useState(true)
+  const [formSubmitted, setFormSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const farmerFormSchema = z.object({
@@ -49,15 +51,17 @@ function FarmerForm() {
 
   async function onSubmit(data: z.infer<typeof farmerFormSchema>) {
     setIsSubmitting(true)
-
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-
-   
-    localStorage.setItem("farmerData", JSON.stringify(data))
-    setFormSubmitted(true)
-    setIsSubmitting(false)
-    toast.success("Registration successful! Check your email.")
+console.log('Submitted :',data )
+localStorage.setItem("farmerData", JSON.stringify(data))
+toast.success("Form submitted successfully!")
+setFormSubmitted(true)
+setIsSubmitting(false)
+const formData = new FormData();
+Object.entries(data).forEach(([key, value]) => {
+  formData.append(key, value);
+  console.log(`key:${key}, value:${value} typeof${typeof(value)}/${typeof(value)}` );
+});
+signup(formData)
   }
 
   if (formSubmitted) {
@@ -89,6 +93,7 @@ function FarmerForm() {
       <div className="space-y-2 text-center flex-shrink-0">
         <h3 className="text-lg font-semibold">Farmer Information</h3>
         <p className="text-sm text-muted-foreground">Tell us about your farming journey</p>
+       
       </div>
 
       <Form {...form}>
@@ -157,10 +162,10 @@ function FarmerForm() {
               name="ageGroup"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-sm font-medium">Age Group</FormLabel>
+                  <FormLabel className="text-sm font-medium w-f">Age Group</FormLabel>
                   <FormControl>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <SelectTrigger className="h-11">
+                      <SelectTrigger className="h-11 w-full">
                         <SelectValue placeholder="Select age group" />
                       </SelectTrigger>
                       <SelectContent>

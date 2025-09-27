@@ -13,11 +13,10 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { login, signInWithOAuth } from "../Actions/Actions";
+import { login } from "../Actions/Actions";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { toast, Toaster } from "sonner";
-import Google from "@/app/Componets/Google";
 import { Sprout } from "lucide-react";
 const formSchema = z.object({
   password: z
@@ -110,12 +109,12 @@ async function handleLogin(formData: FormData) {
             <div className="border w-full bg-neutral-900"></div>
           </div>
 
-          
+          {/* 
             <Button variant={"ghost"} className="w-full active:bg-transparent p-6 " formAction={signInWithOAuth}>
               <Google className="w-8 h-8 "/>
               <p className="pl-2">Sign in with Google</p>
             </Button>
-          
+           */}
         </div>
       </form>
     </Form>

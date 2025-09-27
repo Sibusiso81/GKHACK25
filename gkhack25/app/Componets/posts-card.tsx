@@ -81,7 +81,7 @@ export function PostCard({ post }: PostCardProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Card className="group cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-green-100 border-gray-200 bg-white hover:border-green-200 w-fit">
+        <Card className="group cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-green-100 border-gray-200 bg-white hover:border-green-200 w-full">
           <CardHeader className="pb-3">
             <div className="flex items-start justify-between">
               <div className="flex-1">
@@ -126,7 +126,7 @@ export function PostCard({ post }: PostCardProps) {
           </CardHeader>
 
           <CardContent className="pt-0">
-            <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+            <p className="text-gray-600 text-sm mb-4 line-clamp-3 text-wr">
               {truncateText(post.description, 120)}
             </p>
 
@@ -158,12 +158,11 @@ export function PostCard({ post }: PostCardProps) {
       </DialogTrigger>
 
       <DialogContent
-        className="w-[95vw]      
-    max-w-5xl       
+        className="w-[80%]
     max-h-[90vh]    p-0"
       >
         <DialogHeader className="p-6 pb-0">
-          <DialogTitle className="text-md md:text-2xl font-bold text-gray-900 pr-8">
+          <DialogTitle className="text-md md:text-2xl font-bold text-gray-900  text-center mx-auto">
             {post.title}
           </DialogTitle>
           <DialogDescription className="flex items-center gap-4 text-gray-600 mt-2">
@@ -180,7 +179,7 @@ export function PostCard({ post }: PostCardProps) {
           <div className="p-6 pt-4 space-y-6">
             {/* Student Profile Section */}
             <div className="bg-gradient-to-r from-green-50 to-gray-50 rounded-lg p-4 border border-green-200">
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 w-fit ">
                 <Avatar className="h-12 w-12">
                   <AvatarFallback className="bg-green-100 text-green-700 text-lg font-medium">
                     {getInitials(post.profile.name)}
@@ -209,7 +208,7 @@ export function PostCard({ post }: PostCardProps) {
             </div>
 
             {/* Description Section */}
-            <div className="space-y-3 w-fit">
+            <div className="space-y-3 w-fit ">
               <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
                 <FileText className="h-5 w-5 text-green-600" />
                 Research Description
