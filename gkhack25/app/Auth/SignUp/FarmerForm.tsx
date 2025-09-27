@@ -4,16 +4,13 @@ import { z } from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Input } from "@/components/ui/input"
 import { toast, Toaster } from "sonner"
 import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card"
 import {  Mail, Loader2 } from "lucide-react"
 import Google from "@/app/Componets/Google"
 import { signup } from "../Actions/Actions"
-import Link from "next/link"
 
 function FarmerForm() {
   const [formSubmitted, setFormSubmitted] = useState(false)
@@ -26,12 +23,8 @@ function FarmerForm() {
       .email({ message: "Please enter a valid email address." })
       .max(100, { message: "Email must be no longer than 100 characters." }),
     password: z.string().min(6, "Password must be at least 6 characters"),
-    farmingGoal: z.string().min(1, "Farming goal is required"),
-    farmingExperienceLevel: z.string().min(1, "Farming experience level is required"),
-    farmingVision: z.string().min(1, "Farming vision is required"),
-    cropsGrown: z.string().min(1, "Crops grown is required"),
     location: z.string().min(1, "Location is required"),
-    ageGroup: z.string().min(1, "Age group is required"),
+   
   })
 
   const form = useForm<z.infer<typeof farmerFormSchema>>({
@@ -40,12 +33,8 @@ function FarmerForm() {
       name: "",
       email: "",
       password: "",
-      farmingGoal: "",
-      farmingExperienceLevel: "",
-      farmingVision: "",
-      cropsGrown: "",
       location: "",
-      ageGroup: "",
+    
     },
   })
 
@@ -157,7 +146,7 @@ signup(formData)
               )}
             />
 
-            <FormField
+      {/*       <FormField
               control={form.control}
               name="ageGroup"
               render={({ field }) => (
@@ -181,10 +170,10 @@ signup(formData)
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /> */}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+         {/*  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FormField
               control={form.control}
               name="farmingExperienceLevel"
@@ -264,7 +253,7 @@ signup(formData)
                 <FormMessage />
               </FormItem>
             )}
-          />
+          /> */}
 
           <Button
             type="submit"

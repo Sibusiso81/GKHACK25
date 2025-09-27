@@ -22,10 +22,10 @@ export interface FeatureCardProps {
 }
 
 export type Post = {
-  title: string;
-  description: string;
-  images_urls: string[];
-  documents_urls: string[];
+  productId: string;
+  name: string;
+  stock: number;
+  supplierId: string;
 };
 
 
@@ -42,12 +42,12 @@ export interface StudentProfile {
 export interface PostData {
   id: string
   created_at: string
-  title: string
-  description: string
-  image_urls: string[]
-  document_urls: string[]
-  student_id: string
-  profile: StudentProfile
+  title: string,
+  product_name:string,
+  supplier_id:string,
+  stock_quantity:number,
+
+  
 }
 
 export interface PostsResponse {

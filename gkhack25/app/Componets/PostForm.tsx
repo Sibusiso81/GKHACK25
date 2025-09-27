@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import {  z } from "zod";
+import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ArrowDownToLine, Loader2Icon } from "lucide-react";
+import { Loader2Icon } from "lucide-react";
 import {
   Form,
   FormControl,
@@ -14,7 +14,6 @@ import {
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -22,22 +21,16 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import {
-  uploadDocuments,
-  uploadImages,
-  uploadPost,
-} from "../Auth/Actions/Actions";
+import { uploadPost } from "../Auth/Actions/Actions";
 import { toast, Toaster } from "sonner";
 function PostForm() {
-  const [description, setDescription] = useState("");
-  const [title, setTitle] = useState("");
-  const [images, setImages] = useState<File[]>([]);
-  const [documents, setDocuments] = useState<File[]>([]);
-  const [images_display_urls, setImages__Display_Urls] = useState<string[]>([]);
-  const [documents_display_urls, setDocuments_Display_Urls] = useState<string[]>([]);
+  /* const [images, setImages] = useState<File[]>([]);
+  const [documents, setDocuments] = useState<File[]>([]); */
+  /* const [images_display_urls, setImages__Display_Urls] = useState<string[]>([]);
+  const [documents_display_urls, setDocuments_Display_Urls] = useState<string[]>([]); */
   const [postCreated, setPostCreated] = useState(false);
-  function handleImageChange(files: File[], onChange: (files: File[]) => void) {
+
+  /*  function handleImageChange(files: File[], onChange: (files: File[]) => void) {
     // Combine previous images with new files
     
     setImages((prev) => [...prev, ...files.map((file) => file)]);
@@ -51,8 +44,8 @@ function PostForm() {
     onChange([...(PostForm.getValues("images") ?? []), ...files]);
     onChange([...(PostForm.getValues("images") ?? []), ...files]);
   }
-
-  function handleDocumentChange(
+ */
+  /*  function handleDocumentChange(
     files: File[],
     onChange: (files: File[]) => void
   ) {
@@ -66,19 +59,23 @@ function PostForm() {
     
     // Combine previous files with new files for the form field
     onChange([...(PostForm.getValues("documents_urls") ?? []), ...files]);
-  }
+  } */
   const postFormSchema = z.object({
-    title: z
+    productId: z
       .string()
-      .min(3, { message: "Title must be at least 3 characters long" })
-      .max(100, { message: "Title must not exceed 100 characters" }),
+      .min(3, { message: "ID must be at least 3 characters long" })
+      .max(100, { message: "ID must not exceed 100 characters" }),
 
-    description: z
+    name: z
       .string()
       .min(10, { message: "Description must be at least 10 characters long" })
       .max(1000, { message: "Description must not exceed 1000 characters" }),
 
-    images: z
+    stock: z.number().min(1, "Stock is Required"),
+
+    supplierId: z.string().min(6, "Supplier id required "),
+
+    /* images: z
       .array(z.instanceof(File))
       .max(20, { message: "You can upload a maximum of 5 images" })
       .refine((files) => files.every((file) => file.size <= 5 * 1024 * 1024), {
@@ -97,53 +94,53 @@ function PostForm() {
         message: "Each document must be less than 10MB",
       })
       .optional(),
+  }); */
   });
 
   const PostForm = useForm<z.infer<typeof postFormSchema>>({
     resolver: zodResolver(postFormSchema),
     defaultValues: {
-      title: "",
-      description: "",
-      images: [],
-      documents_urls: [],
+      productId: "",
+      name: "",
+      stock: 0,
+      supplierId: "",
     },
   });
 
-  async function onSubmit() {
+  async function onSubmit(values: z.infer<typeof postFormSchema>) {
     setPostCreated(true);
-    const  images_urls = await uploadImages(images); // returns an array of image urls
+    /*  const  images_urls = await uploadImages(images); // returns an array of image urls
     const  documents_urls = await uploadDocuments(documents);
     console.log('Public Image links :',images_urls)
-    console.log('Public Document links :',images_urls)
+    console.log('Public Document links :',images_urls) */
 
-    const  result = await uploadPost({
-      title,
-      description,
-      images_urls: images_urls ?? [],
-      documents_urls: documents_urls ?? [],
+    const result = await uploadPost({
+      productId: values.productId,
+      name: values.name,
+      stock: values.stock,
+      supplierId: values.supplierId,
     });
 
     if (result.success) {
-      toast.success("Your post has been successfully uploaded.",{description:`Thank you for your contribution`});
-      PostForm.reset()
-      
+      toast.success("Your post has been successfully uploaded.", {
+        description: `Thank you for your contribution`,
+      });
+      PostForm.reset();
     } else {
       toast.error(`${"Something went wrong."}`);
-       
     }
-    setPostCreated(false)
-    
+    setPostCreated(false);
   }
   return (
     <Form {...PostForm}>
-      <Toaster position="top-center" closeButton/>
+      <Toaster position="top-center" closeButton />
       <form
         onSubmit={PostForm.handleSubmit(onSubmit)}
         className="space-y-10 lg:space-y-8 lg:grid lg:grid-cols-2 lg:gap-8"
       >
         <FormField
           control={PostForm.control}
-          name="title"
+          name="productId"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Title</FormLabel>
@@ -155,7 +152,6 @@ function PostForm() {
                   {...field}
                   onChange={(e) => {
                     field.onChange(e);
-                    setTitle(e.target.value);
                   }}
                 />
               </FormControl>
@@ -166,7 +162,7 @@ function PostForm() {
 
         <FormField
           control={PostForm.control}
-          name="description"
+          name="name"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Description</FormLabel>
@@ -179,9 +175,7 @@ function PostForm() {
                   {...field}
                   onChange={(e) => {
                     field.onChange(e);
-                    setDescription(e.target.value);
                   }}
-                  value={description}
                 />
               </FormControl>
               <FormMessage />
@@ -189,6 +183,46 @@ function PostForm() {
           )}
         />
         <FormField
+          control={PostForm.control}
+          name="stock"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Stock Quantity</FormLabel>
+              <FormControl>
+                <Input
+                  className="p-4"
+                  placeholder="Enter stock quantity"
+                  type="number"
+                  {...field}
+                  onChange={(e) => field.onChange(Number(e.target.value))}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={PostForm.control}
+          name="supplierId"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>supplier info</FormLabel>
+              <FormControl>
+                <Input
+                  className="p-4"
+                  placeholder="Enter your suplier name "
+                  type="text"
+                  {...field}
+                  onChange={(e) => {
+                    field.onChange(e);
+                  }}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        {/*     <FormField
           control={PostForm.control}
           name="images"
           render={({ field }) => (
@@ -216,8 +250,8 @@ function PostForm() {
               <FormMessage />
             </FormItem>
           )}
-        />
-        <FormField
+        /> */}
+        {/* <FormField
           control={PostForm.control}
           name="documents_urls"
           render={({ field }) => (
@@ -245,7 +279,7 @@ function PostForm() {
               <FormMessage />
             </FormItem>
           )}
-        />
+        /> */}
         <div className="flex flex-col space-y-4 ">
           <Dialog>
             <DialogTrigger asChild>
@@ -257,68 +291,21 @@ function PostForm() {
               <DialogHeader className="flex-shrink-0">
                 <DialogTitle>
                   <div className="flex-col space-y-0.5 text-sm text-start font-medium">
-                    <p>Sibusiso Zulu</p>
+                    <p>NDV001</p>
                     <div className="flex space-x-2">
-                      <p>Agriculture</p>
-                      <p>2nd Year</p>
+                      <p>nONILLIS nd cLONE 30</p>
+                      <p></p>
                     </div>
-                    <p>University of Johannesburg</p>
+                    <p></p>
                   </div>
                 </DialogTitle>
               </DialogHeader>
 
               {/* Scrollable content area */}
-              <div className="flex-1 overflow-y-auto pr-2 -mr-2">
-                <div className="space-y-4">
-                  <div>
-                    {" "}
-                    <h1 className="textlg font-bold">{title}</h1>
-                  </div>
-                  <div className="border-2 h-fit rounded-md grid grid-cols-2 gap-2 p-2 w-full">
-                    <div className="grid grid-cols-3 gap-1 w-full">
-                      {(images_display_urls ?? []).map((image, idx) => (
-                        <Image
-                          key={idx}
-                          src={image}
-                          width={200}
-                          height={200}
-                          sizes="(max-width: 768px) 200px, (max-width: 1200px) 200px, 200px"
-                          alt={`Uploaded image ${idx + 1}`}
-                          className="border-2 rounded-md bg-gray-50 col-span-1"
-                        />
-                      ))}
-                      {/*   <div className="border-2 rounded-md bg-gray-50"></div>
-                      <div className="border-2 rounded-md bg-gray-50"></div>
-                      <div className="border-2 rounded-md bg-gray-50"></div>
-                      <div className="border-2 rounded-md bg-gray-50"></div> */}
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <h3 className="col-span-2 text-nowrap">
-                      Uploaded documents_urls:
-                    </h3>
-                    {documents_display_urls.map((document, i) => (
-                      <div
-                        key={i}
-                        className="border rounded-md p-3 bg-gray-50 flex space-x-2"
-                      >
-                        <p className="text-xs">{document}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <DialogDescription className="text-sm text-start">
-                    {description}
-                  </DialogDescription>
-
-                  {/* Extra content to demonstrate scrolling */}
-                </div>
-              </div>
             </DialogContent>
           </Dialog>
           {postCreated ? (
-            <Button  disabled>
+            <Button disabled>
               <Loader2Icon className="animate-spin" />
               Please wait
             </Button>

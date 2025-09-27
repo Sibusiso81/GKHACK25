@@ -9,15 +9,11 @@ import { toast } from "sonner";
 export async function createStudentProfile({
   email,
   name,
-  field_of_study,
-  year_of_study,
-  university,
+  location,
 }: {
   email: string;
   name: string;
-  field_of_study: string;
-  year_of_study: string;
-  university: string;
+  location: string;
 }) {
   const supabase = await createClient();
 
@@ -41,14 +37,12 @@ export async function createStudentProfile({
   }
 
   // Insert new student
-  const { error } = await supabase.from("student").insert({
+  const { data,error } = await supabase.from("student").insert({
     email,
     name,
-    field_of_study,
-    year_of_study,
-    university,
-  });
-
+    location,
+  }).select();
+console.log('Insered Row :',data,error)
   if (error) {
     console.log(error.message);
     return { error: error.message };
@@ -59,20 +53,10 @@ export async function createFarmerProfile({
   email,
   name,
   location,
-  age_group,
-  farming_goal,
-  farming_experience_level,
-  crops_grown, // <-- update argument name
-  farming_vision,
 }: {
   email: string;
   name: string;
   location: string;
-  age_group: string;
-  farming_goal: string;
-  farming_experience_level: string;
-  crops_grown: string; // <-- update type
-  farming_vision: string;
 }) {
   const supabase = await createClient();
 
@@ -94,16 +78,12 @@ export async function createFarmerProfile({
   }
 
   // Insert new farmer with correct column name
-  const { error } = await supabase.from("farmer").insert({
+  const {data, error } = await supabase.from("farmer").insert({
     email,
     name,
     location,
-    age_group,
-    farming_goal,
-    farming_experience_level,
-    crops_grown, // <-- use correct column name
-    farming_vision,
   });
+  console.log('Inserted row:',data,error)
 
   if (error) {
     console.log(error.message);
@@ -306,23 +286,23 @@ export async function getStudentPorfile() {
 }
 
 export async function uploadPost({
-  title,
-  description,
-  images_urls,
-  documents_urls,
+ productId,
+ name,
+ stock,
+ supplierId
 }: Post) {
   const userId = await getUserID();
   console.log("UserId:", userId);
   const supabase = await createClient();
-  const { error: insertError } = await supabase.from("post").insert([
+  const { error: insertError } = await supabase.from("inventory").insert([
     {
-      title: title,
-      description: description,
-      image_urls: images_urls,
-      document_urls: documents_urls,
-      student_id: userId,
+      product_id: productId,
+      product_name: name,
+      stock_quantity: stock,
+      supplier_id:userId,
     },
-  ]);
+  ]).select();
+  console.log(`uploaded:`,productId,name,stock,userId,supplierId)
   if (insertError) {
     console.log(insertError.message);
   }
@@ -446,7 +426,7 @@ export async function getUserPosts() {
       posts?.map((post) => ({
         id: post.id,
         created_at: post.created_at,
-        title: post.title,
+        productId: post.productId,
         description: post.description,
         image_urls: post.image_urls || [],
         document_urls: post.document_urls || [],
@@ -473,55 +453,20 @@ export async function getAllPosts() {
   const supabase = await createClient();
 
   try {
-    // Fetch all posts with their associated student profiles
-    const { data: posts, error: postError } = await supabase
-      .from("post")
-      .select(
-        `
-        *,
-        student:student_id (
-          id,
-          created_at,
-          name,
-          email,
-          field_of_study,
-          year_of_study,
-          university
-        )
-      `
-      )
+    const { data: posts, error } = await supabase
+      .from("inventory")
+      .select("*") // just fetch everything in post table
       .order("created_at", { ascending: false });
 
-    if (postError) {
-      console.error("Error fetching posts:", postError);
+    if (error) {
+      console.error("Error fetching posts:", error);
       return [];
     }
 
-    // Transform the data to match our PostData interface
-    const transformedPosts =
-      posts
-        ?.filter((post) => post.student) // Only include posts with a valid student
-        .map((post) => ({
-          id: post.id,
-          created_at: post.created_at,
-          title: post.title,
-          description: post.description,
-          image_urls: post.image_urls || [],
-          document_urls: post.document_urls || [],
-          student_id: post.student_id,
-          profile: {
-            id: post.student.id,
-            created_at: post.student.created_at,
-            name: post.student.name,
-            email: post.student.email,
-            field_of_study: post.student.field_of_study,
-            year_of_study: post.student.year_of_study,
-            university: post.student.university,
-          },
-        })) || [];
-    return transformedPosts;
-  } catch (error) {
-    console.error("Error in getAllPosts:", error);
+    return posts ?? [];
+  } catch (err) {
+    console.error("Error in getAllPosts:", err);
     return [];
   }
 }
+

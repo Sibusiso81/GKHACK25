@@ -12,13 +12,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { toast, Toaster } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
@@ -27,14 +20,13 @@ import {
   CardDescription,
   CardTitle,
 } from "@/components/ui/card";
-import {  Mail, Loader2, Link } from "lucide-react";
+import {  Mail, Loader2} from "lucide-react";
 import Google from "@/app/Componets/Google";
 import { signup } from "../Actions/Actions";
 
 function StudentForm() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [,setSignUpWithGoogle] = useState(false);
 
   const studentFormSchema = z.object({
     name: z.string().min(1, "Name is required"),
@@ -43,9 +35,8 @@ function StudentForm() {
       .email({ message: "Please enter a valid email address." })
       .max(100, { message: "Email must be no longer than 100 characters." }),
     password: z.string().min(6, "Password must be at least 6 characters"),
-    fieldOfStudy: z.string().min(1, "Field of study is required"),
-    yearOfStudy: z.string().min(1, "Year of study is required"),
-    university: z.string().min(1, "University is required"),
+    location: z.string().min(1, "Location is required"),
+    
   });
 
   const form = useForm<z.infer<typeof studentFormSchema>>({
@@ -54,9 +45,7 @@ function StudentForm() {
       name: "",
       email: "",
       password: "",
-      fieldOfStudy: "",
-      yearOfStudy: "",
-      university: "",
+      location:''
     },
   });
 
@@ -114,186 +103,161 @@ function StudentForm() {
       <Toaster position="top-right" closeButton />
 
       <div className="space-y-2 text-center">
-        <h3 className="text-lg font-semibold">Student Information</h3>
+        <h3 className="text-lg font-semibold">Buyer Information</h3>
         <p className="text-sm text-muted-foreground">
-          Please provide your academic details
+          Please provide your  details
         </p>
-         <p>Please note the following information will be shared with third parties 
-
-          <Button variant={'link'}><Link href={'Auth/Signup/Terms'} className="text-lime-400 cursor-pointer">View details</Link></Button>
-        </p>
+         
       </div>
 
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <FormField
+    <Form {...form}>
+  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <FormField
+        control={form.control}
+        name="name"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel className="text-sm font-medium">Full Name</FormLabel>
+            <FormControl>
+              <Input
+                className="h-11"
+                placeholder="Enter your full name"
+                {...field}
+              />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+
+      <FormField
+        control={form.control}
+        name="email"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel className="text-sm font-medium">Email Address</FormLabel>
+            <FormControl>
+              <Input
+                className="h-11"
+                placeholder="your.email@example.com"
+                type="email"
+                {...field}
+              />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+    </div>
+
+    <FormField
+      control={form.control}
+      name="password"
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel className="text-sm font-medium">Password</FormLabel>
+          <FormControl>
+            <Input
+              className="h-11"
+              placeholder="Create a secure password"
+              type="password"
+              {...field}
+            />
+          </FormControl>
+          <FormMessage />
+        </FormItem>
+      )}
+    />
+<FormField
               control={form.control}
-              name="name"
+              name="location"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-sm font-medium">
-                    Full Name
-                  </FormLabel>
+                  <FormLabel className="text-sm font-medium">Location</FormLabel>
                   <FormControl>
-                    <Input
-                      className="h-11"
-                      placeholder="Enter your full name"
-                      {...field}
-                    />
+                    <Input className="h-11" placeholder="City, State/Province" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
+   {/*  <FormField
+      control={form.control}
+      name="farmer_type"
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel className="text-sm font-medium">Farmer Type</FormLabel>
+          <FormControl>
+            <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <SelectTrigger className="h-11 w-full">
+                <SelectValue placeholder="Select farmer type" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="crop">Crop Farmer</SelectItem>
+                <SelectItem value="poultry">Poultry Farmer</SelectItem>
+                <SelectItem value="livestock">Livestock Farmer</SelectItem>
+                <SelectItem value="mixed">Mixed Farming</SelectItem>
+              </SelectContent>
+            </Select>
+          </FormControl>
+          <FormMessage />
+        </FormItem>
+      )}
+    /> */}
 
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-sm font-medium">
-                    Email Address
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      className="h-11"
-                      placeholder="your.email@university.edu"
-                      type="email"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+  {/*   <FormField
+      control={form.control}
+      name="specialities"
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel className="text-sm font-medium">Specialities</FormLabel>
+          <FormControl>
+            <Input
+              className="h-11"
+              placeholder="e.g., Maize, Tomatoes, Chickens"
+              {...field}
             />
-          </div>
+          </FormControl>
+          <FormMessage />
+        </FormItem>
+      )}
+    /> */}
 
-          <FormField
-            control={form.control}
-            name="password"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-sm font-medium">Password</FormLabel>
-                <FormControl>
-                  <Input
-                    className="h-11"
-                    placeholder="Create a secure password"
-                    type="password"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <FormField
-              control={form.control}
-              name="fieldOfStudy"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-sm font-medium">
-                    Field of Study
-                  </FormLabel>
-                  <FormControl>
-                    <Input
-                      className="h-11"
-                      placeholder="e.g., Computer Science"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+   {/*  <FormField
+      control={form.control}
+      name="bio"
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel className="text-sm font-medium">Bio</FormLabel>
+          <FormControl>
+            <textarea
+              className="h-24 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm"
+              placeholder="Share your farming journey and goals..."
+              {...field}
             />
+          </FormControl>
+          <FormMessage />
+        </FormItem>
+      )}
+    /> */}
 
-            <FormField
-              control={form.control}
-              name="yearOfStudy"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-sm font-medium">
-                    Academic Level
-                  </FormLabel>
-                  <FormControl>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <SelectTrigger className="h-11 w-full">
-                        <SelectValue placeholder="Select level" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="undergraduate">
-                          Undergraduate
-                        </SelectItem>
-                        <SelectItem value="honours">Honours</SelectItem>
-                        <SelectItem value="masters">Masters</SelectItem>
-                        <SelectItem value="phd">PhD</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-
-          <FormField
-            control={form.control}
-            name="university"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-sm font-medium">
-                  University
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    className="h-11"
-                    placeholder="Enter your university name"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <Button
-            type="submit"
-            className="w-full h-11 bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
-            disabled={isSubmitting}
-            onClick={() => setSignUpWithGoogle(false)}
-          >
-            {isSubmitting ? (
-              <>
-                <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                Creating Account...
-              </>
-            ) : (
-              "Create Student Account"
-            )}
-          </Button>
-          {/* <div className="flex flex-row space-x-2 items-center">
-            <div className="border w-full bg-neutral-900"></div>
-            <p className="text-center text-muted-foreground">or</p>
-            <div className="border w-full bg-neutral-900"></div>
-          </div> */}
-         {/*  <Button
-            variant={"ghost"}
-            className="w-full active:bg-transparent p-6 "
-            onClick={handleGoogleSignup}
-            type="button"
-            disabled={isSubmitting}
-          >
-            <Google className="w-8 h-8 " />
-
-            {isSubmitting ? "Creating Account..." : "Sign up with Google"}
-          </Button> */}
-        </form>
-      </Form>
+    <Button
+      type="submit"
+      className="w-full h-11 bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
+      disabled={isSubmitting}
+    >
+      {isSubmitting ? (
+        <>
+          <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+          Creating Account...
+        </>
+      ) : (
+        "Create Buyer Account"
+      )}
+    </Button>
+  </form>
+</Form>
     </div>
   );
 }

@@ -12,8 +12,9 @@ export default function BrowsePage() {
   const [posts, setPosts] = useState<PostData[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  
-console.log(`posts fetched${posts.map((post)=>post.student_id)} , Current Student id:${posts.map((post)=>post.profile.id)}`)
+  posts.forEach((post, index) => {
+  console.log(`Post ${index + 1}:`, post);
+});
   useEffect(() => {
     async function fetchPosts() {
       try {
@@ -138,7 +139,7 @@ fetchUpdaredPosts()
   return (
     <div className="max-w-7xl mx-auto p-6 space-y-6">
       <div className="space-y-2">
-        <h1 className="text-3xl font-bold text-gray-900">Browse Research Posts</h1>
+        <h1 className="text-3xl font-bold text-gray-900">Browse Supplier Inventory</h1>
         <p className="text-gray-600">Discover agricultural research and innovations shared by fellow students</p>
       </div>
 

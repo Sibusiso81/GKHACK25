@@ -9,9 +9,7 @@ import {
   Users,
   BookOpen,
   Clock,
-  CheckCircle,
-  ArrowRight,
- 
+  CheckCircle, 
   TrendingUp,
   Shield,
   Lightbulb,
@@ -58,6 +56,7 @@ numberOfAdpotations:number,
 function Page() {
 
 
+
   
 
   useEffect(() => {
@@ -73,34 +72,32 @@ function Page() {
 
         if (studentData && !farmerData) {
           const parsedData = JSON.parse(studentData);
+          console.log(parsedData)
           await createStudentProfile({
             email: parsedData.email,
             name: parsedData.name,
-            field_of_study: parsedData.fieldOfStudy,
-            year_of_study: parsedData.yearOfStudy,
-            university: parsedData.university,
+            location:parsedData.location
           });
           localStorage.removeItem("studentData");
           if (isMounted) {
             const posts = await getAllPosts();
-            console.log("Posts fetched", posts);
+           /*  console.log("Posts fetched", posts); */
+           console.log(posts)
           }
         } else if (farmerData && !studentData) {
           const parsedFarmer = JSON.parse(farmerData);
+          console.log(parsedFarmer)
           await createFarmerProfile({
-            age_group: parsedFarmer.ageGroup,
+            
             email: parsedFarmer.email,
             name: parsedFarmer.name,
             location: parsedFarmer.location,
-            farming_goal: parsedFarmer.farmingGoal,
-            farming_experience_level: parsedFarmer.farmingExperienceLevel,
-            crops_grown: parsedFarmer.cropsGrown,
-            farming_vision: parsedFarmer.farmingVision,
+           
           });
           localStorage.removeItem("farmerData");
           if (isMounted) {
-            const posts = await getAllPosts();
-            console.log("Posts fetched", posts);
+           
+            /* console.log("Posts fetched", posts); */
           }
         }
       } catch (err) {
@@ -118,69 +115,7 @@ function Page() {
    <div className="min-h-screen">
     <Toaster/>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-green-50 via-white to-gray-50 px-6 py-16">
-        <div className="absolute inset-0 bg-grid-black/[0.02] bg-[size:60px_60px]" />
-        <div className="relative mx-auto max-w-4xl text-center space-y-4">
-          <Badge variant="secondary" className="mb-4 bg-green-100 text-green-700 hover:bg-green-200">
-            🎓 For Students • By Students • Helping Farmers
-          </Badge>
-
-          <h1 className="mb-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            Turn Your
-            <span className="bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent">
-              {" "}
-              Academic Knowledge
-            </span>
-            <br />
-            <span className="text-2xl sm:text-3xl text-gray-700">Into Real-World Impact</span>
-          </h1>
-
-          <p className="mb-8 text-xl text-gray-600 max-w-2xl mx-auto">
-            Share your agricultural research, theories, and innovative solutions with fellow students. Together, we&apos;re
-            building the knowledge base that will revolutionize farming in South Africa.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-3" asChild>
-              <a href="/create-post" className="flex items-center gap-2">
-                <Plus className="h-5 w-5" />
-                Share Your Research
-              </a>
-            </Button>
-
-            <Button
-              variant="outline"
-              size="lg"
-              className="px-8 py-3 border-green-200 text-green-700 hover:bg-green-50 bg-transparent"
-              asChild
-            >
-              <a href="#impact" className="flex items-center gap-2">
-                See Your Impact
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </Button>
-          </div>
-
-          {/* Quick Stats */}
-                      <h2 className='text-2xl font-bold   col-span-2 '>Help us Reach </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
-
-            
-            <div className="text-center">
-              <div className="text-2xl font-bold text-green-600">200+</div>
-              <div className="text-sm text-gray-600">Student Contributors</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-green-600">200+</div>
-              <div className="text-sm text-gray-600">Farmers </div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-green-600">500+</div>
-              <div className="text-sm text-gray-600">Research Posts</div>
-            </div>
-          </div>
-        </div>
-      </section>
+   
 
       {/* Impact Section */}
       <section id="impact" className="px-6 py-16 bg-white">

@@ -30,8 +30,8 @@ function page() {
                 <GraduationCap className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h3 className="font-semibold">For Students</h3>
-                <p className="text-sm text-muted-foreground">Academic excellence</p>
+                <h3 className="font-semibold">For Farmers</h3>
+                <p className="text-sm text-muted-foreground">Agricultural Excellence </p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
@@ -39,7 +39,7 @@ function page() {
                 <Sprout className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-semibold">For Farmers</h3>
+                <h3 className="font-semibold">By Suppliers</h3>
                 <p className="text-sm text-muted-foreground">Sustainable growth</p>
               </div>
             </div>
@@ -54,26 +54,26 @@ function page() {
           </CardHeader>
 
           <CardContent className="space-y-6 flex-1 overflow-scroll">
-            <Tabs defaultValue="Student" className="w-full h-full flex flex-col">
+            <Tabs defaultValue="Supplier" className="w-full h-full flex flex-col">
               <TabsList className="grid w-full grid-cols-2 mb-8 h-12 flex-shrink-0">
                 <TabsTrigger
-                  value="Student"
+                  value="Supplier"
                   className="flex items-center gap-2 text-sm font-medium data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
                 >
                   <GraduationCap className="w-4 h-4" />
-                  Student
+                 Buyer
                 </TabsTrigger>
                 <TabsTrigger
                   value="Farmer"
                   className="flex items-center gap-2 text-sm font-medium data-[state=active]:bg-accent data-[state=active]:text-accent-foreground"
                 >
                   <Sprout className="w-4 h-4" />
-                  Farmer
+                  Supplier
                 </TabsTrigger>
               </TabsList>
 
               <div className="flex-1 overflow-y-auto">
-                <TabsContent value="Student" className="mt-0 h-full">
+                <TabsContent value="Supplier" className="mt-0 h-full">
                   <StudentForm />
                 </TabsContent>
 

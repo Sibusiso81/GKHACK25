@@ -42,18 +42,12 @@ const studentAvailableItems = [
     icon: Home,
   },
   {
-    title: "Create Post",
-    url: "/Dashboard/create-post",
-    icon: Plus,
-    highlight: true,
-  },
-  {
-    title: "My Posts",
+    title: "Borowse vacines",
     url: "/Dashboard/my-posts",
     icon: FileText,
   },
   {
-    title: "Research Challenges",
+    title: "Place Order ",
     url: "/Dashboard/research-challanges",
     icon: Award,
     comingSoon: true,
@@ -67,17 +61,17 @@ const farmerAvailableItems = [
     icon: Home,
   },
   {
-    title: 'Schedule',
-    url: '/Dashboard/schedule',
+    title: 'Add/Edit stock',
+    url: '/Dashboard/add-inventory',
     icon: Calendar,
   },
   {
-    title: 'Post Challange ',
+    title: 'View Incomming Orders',
     url: '/Dashboard/create-challange',
     icon: Plus,
   },
   {
-    title: 'Learn',
+    title: 'Confirm/decline orders',
     url: '/Dashboard/learn',
     icon: FileText,
   },
@@ -129,7 +123,7 @@ export function AppSidebar() {
 
       if (studentData) {
         const parsed = JSON.parse(studentData);
-        console.log("Parsed studentData:", parsed);
+        /* console.log("Parsed studentData:", parsed); */
         setUser(parsed.email ?? "");
         if (parsed.fieldOfStudy || parsed.field_of_study) {
           setUserType("student");
@@ -138,7 +132,7 @@ export function AppSidebar() {
       }
       if (farmerData) {
         const parsed = JSON.parse(farmerData);
-        console.log("Parsed farmerData:", parsed);
+       /*  console.log("Parsed farmerData:", parsed); */
         setUser(parsed.email ?? "");
         if (parsed.location || parsed["location"]) {
           setUserType("farmer");
@@ -147,7 +141,7 @@ export function AppSidebar() {
       }
       // fallback to server-side getUser
       const data = await getUser();
-      console.log("Fetched user data:", data);
+      /* console.log("Fetched user data:", data); */
       if (data && data.email) {
         setUser(data.email);
         if (data.type === "student") setUserType("student");
@@ -157,7 +151,7 @@ export function AppSidebar() {
     };
     fetchUser();
   }, []);
-console.log("User Type:", userType);
+/* console.log("User Type:", userType); */
   const availableItems = userType === "student"
     ? studentAvailableItems
     : userType === null
