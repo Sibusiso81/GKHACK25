@@ -44,8 +44,8 @@ function LandingPage({ index }: LandingPageProps) {
             <Sprout className="w-8 h-8 stroke-lime-400" />
           </div>
           <div className="flex flex-row space-x-2 items-cente justify-between pr-4">
-            <Link href="/Auth/Login" className="w-full hover:cursor-pointer p-2 lg:p-3 text-center bg-white text-lime-600">
-       <p className="font-medium text-white text-xl"> Login </p>
+            <Link href="/Auth/Login" className=" hover:cursor-pointer p-2 lg:p-3 text-center   ">
+       <p className="font-medium text-lime-400 text-2xl"> Login </p>
        </Link>
           </div>
         </div>

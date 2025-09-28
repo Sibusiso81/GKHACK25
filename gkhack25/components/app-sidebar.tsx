@@ -31,7 +31,7 @@ import { useEffect, useState } from "react";
 import logout, { getUser } from "@/app/Auth/Actions/Actions";
 import { Button } from "./ui/button";
 
-const studentAvailableItems = [
+const farmerAvailableItems = [
   {
     title: "Home",
     url: "/Dashbard",
@@ -49,9 +49,14 @@ const studentAvailableItems = [
     comingSoon: true,
     description: "Compete in innovation challenges",
   },
+  {
+    title: 'Submit Review',
+    url: '/Dashboard/reviews',
+    icon: Calendar,
+  },
   
 ];
-const farmerAvailableItems = [
+const studentAvailableItems = [
   {
     title: 'Home',
     url: '/Dashboard',
@@ -68,11 +73,7 @@ const farmerAvailableItems = [
     url: '/Dashboard/risk-detection',
     icon: Calendar,
   },
-   {
-    title: 'Submit Review',
-    url: '/Dashboard/reviews',
-    icon: Calendar,
-  },
+   
   
   
   
