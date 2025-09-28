@@ -103,11 +103,7 @@ async function handleLogin(formData: FormData) {
           >
             Login
           </Button>
-          <div className="flex flex-row space-x-2 items-center">
-            <div className="border w-full bg-neutral-900"></div>
-            <p className="text-center text-muted-foreground">or</p>
-            <div className="border w-full bg-neutral-900"></div>
-          </div>
+         
 
           {/* 
             <Button variant={"ghost"} className="w-full active:bg-transparent p-6 " formAction={signInWithOAuth}>

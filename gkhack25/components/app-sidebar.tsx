@@ -3,11 +3,8 @@ import {
   Home,
   Plus,
   FileText,
-  Users,
   Award,
-  TrendingUp,
-  Clock,
-  Target,
+ 
   ArrowRightCircleIcon,
   Calendar,
 } from "lucide-react";
@@ -33,7 +30,6 @@ import { User2, ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
 import logout, { getUser } from "@/app/Auth/Actions/Actions";
 import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
 
 const studentAvailableItems = [
   {
@@ -42,17 +38,18 @@ const studentAvailableItems = [
     icon: Home,
   },
   {
-    title: "Borowse vacines",
-    url: "/Dashboard/my-posts",
+    title: "View Inventory",
+    url: "/Dashboard/view-inventory",
     icon: FileText,
   },
   {
-    title: "Place Order ",
-    url: "/Dashboard/research-challanges",
+    title: "Add Inventory",
+    url: "/Dashboard/add-inventory",
     icon: Award,
     comingSoon: true,
     description: "Compete in innovation challenges",
   },
+  
 ];
 const farmerAvailableItems = [
   {
@@ -60,30 +57,28 @@ const farmerAvailableItems = [
     url: '/Dashboard',
     icon: Home,
   },
+  
   {
-    title: 'Add/Edit stock',
-    url: '/Dashboard/add-inventory',
-    icon: Calendar,
-  },
-  {
-    title: 'View Incomming Orders',
-    url: '/Dashboard/create-challange',
+    title: 'View Potetial Suppliers',
+    url: '/Dashboard/view-inventory',
     icon: Plus,
   },
   {
-    title: 'Confirm/decline orders',
-    url: '/Dashboard/learn',
-    icon: FileText,
+    title: 'Risk Detection',
+    url: '/Dashboard/risk-detection',
+    icon: Calendar,
   },
-  {
-    title: 'Posts',
-    url: '/Dashboard/my-posts',
-    icon: Users,
+   {
+    title: 'Submit Review',
+    url: '/Dashboard/reviews',
+    icon: Calendar,
   },
+  
+  
   
 ];
 
-const StudentComingSoonItems = [
+/* const StudentComingSoonItems = [
   {
     title: "Student Network",
     url: "#",
@@ -106,7 +101,7 @@ const StudentComingSoonItems = [
     description: "Get feedback from farmers",
   },
   
-];
+]; */
 /* Farmer Coming soon items 
 1.Pest Detection
 2.Whatapp Chatbot
@@ -158,9 +153,7 @@ export function AppSidebar() {
     ? farmerAvailableItems
     : [{'title': 'Home', 'url': '/Dashboard', 'icon': Home}];
 
-  const comingSoonItems = userType === "student"
-    ? StudentComingSoonItems
-    : [];
+
 
   return (
     <Sidebar className="bg-gradient-to-br from-green-50 via-white to-gray-50 ">
@@ -193,36 +186,7 @@ export function AppSidebar() {
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {comingSoonItems.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton
-                      className="opacity-60 cursor-not-allowed hover:bg-transparent flex-col items-start h-auto py-2 text-gray-600"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <div className="flex items-center justify-between w-full">
-                        <div className="flex items-center gap-2">
-                          <Icon className="h-4 w-4 text-gray-400" />
-                          <span className="font-medium">{item.title}</span>
-                        </div>
-                        <Badge
-                          variant="outline"
-                          className="text-xs border-gray-300 text-gray-500"
-                        >
-                          <Clock className="h-3 w-3 mr-1" />
-                          Soon
-                        </Badge>
-                      </div>
-                      {item.description && (
-                        <p className="text-xs text-gray-500 mt-1 ml-6">
-                          {item.description}
-                        </p>
-                      )}
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                );
-              })}
+         
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>

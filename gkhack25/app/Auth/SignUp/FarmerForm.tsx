@@ -80,8 +80,7 @@ signup(formData)
       <Toaster position="top-right" closeButton />
 
       <div className="space-y-2 text-center flex-shrink-0">
-        <h3 className="text-lg font-semibold">Farmer Information</h3>
-        <p className="text-sm text-muted-foreground">Tell us about your farming journey</p>
+        <h3 className="text-lg font-semibold">Supplier Information</h3>
        
       </div>
 

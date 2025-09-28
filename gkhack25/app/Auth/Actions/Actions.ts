@@ -234,7 +234,7 @@ export const getUser = async () => {
   return { type: "unknown", email: user.email, profile: null };
 };
 
-const getUserID = async () => {
+export const getUserID = async () => {
   const supabase = await createClient();
   const { data: session, error: sessionError } =
     await supabase.auth.getSession();
@@ -469,4 +469,98 @@ export async function getAllPosts() {
     return [];
   }
 }
+
+
+export async function getReviews(){
+  const supabase = await createClient();
+  try{
+    const {error} = await supabase 
+    .from('reviews')
+    .select('*')
+    .order('created_at',{ascending:false})
+
+    if(error){
+    console.error("Error fetching reviews:", error);
+      return [];
+  }
+  }catch (err) {
+    console.error("Error in getAllPosts:", err);
+    return [];
+  }
+  
+}
+interface NewReview {
+  title: string;
+  content: string;
+  rating: number;
+}
+export async function createReview(newReview: NewReview, userId : string) {
+  const supabase = await createClient(); // await if your createClient is async
+
+  try {
+    const { data, error } = await supabase
+      .from('reviews')
+      .insert([
+        {
+          user_id: userId,       // from supabase.auth.getUser() on the client
+          title: newReview.title,
+          content: newReview.content,
+          rating: newReview.rating,
+        },
+      ])
+      .select(); // optional: returns inserted row(s)
+
+    if (error) {
+      console.error("Error creating review:", error);
+      return null;
+    }
+
+    return data[0]; // return the created review
+  } catch (err) {
+    console.error("Unexpected error creating review:", err);
+    return null;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* export async function getAllUsers() {
+  const supabase = createClient();
+
+  const { data, error } = await (await supabase).auth.admin.listUsers({
+    page: 1,
+    perPage: 50,
+  });
+
+  async function testUsers() {
+  const supabase = await createClient();
+  const { data, error } = await supabase.auth.admin.listUsers({
+    page:1,
+    perPage:50,
+  })
+  console.log("Error:", error);
+  console.log("Data:", data?.users);
+}
+
+console.log(testUsers())
+  // data.users is the arrayof users
+  console.log(data?.users)
+  const users = data.users.map((u) => ({
+    id: u.id,
+    email: u.email,
+    full_name: u.user_metadata?.full_name || null,
+    created_at: u.created_at,
+    last_sign_in_at: u.last_sign_in_at,
+    email_confirmed_at: u.email_confirmed_at,
+  }));
+
+  return users;
+}
+ */
 

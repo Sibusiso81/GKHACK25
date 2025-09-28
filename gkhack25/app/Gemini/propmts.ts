@@ -1,7 +1,6 @@
 import { GoogleGenAI } from "@google/genai"
-import type { FarmerInput } from "../utils/supabse/types"
 
-export async function main(farmer: FarmerInput) {
+export async function main() {
   const ai = new GoogleGenAI({
     apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY!,
   })
@@ -13,71 +12,59 @@ export async function main(farmer: FarmerInput) {
       role: "user",
       parts: [
         {
-          text: `You are an **expert agricultural advisor** with specialized knowledge of **Sri Lankan farming, climate, soil conditions, and market economics**. Your goal is to provide a detailed, strategic farming plan based on the farmer's inputs.
+          text: `You are an **expert agricultural epidemiologist** with specialized knowledge of **South African poultry farming, Newcastle Disease (ND) outbreaks, vaccine distribution systems, and market dynamics**. Your goal is to provide a detailed, data-driven outbreak and vaccine allocation plan based on real-time analytics for Johannesburg, South Africa.
 
-**FARMER INPUTS (Use these exact values in your analysis):**
+**BASE CONTEXT (Use these exact values in your analysis):**
 
-1.  **Location (District):** ${farmer.location ?? "Not specified"}
-2.  **Planting Month (Desired):** ${farmer.plantingMonth ?? "Not specified"}
-3.  **Crop Maturity Time (Desired):** ${farmer.cropMaturityTime ?? "Not specified"}
-4.  **Financial Capital (Farmer's Budget):** ${farmer.financialCapital ?? "Not specified"}
-5.  **Area of the Land (Size):** ${farmer.areaOfLand ?? "Not specified"} 
-6.  **Soil Type (Given):** ${farmer.soilType ?? "Not specified"}
-7.  **Topography of the Land:** ${farmer.topographyOfLand ?? "Not specified"}
-8.  **Water Source:** ${farmer.waterSource ?? "Not specified"}
-9.  **Water Availability:** ${farmer.waterAvailability ?? "Not specified"}
-10. **Number of Labors:** ${farmer.numberOfLabors ?? "Not specified"} 
-11. **Objectives of the Farmer:** ${farmer.objectivesOfFarmer ?? "Not specified"}
+1. **Location (City):** Johannesburg, South Africa
+2. **Disease Focus:** Newcastle Disease (ND)
+3. **Objective:** Forecast outbreaks, track vaccine inventory, and optimize vaccine allocation in the region.
 
 **INSTRUCTIONS FOR RESPONSE (CRITICAL):**
 
-1.  **Output Format:** Return the entire response as a single, valid **JSON array of objects**.
-2.  **Content Requirement:** The array **must** contain exactly eight (8) objects, one for each "title" listed below.
-3.  **Language:** Use clear, simple, and direct language suitable for a local farmer, but include specific technical terms (e.g., fertilizer grades, soil pH, specific irrigation methods) where they are essential for effective farming.
-4.  **Prediction Basis:** The analysis must reference Sri Lankan seasons (Maha/Yala), common local crops, and known soil/climate challenges for the specified district.
-5.  **NO Text Outside JSON:** Do not include any introductory text, concluding remarks, or explanations outside the opening [ and closing ] of the JSON array.
+1. **Output Format:** Return the entire response as a single, valid **JSON array of objects**.
+2. **Content Requirement:** The array **must** contain exactly eight (8) objects, one for each "title" listed below.
+3. **Language:** Use clear, simple, and direct language suitable for farmers, suppliers, and government officials, but include specific technical terms (e.g., R0 values, cold-chain logistics, predictive modeling methods).
+4. **Prediction Basis:** The analysis must reference South African poultry conditions, urban-rural supply chain issues in Gauteng, and lessons from recent ND outbreak patterns.
+5. **NO Text Outside JSON:** Do not include any introductory text, concluding remarks, or explanations outside the opening [ and closing ] of the JSON array.
 
 **REQUIRED JSON STRUCTURE (Provide a detailed and specific 'description' for each 'title'):**
 
-
 [
-  {
-    "title": "Estimated Yield & Crop Suitability",
-    "description": "Based on the inputs, the optimal crop is [Suggested Crop]. Predicted yield for this crop: [Low estimate] to [High estimate] per [Hectare/Acre]. Assumptions for this prediction (e.g., use of recommended fertilizer, average rainfall in Maha/Yala season, pest control)."
-  },
-  {
-    "title": "Optimal Planting & Practice Guide",
-    "description": "Advice on the best planting month (confirming or adjusting the farmer's desired month) and specific planting methods (e.g., spacing, line planting, nursery care) that maximize efficiency for the chosen crop, soil, and topography."
-  },
-  {
-    "title": "Soil and Fertilizer Guidance",
-    "description": "Specific NPK fertilizer grades and quantities (e.g., Urea, TSP, MOP) required for the suggested crop and soil type. Recommendations for soil amendments (e.g., lime, organic matter) and timing of application."
-  },
-  {
-    "title": "Water Management Plan",
-    "description": "A clear irrigation schedule (e.g., days per week, volume) based on the water source and availability. Practical water-saving techniques (e.g., mulching, drip irrigation suitability) relevant to the given topography and climate."
-  },
-  {
-    "title": "Labor and Cost Planning",
-    "description": "A breakdown of the labor intensity for the suggested crop (e.g., Land Prep, Weeding, Harvesting). Advice on how to allocate the ${
-      farmer.numberOfLabors ?? "number"
-    } laborers efficiently and suggestions for cost-effective practices given the ${
-      farmer.financialCapital ?? "amount"
-    } financial capital."
-  },
-  {
-    "title": "Harvest Timing & Market Insights",
-    "description": "An assessment of whether the desired Crop Maturity Time is realistic. Suggest the optimal harvest timing for maximum market value, and briefly list 1-2 major market considerations (e.g., expected price in the harvest month, storage needs)."
-  },
-  {
-    "title": "Risk Assessment & Mitigation",
-    "description": "Identify the top 3 key risks for the suggested crop in the specified district (e.g., specific pests, drought, flooding). Provide 1-2 practical, low-cost mitigation strategies for each risk."
-  },
-  {
-    "title": "Alternative Suggestions (If Needed)",
-    "description": "If the primary crop's yield or profit potential is deemed low due to the inputs (e.g., low water, poor soil match), suggest 1-2 alternative, more resilient crops (e.g., substitute paddy with coarse grains or yams) and briefly explain why."
-  }
-]`,
+{
+"title": "Real-Time Outbreak Trends",
+"description": "Summarize the current Newcastle Disease outbreak signals in Johannesburg and nearby Gauteng districts. Include reference to seasonal risks, poultry density, and event-based surveillance data."
+},
+{
+"title": "Predictive Outbreak Modeling",
+"description": "Forecast likely ND outbreak hotspots in the next 3-6 months using poultry density, climate factors (rainfall, temperature), and past outbreak cycles. Provide estimated probabilities or risk zones."
+},
+{
+"title": "Vaccine Demand Forecast",
+"description": "Estimate vaccine demand for Johannesburg based on poultry population data, outbreak risk levels, and typical vaccination coverage rates. Include a low-to-high range of vials required."
+},
+{
+"title": "Inventory & Supply Chain Status",
+"description": "Describe current ND vaccine stock levels, distribution bottlenecks (e.g., cold-chain transport, storage), and risks of depletion. Highlight any urgent resupply needs."
+},
+{
+"title": "Optimized Allocation Strategy",
+"description": "Provide a step-by-step allocation plan to distribute vaccines efficiently across high-risk farms and districts. Consider equity for smallholder farmers and commercial operations."
+},
+{
+"title": "Government & Supplier Coordination",
+"description": "Outline how suppliers, veterinary services, and government should coordinate in Johannesburg to avoid shortages. Mention communication channels, reporting duties, and compliance under the Animal Diseases Act."
+},
+{
+"title": "Risk Assessment & Mitigation",
+"description": "Identify top 3 risks to vaccine supply and outbreak control (e.g., cold-chain failure, transport delays, sudden outbreak spikes). Provide mitigation steps for each risk."
+},
+{
+"title": "Alternative Emergency Measures",
+"description": "If vaccine shortages occur, recommend emergency actions (e.g., ring vaccination, movement restrictions, rapid import of doses). Explain how these measures reduce risk in Johannesburg."
+}
+]
+`,
         },
       ],
     },
