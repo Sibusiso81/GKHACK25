@@ -119,26 +119,25 @@ async function handleLogin(formData: FormData) {
 
 function Login() {
   return (
-    <section className="w-screen h-screen flex flex-col p-4 :items-center justify-center     ">
-      <Toaster position="top-center" richColors/>
-      <div className="flex flex-col lg:flex-row mx-auto justify-center items-center lg:h-3/4  w-full md:max-w-screen-sm lg:max-w-5xl text-green-950">
-     <div className="rounded-md hidden lg:flex  items-end h-[40vh] lg:h-5/6 my-a md:w-full lg:w-1/2 bg-[url(/tim-mossholder-xDwEa2kaeJA-unsplash.jpg)]  bg-center bg-cover">
-
-          <div className="text-white  p-4 b rounded-lg ">
-            <div className="text-5xl font-bold mb-2">
+    <section className="min-h-screen flex flex-col p-4 md:p-6 lg:p-4 items-center justify-center">
+      <Toaster position="top-center" richColors />
+      <div className="flex flex-col lg:flex-row mx-auto justify-center items-center lg:h-3/4 w-full max-w-sm md:max-w-md lg:max-w-5xl text-green-950">
+        <div className="rounded-md hidden lg:flex items-end   w-full lg:w-1/2 bg-[url(/tim-mossholder-xDwEa2kaeJA-unsplash.jpg)] bg-center bg-cover h-[60vh]">
+          <div className="text-white p-4 rounded-lg">
+            <div className="text-4xl xl:text-5xl font-bold mb-2">
               Growth Together.{" "}
-              <span className="place-self-start text-lg font-semibold">
-                
-                <span className="text-lime-400 text-3xl">AgriAssist</span>
-              </span>{" "}
+              <span className="block text-lg font-semibold mt-2">
+                <span className="text-lime-400 text-2xl xl:text-3xl">AgriAssist</span>
+              </span>
             </div>
           </div>
         </div>
-        <div className="flex flex-col space-y-10 w-full lg:w-1/2  max-w-screen-sm mx-auto justify-center my-auto  p-10 ">
-         <div className="flex space-x-2 items-center w-2/3 mx-auto justify-center">
-                    <Sprout className="w-8 h-8 stroke-lime-400" />
-                    <h1 className="font-medium  text-md">AgriAssist</h1>
-                  </div>
+
+        <div className="flex flex-col space-y-6 md:space-y-8 lg:space-y-10 w-full lg:w-1/2 max-w-sm md:max-w-md mx-auto justify-center p-6 md:p-8 lg:p-10">
+          <div className="flex space-x-2 items-center justify-center">
+            <Sprout className="w-6 h-6 md:w-8 md:h-8 stroke-lime-400" />
+            <h1 className="font-medium text-lg md:text-xl">AgriAssist</h1>
+          </div>
           <ProfileForm />
         </div>
       </div>

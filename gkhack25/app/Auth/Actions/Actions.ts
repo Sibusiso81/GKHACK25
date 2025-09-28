@@ -473,49 +473,57 @@ export async function getAllPosts() {
 
 export async function getReviews(){
   const supabase = await createClient();
-  try{
-    const {error} = await supabase 
-    .from('reviews')
-    .select('*')
-    .order('created_at',{ascending:false})
+try {
+    const { data, error } = await supabase
+      .from("reviews")
+      .select("*")
+      .order("created_at", { ascending: true });
 
-    if(error){
-    console.error("Error fetching reviews:", error);
+    if (error) {
+      console.error("Error fetching reviews:", error);
       return [];
-  }
-  }catch (err) {
-    console.error("Error in getAllPosts:", err);
+    }
+
+    console.log("Fetched reviews:", data); // log after checking for error
+    return data; // return the fetched reviews
+
+  } catch (err) {
+    console.error("Error in getReviews:", err);
     return [];
-  }
   
+}
 }
 interface NewReview {
   title: string;
   content: string;
   rating: number;
 }
-export async function createReview(newReview: NewReview, userId : string) {
-  const supabase = await createClient(); // await if your createClient is async
+
+export async function createReview(newReview: NewReview, userId: string) {
+  const supabase = await createClient();
 
   try {
     const { data, error } = await supabase
       .from('reviews')
       .insert([
         {
-          user_id: userId,       // from supabase.auth.getUser() on the client
+          user_id: userId,
           title: newReview.title,
           content: newReview.content,
           rating: newReview.rating,
         },
       ])
-      .select(); // optional: returns inserted row(s)
+      .select(); // returns inserted rows
 
     if (error) {
       console.error("Error creating review:", error);
       return null;
     }
 
-    return data[0]; // return the created review
+    console.log("Created review(s):", data);
+
+    // If you only want the first inserted review
+    return data && data.length > 0 ? data[0] : null;
   } catch (err) {
     console.error("Unexpected error creating review:", err);
     return null;

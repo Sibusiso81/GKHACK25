@@ -41,18 +41,23 @@ export function ReviewsPage() {
   const [loading, setLoading] = useState(true)
 
   const fetchData = async () => {
-    setLoading(true)
-    try {
-      const [reviewsData] = await Promise.all([getReviews()])
+  setLoading(true)
+  try {
+    const reviewsData = await getReviews()
+    setReviews(reviewsData || [])  // set state safely
 
-setReviews(reviewsData ?? []); // ✅ if undefined, set empty array
-    
-    } catch (error) {
-      console.error("Error fetching data:", error)
-    } finally {
-      setLoading(false)
-    }
+  } catch (error) {
+    console.error("Error fetching data:", error)
+  } finally {
+    setLoading(false)
   }
+}
+
+// If you want to log the updated state
+useEffect(() => {
+  console.log("Updated reviews:", reviews)
+}, [reviews])
+
 
   useEffect(() => {
     // Get user ID (you'll need to implement getUserID function)
@@ -60,7 +65,12 @@ setReviews(reviewsData ?? []); // ✅ if undefined, set empty array
       // const id = await getUserID()
       // setUserId(id)
       const id  = await getUserID()
-      setUserId(id) // Placeholder until you implement getUserID
+      setUserId(id) 
+      // Placeholder until you implement getUserID
+    const rev = await getReviews()
+    if(rev){
+        setReviews(rev)
+    }
     }
     user()
 
